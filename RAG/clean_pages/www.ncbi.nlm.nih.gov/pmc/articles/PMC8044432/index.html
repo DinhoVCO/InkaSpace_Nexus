@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/><base href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8044432/"/><title>NASA GeneLab RNA-seq consensus pipeline: standardized processing of short-read RNA-seq data - PMC</title></head><body><main class="usa-layout-docs__main usa-layout-docs grid-col-12 pmc-layout pmc-prose padding-0" id="main-content">
+<article lang="en"><section aria-label="Article citation and metadata"><section class="pmc-layout__citation font-secondary font-xs"><div>
+<div class="display-inline-block"><button aria-controls="journal_context_menu" class="cursor-pointer text-no-underline bg-transparent border-0 padding-0 text-left margin-0 text-normal text-primary" type="button">iScience</button></div>. 2021 Mar 26;24(4):102361. doi: <a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1016/j.isci.2021.102361" rel="noopener noreferrer" target="_blank">10.1016/j.isci.2021.102361</a>
+</div>
+</section><section class="front-matter"><div class="ameta p font-secondary font-xs">
+<hgroup><h1>NASA GeneLab RNA-seq consensus pipeline: standardized processing of short-read RNA-seq data</h1></hgroup><div class="cg p">
+<a aria-describedby="id1" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Overbey%20EG%22%5BAuthor%5D"><span class="name western">Eliah G Overbey</span></a><div hidden="hidden" id="id1">
+<h3><span class="name western">Eliah G Overbey</span></h3>
+<div class="p">
+<sup>1</sup>Department of Genome Sciences, University of Washington, Seattle, WA 98195, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Overbey%20EG%22%5BAuthor%5D"><span class="name western">Eliah G Overbey</span></a>
+</div>
+</div>
+<sup>1,</sup><sup>39</sup>, <a aria-describedby="id2" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Saravia-Butler%20AM%22%5BAuthor%5D"><span class="name western">Amanda M Saravia-Butler</span></a><div hidden="hidden" id="id2">
+<h3><span class="name western">Amanda M Saravia-Butler</span></h3>
+<div class="p">
+<sup>2</sup>Logyx, LLC, Mountain View, CA 94043, USA</div>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Saravia-Butler%20AM%22%5BAuthor%5D"><span class="name western">Amanda M Saravia-Butler</span></a>
+</div>
+</div>
+<sup>2,</sup><sup>3,</sup><sup>39</sup>, <a aria-describedby="id3" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Zhang%20Z%22%5BAuthor%5D"><span class="name western">Zhe Zhang</span></a><div hidden="hidden" id="id3">
+<h3><span class="name western">Zhe Zhang</span></h3>
+<div class="p">
+<sup>4</sup>Department of Biomedical and Health Informatics, The Children's Hospital of Philadelphia, University of Pennsylvania, Philadelphia, PA 19104, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Zhang%20Z%22%5BAuthor%5D"><span class="name western">Zhe Zhang</span></a>
+</div>
+</div>
+<sup>4</sup>, <a aria-describedby="id4" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Rathi%20KS%22%5BAuthor%5D"><span class="name western">Komal S Rathi</span></a><div hidden="hidden" id="id4">
+<h3><span class="name western">Komal S Rathi</span></h3>
+<div class="p">
+<sup>4</sup>Department of Biomedical and Health Informatics, The Children's Hospital of Philadelphia, University of Pennsylvania, Philadelphia, PA 19104, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Rathi%20KS%22%5BAuthor%5D"><span class="name western">Komal S Rathi</span></a>
+</div>
+</div>
+<sup>4</sup>, <a aria-describedby="id5" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Fogle%20H%22%5BAuthor%5D"><span class="name western">Homer Fogle</span></a><div hidden="hidden" id="id5">
+<h3><span class="name western">Homer Fogle</span></h3>
+<div class="p">
+<sup>5</sup>The Bionetics Corporation, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Fogle%20H%22%5BAuthor%5D"><span class="name western">Homer Fogle</span></a>
+</div>
+</div>
+<sup>5,</sup><sup>3</sup>, <a aria-describedby="id6" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22da%20Silveira%20WA%22%5BAuthor%5D"><span class="name western">Willian A da Silveira</span></a><div hidden="hidden" id="id6">
+<h3><span class="name western">Willian A da Silveira</span></h3>
+<div class="p">
+<sup>6</sup>Institute for Global Food Security (IGFS) &amp; School of Biological Sciences, Queen's University Belfast, Belfast, UK</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22da%20Silveira%20WA%22%5BAuthor%5D"><span class="name western">Willian A da Silveira</span></a>
+</div>
+</div>
+<sup>6</sup>, <a aria-describedby="id7" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Barker%20RJ%22%5BAuthor%5D"><span class="name western">Richard J Barker</span></a><div hidden="hidden" id="id7">
+<h3><span class="name western">Richard J Barker</span></h3>
+<div class="p">
+<sup>7</sup>Department of Botany, University of Wisconsin, Madison, WI 53706, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Barker%20RJ%22%5BAuthor%5D"><span class="name western">Richard J Barker</span></a>
+</div>
+</div>
+<sup>7</sup>, <a aria-describedby="id8" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Bass%20JJ%22%5BAuthor%5D"><span class="name western">Joseph J Bass</span></a><div hidden="hidden" id="id8">
+<h3><span class="name western">Joseph J Bass</span></h3>
+<div class="p">
+<sup>8</sup>MRC Versus Arthritis Centre for Musculoskeletal Ageing Research, Royal Derby Hospital, University of Nottingham &amp; National Institute for Health Research Nottingham Biomedical Research Centre, Derby DE22 3DT, UK</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Bass%20JJ%22%5BAuthor%5D"><span class="name western">Joseph J Bass</span></a>
+</div>
+</div>
+<sup>8</sup>, <a aria-describedby="id9" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Beheshti%20A%22%5BAuthor%5D"><span class="name western">Afshin Beheshti</span></a><div hidden="hidden" id="id9">
+<h3><span class="name western">Afshin Beheshti</span></h3>
+<div class="p">
+<sup>37</sup>KBR, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">
+<sup>38</sup>Stanley Center for Psychiatric Research, Broad Institute of MIT and Harvard, Cambridge, MA 02142, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Beheshti%20A%22%5BAuthor%5D"><span class="name western">Afshin Beheshti</span></a>
+</div>
+</div>
+<sup>37,</sup><sup>38</sup>, <a aria-describedby="id10" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Berrios%20DC%22%5BAuthor%5D"><span class="name western">Daniel C Berrios</span></a><div hidden="hidden" id="id10">
+<h3><span class="name western">Daniel C Berrios</span></h3>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Berrios%20DC%22%5BAuthor%5D"><span class="name western">Daniel C Berrios</span></a>
+</div>
+</div>
+<sup>3</sup>, <a aria-describedby="id11" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Blaber%20EA%22%5BAuthor%5D"><span class="name western">Elizabeth A Blaber</span></a><div hidden="hidden" id="id11">
+<h3><span class="name western">Elizabeth A Blaber</span></h3>
+<div class="p">
+<sup>9</sup>Center for Biotechnology and Interdisciplinary Studies, Department of Biomedical Engineering, Rensselaer Polytechnic Institute, Troy, NY 12180, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Blaber%20EA%22%5BAuthor%5D"><span class="name western">Elizabeth A Blaber</span></a>
+</div>
+</div>
+<sup>9</sup>, <a aria-describedby="id12" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Cekanaviciute%20E%22%5BAuthor%5D"><span class="name western">Egle Cekanaviciute</span></a><div hidden="hidden" id="id12">
+<h3><span class="name western">Egle Cekanaviciute</span></h3>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Cekanaviciute%20E%22%5BAuthor%5D"><span class="name western">Egle Cekanaviciute</span></a>
+</div>
+</div>
+<sup>3</sup>, <a aria-describedby="id13" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Costa%20HA%22%5BAuthor%5D"><span class="name western">Helio A Costa</span></a><div hidden="hidden" id="id13">
+<h3><span class="name western">Helio A Costa</span></h3>
+<div class="p">
+<sup>10</sup>Departments of Pathology, and of Biomedical Data Science, Stanford University School of Medicine, Stanford, CA 94305, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Costa%20HA%22%5BAuthor%5D"><span class="name western">Helio A Costa</span></a>
+</div>
+</div>
+<sup>10</sup>, <a aria-describedby="id14" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Davin%20LB%22%5BAuthor%5D"><span class="name western">Laurence B Davin</span></a><div hidden="hidden" id="id14">
+<h3><span class="name western">Laurence B Davin</span></h3>
+<div class="p">
+<sup>11</sup>Institute of Biological Chemistry, Washington State University, Pullman, WA 99164, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Davin%20LB%22%5BAuthor%5D"><span class="name western">Laurence B Davin</span></a>
+</div>
+</div>
+<sup>11</sup>, <a aria-describedby="id15" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Fisch%20KM%22%5BAuthor%5D"><span class="name western">Kathleen M Fisch</span></a><div hidden="hidden" id="id15">
+<h3><span class="name western">Kathleen M Fisch</span></h3>
+<div class="p">
+<sup>12</sup>Center for Computational Biology &amp; Bioinformatics, Department of Medicine, University of California, San Diego, La Jolla, CA 92093, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Fisch%20KM%22%5BAuthor%5D"><span class="name western">Kathleen M Fisch</span></a>
+</div>
+</div>
+<sup>12</sup>, <a aria-describedby="id16" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Gebre%20SG%22%5BAuthor%5D"><span class="name western">Samrawit G Gebre</span></a><div hidden="hidden" id="id16">
+<h3><span class="name western">Samrawit G Gebre</span></h3>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">
+<sup>37</sup>KBR, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Gebre%20SG%22%5BAuthor%5D"><span class="name western">Samrawit G Gebre</span></a>
+</div>
+</div>
+<sup>3,</sup><sup>37</sup>, <a aria-describedby="id17" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Geniza%20M%22%5BAuthor%5D"><span class="name western">Matthew Geniza</span></a><div hidden="hidden" id="id17">
+<h3><span class="name western">Matthew Geniza</span></h3>
+<div class="p">
+<sup>13</sup>Phylos Bioscience, Portland, OR 97214, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Geniza%20M%22%5BAuthor%5D"><span class="name western">Matthew Geniza</span></a>
+</div>
+</div>
+<sup>13</sup>, <a aria-describedby="id18" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Gilbert%20R%22%5BAuthor%5D"><span class="name western">Rachel Gilbert</span></a><div hidden="hidden" id="id18">
+<h3><span class="name western">Rachel Gilbert</span></h3>
+<div class="p">
+<sup>14</sup>NASA Postdoctoral Program, Universities Space Research Association, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Gilbert%20R%22%5BAuthor%5D"><span class="name western">Rachel Gilbert</span></a>
+</div>
+</div>
+<sup>14</sup>, <a aria-describedby="id19" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Gilroy%20S%22%5BAuthor%5D"><span class="name western">Simon Gilroy</span></a><div hidden="hidden" id="id19">
+<h3><span class="name western">Simon Gilroy</span></h3>
+<div class="p">
+<sup>7</sup>Department of Botany, University of Wisconsin, Madison, WI 53706, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Gilroy%20S%22%5BAuthor%5D"><span class="name western">Simon Gilroy</span></a>
+</div>
+</div>
+<sup>7</sup>, <a aria-describedby="id20" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Hardiman%20G%22%5BAuthor%5D"><span class="name western">Gary Hardiman</span></a><div hidden="hidden" id="id20">
+<h3><span class="name western">Gary Hardiman</span></h3>
+<div class="p">
+<sup>6</sup>Institute for Global Food Security (IGFS) &amp; School of Biological Sciences, Queen's University Belfast, Belfast, UK</div>
+<div class="p">
+<sup>15</sup>Medical University of South Carolina, Charleston, SC, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Hardiman%20G%22%5BAuthor%5D"><span class="name western">Gary Hardiman</span></a>
+</div>
+</div>
+<sup>6,</sup><sup>15</sup>, <a aria-describedby="id21" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Herranz%20R%22%5BAuthor%5D"><span class="name western">Raúl Herranz</span></a><div hidden="hidden" id="id21">
+<h3><span class="name western">Raúl Herranz</span></h3>
+<div class="p">
+<sup>16</sup>Centro de Investigaciones Biológicas Margarita Salas (CSIC), Ramiro de Maeztu 9, 28040 Madrid, Spain</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Herranz%20R%22%5BAuthor%5D"><span class="name western">Raúl Herranz</span></a>
+</div>
+</div>
+<sup>16</sup>, <a aria-describedby="id22" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Kidane%20YH%22%5BAuthor%5D"><span class="name western">Yared H Kidane</span></a><div hidden="hidden" id="id22">
+<h3><span class="name western">Yared H Kidane</span></h3>
+<div class="p">
+<sup>17</sup>Center for Pediatric Bone Biology and Translational Research, Texas Scottish Rite Hospital for Children, 2222 Welborn St., Dallas, TX 75219, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Kidane%20YH%22%5BAuthor%5D"><span class="name western">Yared H Kidane</span></a>
+</div>
+</div>
+<sup>17</sup>, <a aria-describedby="id23" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Kruse%20CPS%22%5BAuthor%5D"><span class="name western">Colin PS Kruse</span></a><div hidden="hidden" id="id23">
+<h3><span class="name western">Colin PS Kruse</span></h3>
+<div class="p">
+<sup>18</sup>Los Alamos National Laboratory, Bioscience Division, Los Alamos, NM 87545, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Kruse%20CPS%22%5BAuthor%5D"><span class="name western">Colin PS Kruse</span></a>
+</div>
+</div>
+<sup>18</sup>, <a aria-describedby="id24" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Lee%20MD%22%5BAuthor%5D"><span class="name western">Michael D Lee</span></a><div hidden="hidden" id="id24">
+<h3><span class="name western">Michael D Lee</span></h3>
+<div class="p">
+<sup>19</sup>Exobiology Branch, NASA Ames Research Center, Mountain View, CA 94035, USA</div>
+<div class="p">
+<sup>20</sup>Blue Marble Space Institute of Science, Seattle, WA 98154, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Lee%20MD%22%5BAuthor%5D"><span class="name western">Michael D Lee</span></a>
+</div>
+</div>
+<sup>19,</sup><sup>20</sup>, <a aria-describedby="id25" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Liefeld%20T%22%5BAuthor%5D"><span class="name western">Ted Liefeld</span></a><div hidden="hidden" id="id25">
+<h3><span class="name western">Ted Liefeld</span></h3>
+<div class="p">
+<sup>21</sup>Department of Medicine, University of California San Diego, San Diego, CA 92093, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Liefeld%20T%22%5BAuthor%5D"><span class="name western">Ted Liefeld</span></a>
+</div>
+</div>
+<sup>21</sup>, <a aria-describedby="id26" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Lewis%20NG%22%5BAuthor%5D"><span class="name western">Norman G Lewis</span></a><div hidden="hidden" id="id26">
+<h3><span class="name western">Norman G Lewis</span></h3>
+<div class="p">
+<sup>11</sup>Institute of Biological Chemistry, Washington State University, Pullman, WA 99164, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Lewis%20NG%22%5BAuthor%5D"><span class="name western">Norman G Lewis</span></a>
+</div>
+</div>
+<sup>11</sup>, <a aria-describedby="id27" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22McDonald%20JT%22%5BAuthor%5D"><span class="name western">J Tyson McDonald</span></a><div hidden="hidden" id="id27">
+<h3><span class="name western">J Tyson McDonald</span></h3>
+<div class="p">
+<sup>22</sup>Department of Radiation Medicine, Georgetown University Medical Center, Washington, DC 20007, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22McDonald%20JT%22%5BAuthor%5D"><span class="name western">J Tyson McDonald</span></a>
+</div>
+</div>
+<sup>22</sup>, <a aria-describedby="id28" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Meller%20R%22%5BAuthor%5D"><span class="name western">Robert Meller</span></a><div hidden="hidden" id="id28">
+<h3><span class="name western">Robert Meller</span></h3>
+<div class="p">
+<sup>23</sup>Department of Neurobiology and Pharmacology, Morehouse School of Medicine, Atlanta, GA 30310, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Meller%20R%22%5BAuthor%5D"><span class="name western">Robert Meller</span></a>
+</div>
+</div>
+<sup>23</sup>, <a aria-describedby="id29" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Mishra%20T%22%5BAuthor%5D"><span class="name western">Tejaswini Mishra</span></a><div hidden="hidden" id="id29">
+<h3><span class="name western">Tejaswini Mishra</span></h3>
+<div class="p">
+<sup>24</sup>Department of Genetics, Stanford University School of Medicine, Stanford, CA 94305, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Mishra%20T%22%5BAuthor%5D"><span class="name western">Tejaswini Mishra</span></a>
+</div>
+</div>
+<sup>24</sup>, <a aria-describedby="id30" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Perera%20IY%22%5BAuthor%5D"><span class="name western">Imara Y Perera</span></a><div hidden="hidden" id="id30">
+<h3><span class="name western">Imara Y Perera</span></h3>
+<div class="p">
+<sup>25</sup>Department of Plant and Microbial Biology, North Carolina State University, Raleigh, NC 27695, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Perera%20IY%22%5BAuthor%5D"><span class="name western">Imara Y Perera</span></a>
+</div>
+</div>
+<sup>25</sup>, <a aria-describedby="id31" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Ray%20S%22%5BAuthor%5D"><span class="name western">Shayoni Ray</span></a><div hidden="hidden" id="id31">
+<h3><span class="name western">Shayoni Ray</span></h3>
+<div class="p">
+<sup>26</sup>NGM Biopharmaceuticals, South San Francisco, CA 94080, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Ray%20S%22%5BAuthor%5D"><span class="name western">Shayoni Ray</span></a>
+</div>
+</div>
+<sup>26</sup>, <a aria-describedby="id32" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Reinsch%20SS%22%5BAuthor%5D"><span class="name western">Sigrid S Reinsch</span></a><div hidden="hidden" id="id32">
+<h3><span class="name western">Sigrid S Reinsch</span></h3>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Reinsch%20SS%22%5BAuthor%5D"><span class="name western">Sigrid S Reinsch</span></a>
+</div>
+</div>
+<sup>3</sup>, <a aria-describedby="id33" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Rosenthal%20SB%22%5BAuthor%5D"><span class="name western">Sara Brin Rosenthal</span></a><div hidden="hidden" id="id33">
+<h3><span class="name western">Sara Brin Rosenthal</span></h3>
+<div class="p">
+<sup>12</sup>Center for Computational Biology &amp; Bioinformatics, Department of Medicine, University of California, San Diego, La Jolla, CA 92093, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Rosenthal%20SB%22%5BAuthor%5D"><span class="name western">Sara Brin Rosenthal</span></a>
+</div>
+</div>
+<sup>12</sup>, <a aria-describedby="id34" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Strong%20M%22%5BAuthor%5D"><span class="name western">Michael Strong</span></a><div hidden="hidden" id="id34">
+<h3><span class="name western">Michael Strong</span></h3>
+<div class="p">
+<sup>27</sup>National Jewish Health, Center for Genes, Environment, and Health, 1400 Jackson Street, Denver, CO 80206, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Strong%20M%22%5BAuthor%5D"><span class="name western">Michael Strong</span></a>
+</div>
+</div>
+<sup>27</sup>, <a aria-describedby="id35" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Szewczyk%20NJ%22%5BAuthor%5D"><span class="name western">Nathaniel J Szewczyk</span></a><div hidden="hidden" id="id35">
+<h3><span class="name western">Nathaniel J Szewczyk</span></h3>
+<div class="p">
+<sup>28</sup>Ohio Musculoskeletal and Neurological Institute and Department of Biomedical Sciences, Ohio University, Athens, OH 43147, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Szewczyk%20NJ%22%5BAuthor%5D"><span class="name western">Nathaniel J Szewczyk</span></a>
+</div>
+</div>
+<sup>28</sup>, <a aria-describedby="id36" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Tahimic%20CGT%22%5BAuthor%5D"><span class="name western">Candice GT Tahimic</span></a><div hidden="hidden" id="id36">
+<h3><span class="name western">Candice GT Tahimic</span></h3>
+<div class="p">
+<sup>29</sup>Department of Biology, University of North Florida, Jacksonville, FL 32224, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Tahimic%20CGT%22%5BAuthor%5D"><span class="name western">Candice GT Tahimic</span></a>
+</div>
+</div>
+<sup>29</sup>, <a aria-describedby="id37" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Taylor%20DM%22%5BAuthor%5D"><span class="name western">Deanne M Taylor</span></a><div hidden="hidden" id="id37">
+<h3><span class="name western">Deanne M Taylor</span></h3>
+<div class="p">
+<sup>30</sup>Department of Biomedical and Health Informatics, Children's Hospital of Philadelphia and the Department of Pediatrics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA 19104, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Taylor%20DM%22%5BAuthor%5D"><span class="name western">Deanne M Taylor</span></a>
+</div>
+</div>
+<sup>30</sup>, <a aria-describedby="id38" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Vandenbrink%20JP%22%5BAuthor%5D"><span class="name western">Joshua P Vandenbrink</span></a><div hidden="hidden" id="id38">
+<h3><span class="name western">Joshua P Vandenbrink</span></h3>
+<div class="p">
+<sup>31</sup>Department of Biology, Louisiana Tech University, Ruston, LA 71272, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Vandenbrink%20JP%22%5BAuthor%5D"><span class="name western">Joshua P Vandenbrink</span></a>
+</div>
+</div>
+<sup>31</sup>, <a aria-describedby="id39" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Villacampa%20A%22%5BAuthor%5D"><span class="name western">Alicia Villacampa</span></a><div hidden="hidden" id="id39">
+<h3><span class="name western">Alicia Villacampa</span></h3>
+<div class="p">
+<sup>16</sup>Centro de Investigaciones Biológicas Margarita Salas (CSIC), Ramiro de Maeztu 9, 28040 Madrid, Spain</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Villacampa%20A%22%5BAuthor%5D"><span class="name western">Alicia Villacampa</span></a>
+</div>
+</div>
+<sup>16</sup>, <a aria-describedby="id40" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Weging%20S%22%5BAuthor%5D"><span class="name western">Silvio Weging</span></a><div hidden="hidden" id="id40">
+<h3><span class="name western">Silvio Weging</span></h3>
+<div class="p">
+<sup>32</sup>Institute of Computer Science, Martin-Luther University Halle-Wittenberg, Von-Seckendorff-Platz 1, Halle 06120, Germany</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Weging%20S%22%5BAuthor%5D"><span class="name western">Silvio Weging</span></a>
+</div>
+</div>
+<sup>32</sup>, <a aria-describedby="id41" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Wolverton%20C%22%5BAuthor%5D"><span class="name western">Chris Wolverton</span></a><div hidden="hidden" id="id41">
+<h3><span class="name western">Chris Wolverton</span></h3>
+<div class="p">
+<sup>33</sup>Department of Botany and Microbiology, Ohio Wesleyan University, Delaware, OH, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Wolverton%20C%22%5BAuthor%5D"><span class="name western">Chris Wolverton</span></a>
+</div>
+</div>
+<sup>33</sup>, <a aria-describedby="id42" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Wyatt%20SE%22%5BAuthor%5D"><span class="name western">Sarah E Wyatt</span></a><div hidden="hidden" id="id42">
+<h3><span class="name western">Sarah E Wyatt</span></h3>
+<div class="p">
+<sup>34</sup>Department of Environmental and Plant Biology, Ohio University, Athens, OH 45701, USA</div>
+<div class="p">
+<sup>35</sup>Interdisciplinary Program in Molecular and Cellular Biology, Ohio University, Athens, OH 45701, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Wyatt%20SE%22%5BAuthor%5D"><span class="name western">Sarah E Wyatt</span></a>
+</div>
+</div>
+<sup>34,</sup><sup>35</sup>, <a aria-describedby="id43" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Zea%20L%22%5BAuthor%5D"><span class="name western">Luis Zea</span></a><div hidden="hidden" id="id43">
+<h3><span class="name western">Luis Zea</span></h3>
+<div class="p">
+<sup>36</sup>BioServe Space Technologies, Aerospace Engineering Sciences Department, University of Colorado Boulder, Boulder 80303 USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Zea%20L%22%5BAuthor%5D"><span class="name western">Luis Zea</span></a>
+</div>
+</div>
+<sup>36</sup>, <a aria-describedby="id44" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Costes%20SV%22%5BAuthor%5D"><span class="name western">Sylvain V Costes</span></a><div hidden="hidden" id="id44">
+<h3><span class="name western">Sylvain V Costes</span></h3>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Costes%20SV%22%5BAuthor%5D"><span class="name western">Sylvain V Costes</span></a>
+</div>
+</div>
+<sup>3,</sup><sup>∗</sup>, <a aria-describedby="id45" class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Galazka%20JM%22%5BAuthor%5D"><span class="name western">Jonathan M Galazka</span></a><div hidden="hidden" id="id45">
+<h3><span class="name western">Jonathan M Galazka</span></h3>
+<div class="p">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div class="p">Find articles by <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Galazka%20JM%22%5BAuthor%5D"><span class="name western">Jonathan M Galazka</span></a>
+</div>
+</div>
+<sup>3,</sup><sup>40,</sup><sup>∗∗</sup>
+</div>
+<ul class="d-buttons inline-list">
+<li><button aria-controls="aip_a" aria-expanded="false" class="d-button">Author information</button></li>
+<li><button aria-controls="anp_a" aria-expanded="false" class="d-button">Article notes</button></li>
+<li><button aria-controls="clp_a" aria-expanded="false" class="d-button">Copyright and License information</button></li>
+</ul>
+<div class="d-panels font-secondary-light">
+<div class="d-panel p" id="aip_a" style="display: none">
+<div class="p" id="aff1">
+<sup>1</sup>Department of Genome Sciences, University of Washington, Seattle, WA 98195, USA</div>
+<div id="aff2">
+<sup>2</sup>Logyx, LLC, Mountain View, CA 94043, USA</div>
+<div id="aff3">
+<sup>3</sup>Space Biosciences Division, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div id="aff4">
+<sup>4</sup>Department of Biomedical and Health Informatics, The Children's Hospital of Philadelphia, University of Pennsylvania, Philadelphia, PA 19104, USA</div>
+<div id="aff5">
+<sup>5</sup>The Bionetics Corporation, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div id="aff6">
+<sup>6</sup>Institute for Global Food Security (IGFS) &amp; School of Biological Sciences, Queen's University Belfast, Belfast, UK</div>
+<div id="aff7">
+<sup>7</sup>Department of Botany, University of Wisconsin, Madison, WI 53706, USA</div>
+<div id="aff8">
+<sup>8</sup>MRC Versus Arthritis Centre for Musculoskeletal Ageing Research, Royal Derby Hospital, University of Nottingham &amp; National Institute for Health Research Nottingham Biomedical Research Centre, Derby DE22 3DT, UK</div>
+<div id="aff9">
+<sup>9</sup>Center for Biotechnology and Interdisciplinary Studies, Department of Biomedical Engineering, Rensselaer Polytechnic Institute, Troy, NY 12180, USA</div>
+<div id="aff10">
+<sup>10</sup>Departments of Pathology, and of Biomedical Data Science, Stanford University School of Medicine, Stanford, CA 94305, USA</div>
+<div id="aff11">
+<sup>11</sup>Institute of Biological Chemistry, Washington State University, Pullman, WA 99164, USA</div>
+<div id="aff12">
+<sup>12</sup>Center for Computational Biology &amp; Bioinformatics, Department of Medicine, University of California, San Diego, La Jolla, CA 92093, USA</div>
+<div id="aff13">
+<sup>13</sup>Phylos Bioscience, Portland, OR 97214, USA</div>
+<div id="aff14">
+<sup>14</sup>NASA Postdoctoral Program, Universities Space Research Association, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div id="aff15">
+<sup>15</sup>Medical University of South Carolina, Charleston, SC, USA</div>
+<div id="aff16">
+<sup>16</sup>Centro de Investigaciones Biológicas Margarita Salas (CSIC), Ramiro de Maeztu 9, 28040 Madrid, Spain</div>
+<div id="aff17">
+<sup>17</sup>Center for Pediatric Bone Biology and Translational Research, Texas Scottish Rite Hospital for Children, 2222 Welborn St., Dallas, TX 75219, USA</div>
+<div id="aff18">
+<sup>18</sup>Los Alamos National Laboratory, Bioscience Division, Los Alamos, NM 87545, USA</div>
+<div id="aff19">
+<sup>19</sup>Exobiology Branch, NASA Ames Research Center, Mountain View, CA 94035, USA</div>
+<div id="aff20">
+<sup>20</sup>Blue Marble Space Institute of Science, Seattle, WA 98154, USA</div>
+<div id="aff21">
+<sup>21</sup>Department of Medicine, University of California San Diego, San Diego, CA 92093, USA</div>
+<div id="aff22">
+<sup>22</sup>Department of Radiation Medicine, Georgetown University Medical Center, Washington, DC 20007, USA</div>
+<div id="aff23">
+<sup>23</sup>Department of Neurobiology and Pharmacology, Morehouse School of Medicine, Atlanta, GA 30310, USA</div>
+<div id="aff24">
+<sup>24</sup>Department of Genetics, Stanford University School of Medicine, Stanford, CA 94305, USA</div>
+<div id="aff25">
+<sup>25</sup>Department of Plant and Microbial Biology, North Carolina State University, Raleigh, NC 27695, USA</div>
+<div id="aff26">
+<sup>26</sup>NGM Biopharmaceuticals, South San Francisco, CA 94080, USA</div>
+<div id="aff27">
+<sup>27</sup>National Jewish Health, Center for Genes, Environment, and Health, 1400 Jackson Street, Denver, CO 80206, USA</div>
+<div id="aff28">
+<sup>28</sup>Ohio Musculoskeletal and Neurological Institute and Department of Biomedical Sciences, Ohio University, Athens, OH 43147, USA</div>
+<div id="aff29">
+<sup>29</sup>Department of Biology, University of North Florida, Jacksonville, FL 32224, USA</div>
+<div id="aff30">
+<sup>30</sup>Department of Biomedical and Health Informatics, Children's Hospital of Philadelphia and the Department of Pediatrics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA 19104, USA</div>
+<div id="aff31">
+<sup>31</sup>Department of Biology, Louisiana Tech University, Ruston, LA 71272, USA</div>
+<div id="aff32">
+<sup>32</sup>Institute of Computer Science, Martin-Luther University Halle-Wittenberg, Von-Seckendorff-Platz 1, Halle 06120, Germany</div>
+<div id="aff33">
+<sup>33</sup>Department of Botany and Microbiology, Ohio Wesleyan University, Delaware, OH, USA</div>
+<div id="aff34">
+<sup>34</sup>Department of Environmental and Plant Biology, Ohio University, Athens, OH 45701, USA</div>
+<div id="aff35">
+<sup>35</sup>Interdisciplinary Program in Molecular and Cellular Biology, Ohio University, Athens, OH 45701, USA</div>
+<div id="aff36">
+<sup>36</sup>BioServe Space Technologies, Aerospace Engineering Sciences Department, University of Colorado Boulder, Boulder 80303 USA</div>
+<div id="aff37">
+<sup>37</sup>KBR, NASA Ames Research Center, Moffett Field, CA 94035, USA</div>
+<div id="aff38">
+<sup>38</sup>Stanley Center for Psychiatric Research, Broad Institute of MIT and Harvard, Cambridge, MA 02142, USA</div>
+<div class="author-notes p">
+<div class="fn" id="cor1">
+<sup>∗</sup><p class="display-inline">Corresponding author <span>sylvain.v.costes@nasa.gov</span></p>
+</div>
+<div class="fn" id="cor2">
+<sup>∗∗</sup><p class="display-inline">Corresponding author <span>jonathan.m.galazka@nasa.gov</span></p>
+</div>
+<div class="fn" id="fn1">
+<sup>39</sup><p class="display-inline" id="ntpara0010">These authors contributed equally</p>
+</div>
+<div class="fn" id="fn2">
+<sup>40</sup><p class="display-inline" id="ntpara0015">Lead contact</p>
+</div>
+</div>
+</div>
+<div class="d-panel p" id="anp_a" style="display: none"><div class="notes p"><section class="history" id="historyarticle-meta1"><p>Received 2020 Sep 8; Revised 2020 Oct 30; Accepted 2021 Mar 23; Collection date 2021 Apr 23.</p></section></div></div>
+<div class="d-panel p" id="clp_a" style="display: none">
+<p>This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).</p>
+<div class="p"><a class="usa-link" href="/about/copyright/">PMC Copyright notice</a></div>
+</div>
+</div>
+<div>PMCID: PMC8044432  PMID: <a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/33870146/">33870146</a>
+</div>
+</div></section></section><section aria-label="Article content"><section class="body main-article-body"><section class="abstract" id="abs0010"><h2>Summary</h2>
+<p>With the development of transcriptomic technologies, we are able to quantify precise changes in gene expression profiles from astronauts and other organisms exposed to spaceflight. Members of NASA GeneLab and GeneLab-associated analysis working groups (AWGs) have developed a consensus pipeline for analyzing short-read RNA-sequencing data from spaceflight-associated experiments. The pipeline includes quality control, read trimming, mapping, and gene quantification steps, culminating in the detection of differentially expressed genes. This data analysis pipeline and the results of its execution using data submitted to GeneLab are now all publicly available through the GeneLab database. We present here the full details and rationale for the construction of this pipeline in order to promote transparency, reproducibility, and reusability of pipeline data; to provide a template for data processing of future spaceflight-relevant datasets; and to encourage cross-analysis of data from other databases with the data available in GeneLab.</p>
+<section class="kwd-group" id="kwrds0010"><p><strong>Subject areas:</strong> Omics, Space Sciences</p></section></section><section class="abstract" id="abs0015"><h2>Graphical abstract</h2>
+<figure class="fig xbox font-sm" id="undfig1"><p class="img-box line-height-none margin-x-neg-2 tablet:margin-x-0 text-center"><img alt="graphic file with name fx1.jpg" class="graphic" height="664" loading="lazy" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2b5/8044432/b1ec646d6237/fx1.jpg" width="664"/></p>
+<div class="p text-right font-secondary"><a class="usa-link" href="figure/undfig1/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div></figure></section><section class="abstract" id="abs0020"><h2>Highlights</h2>
+<ul class="list" id="ulist0010" style="list-style-type:none">
+<li id="u0010">
+<span class="label">•</span><p class="display-inline" id="p0010">Analysis of omics data from different spaceflight studies presents unique challenges</p>
+</li>
+<li id="u0015">
+<span class="label">•</span><p class="display-inline" id="p0015">A standardized pipeline for RNA-seq analysis eliminates data processing variation</p>
+</li>
+<li id="u0020">
+<span class="label">•</span><p class="display-inline" id="p0020">The GeneLab RNA-seq pipeline includes QC, trimming, mapping, quantification, and DGE</p>
+</li>
+<li id="u0025">
+<span class="label">•</span><p class="display-inline" id="p0025">Space-relevant data processed with this pipeline are available at g<span class="text-underline">enelab.nasa.gov</span></p>
+</li>
+</ul></section><section class="abstract" id="abs0025"><hr class="headless"/>
+<p>Omics; Space Sciences</p></section><section id="sec1"><h2 class="pmc_sec_title">Introduction</h2>
+<p id="p0030">Opportunities to perform biological studies in space are rare due to high costs and a limited number of funding sources, rocket launches, and spaceflight crew hours for experimental procedures. In addition, spaceflight research is decentralized and distributed across numerous laboratories in the United States and abroad. As a result, studies performed in different laboratories often utilize different organisms, strains, cell lines, and experimental procedures. Adding to this complexity are variance in spaceflight factors and/or confounders within each study, such as degree of radiation exposure, experiment duration, CO<sub>2</sub> concentration, light cycle, and water availability, all of which can have effects on an organism's health and gene expression profiles during spaceflight (<a aria-describedby="bib36" class="usa-link" href="#bib36">Rutter et al., 2020</a>). In order to optimize the integration of data from this diverse array of spaceflight experiments, it is paramount that variations in data processing are minimized.</p>
+<p id="p0035">There is presently no consensus on how best to analyze RNA-seq data, and the impact of analysis tool selection on results is an active field of research. Indeed, selections of trimming parameters (<a aria-describedby="bib49" class="usa-link" href="#bib49">Williams et al., 2016</a>), read aligner (<a aria-describedby="bib51" class="usa-link" href="#bib51">Yang et al., 2015</a>), quantification tool (<a aria-describedby="bib45" class="usa-link" href="#bib45">Teng et al., 2016</a>), and differential expression detection algorithm (<a aria-describedby="bib8" class="usa-link" href="#bib8">Costa-Silva et al. 2017</a>) all affect results. Because of such challenges, groups such as ENCODE and MINSEQE have developed standardized analysis pipelines for better comparison of RNA-seq datasets (<a aria-describedby="bib10" class="usa-link" href="#bib10">ENCODE Project Consortium et al., 2020</a>; <a aria-describedby="bib12" class="usa-link" href="#bib12">Functional Genomics Data Society, 2012</a>).</p>
+<p id="p0040">The NASA GeneLab database (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://genelab-data.ndc.nasa.gov/genelab/projects" rel="noopener noreferrer" target="_blank">https://genelab-data.ndc.nasa.gov/genelab/projects</a>) was created as a central repository for spaceflight-related omics-data. The repository includes data from experiments that profile transcription (RNA-seq, microarray), DNA/RNA methylation, protein expression, metabolite pools, and metagenomes. The most prevalent data type in this repository is RNA-seq from organisms exposed to spaceflight conditions. As of August 2020, the NASA GeneLab database has over eighty datasets with RNA-sequencing data (<a class="usa-link" href="#mmc2">Table S1</a>). These datasets include <em>Homo sapiens</em> (human), <em>Mus musculus</em> (mouse), <em>Drosophila melanogaster</em> (fruit fly), <em>Arabidopsis thaliana</em> (model higher plant), <em>Oryzias latipes</em> (Japanese rice fish), <em>Helix lucorum</em> (land snail), <em>Brassica rapa</em> (Fast Plant), <em>Eruca vesicaria</em> (arugula/edible plant), <em>Euprymna scolopes</em> (Hawaiian bobtail squid), <em>Ceratopteris richardii</em> (aquatic fern), and the bacterium, <em>Bacillus subtilis</em> from experiments performed during true spaceflight on various orbital platforms such as the Space Shuttle and International Space Station (ISS), as well as spaceflight-analog studies, such as hindlimb unloading and bed rest studies (<a aria-describedby="bib3" class="usa-link" href="#bib3">Berrios et al., 2020</a>).</p>
+<p id="p0045">NASA's GeneLab and Ames Life Sciences Data Archive (ALSDA) projects have put forward an ambitious strategy focused on integrating data, metadata, and biospecimens to fully utilize the 40+ years of archived NASA Life Sciences data (<a aria-describedby="bib40" class="usa-link" href="#bib40">Scott et al., 2020</a>). One of the first steps in this effort is the ability to analyze how experimental factors common to multiple datasets impact molecular signaling. Such meta-analysis can only occur if metadata, data, and processed data are harmonized. As part of this strategy, GeneLab engaged with the scientific community and held its first Analysis Working Group (AWG) workshop in 2018. Spaceflight researchers from universities and organizations across the United States and abroad met to begin the creation of a standardized, consensus data-processing pipeline for one of the most common types of spaceflight datasets: transcription profiling via RNA-sequencing. Scientists at this workshop met to discuss the merits of various bioinformatic software tools for processing RNA-sequencing data and ultimately agreed on a single pipeline of these tools.</p>
+<p id="p0050">The main driver for developing the consensus pipeline was to present consistently processed data to the public, therefore making space-relevant multi-omics data more accessible and reusable. The overall goals were (1) to get more consistently processed data to the public; (2) to provide output data from every step of the consensus pipeline so users can download and use these “intermediate” data; (3) to support easier and more consistent analysis of space-relevant data by users including those in the NASA AWGs; and (4) to allow easier cross-analysis of experiments to identify effects that result from the spaceflight environment, independent of confounding factors. In addition, many of these data in the GeneLab database have not been previously analyzed, as their generation was relatively recent. Therefore, providing new and processed datasets to the public allows biologists and others to more easily interpret these data and contributes significantly to our collective knowledge of the effects of spaceflight on terrestrial organisms.</p>
+<p id="p0055">Here we present the RNA-seq consensus pipeline (RCP) developed by the GeneLab AWG along with the rationale behind the tool settings and options selected. The RCP includes three distinct steps: data pre-processing, data processing, and differential gene expression computation/annotation (<a class="usa-link" href="#fig1">Figure 1</a>A). These steps use tools for quality control (FastQC, MultiQC) (<a aria-describedby="bib1" class="usa-link" href="#bib1">Andrews, 2010</a>; <a aria-describedby="bib11" class="usa-link" href="#bib11">Ewels et al., 2016</a>), read trimming (TrimGalore) (<a aria-describedby="bib17" class="usa-link" href="#bib17">Krueger 2019</a>), mapping (STAR) (<a aria-describedby="bib9" class="usa-link" href="#bib9">Dobin et al., 2013</a>), quantification (RSEM) (<a aria-describedby="bib21" class="usa-link" href="#bib21">Li and Dewey 2011</a>), and differential gene expression calculation/annotation (DESeq2) (<a aria-describedby="bib23" class="usa-link" href="#bib23">Love et al. 2014</a>) (<a class="usa-link" href="#fig1">Figure 1</a>B). The RCP has been integrated into the GeneLab database, and files produced by the RCP for each RNA-seq dataset hosted in GeneLab are and will continue to be publicly available for download.</p>
+<figure class="fig xbox font-sm" id="fig1"><h3 class="obj_head">Figure 1.</h3>
+<p class="img-box line-height-none margin-x-neg-2 tablet:margin-x-0 text-center"><a class="tileshop" href="https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&amp;p=PMC3&amp;id=8044432_gr1.jpg" target="_blank"><img alt="Figure 1" class="graphic zoom-in" height="881" loading="lazy" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2b5/8044432/f9f98a6d9dd2/gr1.jpg" width="744"/></a></p>
+<div class="p text-right font-secondary"><a class="usa-link" href="figure/fig1/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<figcaption><p>GeneLab RNA-seq Consensus Pipeline (RCP)</p>
+<p>(A) The three broad steps of the RCP. The RCP handles (1) data preprocessing to trim sequencing adapters and to provide quality control metrics; (2) data processing to map reads to the reference genome and quantify the number of read counts per gene; and (3) differential gene expression calculation, which will provide a list of differentially expressed genes that can be sorted by adjusted p value and log fold-change.</p>
+<p>(B) The full RCP annotated with tools, input files, and output files.</p></figcaption></figure></section><section id="sec2"><h2 class="pmc_sec_title">Results</h2>
+<section id="sec2.1"><h3 class="pmc_sec_title">Data pre-processing: quality control and trimming</h3>
+<p id="p0060">There are three distinct steps to the RCP, the first of which is data preprocessing (<a class="usa-link" href="#fig2">Figure 2</a>A). The pipeline begins with quality control (QC) of raw FASTQ files from a short-read Illumina sequencer using the FastQC software (<a aria-describedby="bib1" class="usa-link" href="#bib1">Andrews, 2010</a>) (<a class="usa-link" href="#fig2">Figure 2</a>B). FastQC is one of the most widely used QC programs for short-read sequencing data. It provides information that can be used to assess sample and sequencing quality, including base statistics, per base sequencing quality, per sequence quality scores, per base sequence content, per base GC content, per sequence GC content, per base N content, sequence length distributions, sequence duplication levels, overrepresented sequences, and k-mer content.</p>
+<figure class="fig xbox font-sm" id="fig2"><h4 class="obj_head">Figure 2.</h4>
+<p class="img-box line-height-none margin-x-neg-2 tablet:margin-x-0 text-center"><a class="tileshop" href="https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&amp;p=PMC3&amp;id=8044432_gr2.jpg" target="_blank"><img alt="Figure 2" class="graphic zoom-in" height="877" loading="lazy" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2b5/8044432/1bbc42f5504b/gr2.jpg" width="748"/></a></p>
+<div class="p text-right font-secondary"><a class="usa-link" href="figure/fig2/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<figcaption><p>Data preprocessing (pipeline step 1): quality control and trimming</p>
+<p>(A) Data preprocessing pipeline. FastQ files from Illumina base-calling software are quality checked using FastQC and MultiQC. Data are then trimmed using TrimGalore and are re-checked for quality; (B) flags used for FastQC program; (C) flags used for MultiQC program; (D) flags used for TrimGalore program; trimmed reads (∗fastq.gz) are then used as input data for FastQC (B) followed by MultiQC (C) to generate trimmed read quality metrics. Tool versions used to process each dataset are included in the RNA-seq processing protocol in the GLDS Repository.</p></figcaption></figure><p id="p0065">The FastQC program is run on each individual sample file. However, reviewing the FastQC results for each sample file can be tedious and time consuming. Experiments typically have many sample files (biological and/or technical replicates) for multiple experimental conditions (spaceflight, ground control, etc.). For this reason, we also use the MultiQC package (<a aria-describedby="bib11" class="usa-link" href="#bib11">Ewels et al., 2016</a>) (<a class="usa-link" href="#fig2">Figure 2</a>C) to create a summary statistics report that includes the same quality control result categories from FastQC across all experiment samples.</p>
+<p id="p0070">After performing quality control on the raw FASTQ data, reads are trimmed using TrimGalore (<a aria-describedby="bib17" class="usa-link" href="#bib17">Krueger 2019</a>) to remove sequencing adapters and low-quality bases that would disrupt read mapping during the data processing pipeline step (<a class="usa-link" href="#fig2">Figure 2</a>D). TrimGalore is a wrapper program that uses the cutadapt program (<a aria-describedby="bib24" class="usa-link" href="#bib24">Martin 2011</a>) for read trimming. TrimGalore was selected for the RCP due to its simplified command line interface, thorough output of trimming metrics, and ability to automatically detect adapters. In this step, bases that are part of a sequencing adapter or of low quality are removed from each read, and reads that become too short are subsequently removed. After trimming, the quality control programs, FastQC and MultiQC, are again run on the trimmed FASTQ files for viewing the quality control metrics of the reads that will be used for data processing. Once the data have been preprocessed, the sequenced reads are ready for mapping and quantification.</p></section><section id="sec2.2"><h3 class="pmc_sec_title">Data processing: read mapping and sample quantification</h3>
+<p id="p0075">In the data processing step (<a class="usa-link" href="#fig1">Figure 1</a>; Step 2A), the trimmed reads are first aligned to the reference genome (<a class="usa-link" href="#fig3">Figure 3</a>A) with STAR, a splice-aware aligner (<a aria-describedby="bib9" class="usa-link" href="#bib9">Dobin et al., 2013</a>). STAR must be run in two steps. The first step is to create indexed genome files (<a class="usa-link" href="#fig3">Figure 3</a>B). These files are used to assist read mapping and only need to be generated once for each reference genome file. This step requires reference FASTA and GTF files (<a class="usa-link" href="#mmc3">Table S2</a>). Some datasets include the External RNA Control Consortium (ERCC) spike-in control—a pool of 96 synthetic RNAs with various lengths and GC content covering a 2<sup>20</sup> concentration range (<a aria-describedby="bib16" class="usa-link" href="#bib16">Jiang et al., 2011</a>). If ERCC spike-ins were included, the spike-in FASTA and GTF files are appended to the reference FASTA and GTF files, respectively. The second step of STAR mapping is to use the indexed reference genome and the trimmed reads from the preprocessing step in order to map the reads to the genome and the transcriptome (<a class="usa-link" href="#fig3">Figure 3</a>C). STAR will also produce genome mapped data, which can optionally be used to find reads that map outside of annotated reference transcripts. STAR mapping output data are in Binary Alignment Map (BAM) format, which has a separate entry for each mapped read and states which transcript each read is mapped to. In order to improve the detection and quantification of splice sites, STAR is run in “two-pass mode.” Here, splice sites are detected in the initial mapping to the reference and used to build a new reference that includes these splice sites. Reads are then re-mapped to this dynamically generated reference to improve the quantification of splice isoforms (<a aria-describedby="bib9" class="usa-link" href="#bib9">Dobin et al., 2013</a>). Users are provided with these results (as per sample SJ.out files) for further analysis of differential splicing.</p>
+<figure class="fig xbox font-sm" id="fig3"><h4 class="obj_head">Figure 3.</h4>
+<p class="img-box line-height-none margin-x-neg-2 tablet:margin-x-0 text-center"><a class="tileshop" href="https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&amp;p=PMC3&amp;id=8044432_gr3.jpg" target="_blank"><img alt="Figure 3" class="graphic zoom-in" height="922" loading="lazy" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2b5/8044432/9d590eabac42/gr3.jpg" width="742"/></a></p>
+<div class="p text-right font-secondary"><a class="usa-link" href="figure/fig3/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<figcaption><p>Data processing (pipeline step 2A): read mapping</p>
+<p>(A) Data processing pipeline. Trimmed reads are mapped to their reference genome and transcriptome with STAR. Gene counts are then quantified with RSEM; (B) flags used for generating the indexed STAR reference files; (C) flags used for mapping reads with STAR. Tool versions used to process each dataset are included in the RNA-seq processing protocol in the GLDS Repository.</p></figcaption></figure><p id="p0080">The second part of processing is quantifying the number of reads mapped to each annotated transcript and gene (<a class="usa-link" href="#fig1">Figure 1</a>A; Step 2B, <a class="usa-link" href="#fig4">Figure 4</a>A). For this task, the RCP uses RSEM (<a aria-describedby="bib21" class="usa-link" href="#bib21">Li and Dewey 2011</a>). The main reasons for using RSEM are its ability to account for reads that map to multiple transcripts and distinguish gene isoforms. In short-read sequencing experiments it is likely that some number of reads will map to multiple regions in the genome. RSEM computes maximum likelihood abundance estimates to split the read count across multiple genes. Similar to STAR, RSEM is run in two distinct phases (<a class="usa-link" href="#fig4">Figure 4</a>A). The first phase uses the reference genome and GTF files (with or without ERCC as appropriate) (<a class="usa-link" href="#mmc3">Table S2</a>) to prepare indexed genome files (<a class="usa-link" href="#fig4">Figure 4</a>B). The second phase uses the indexed files and the mapped reads from STAR to assign counts to each gene (<a class="usa-link" href="#fig4">Figure 4</a>C). There are two output files generated for each sample: counts assigned to genes and counts assigned to isoforms. Gene counts are used to calculate differential gene expression. Isoform counts are also generated as an option to look at differential isoform expression but are not used during differential gene expression calculation in the RCP. Once the RSEM count files are generated, the data are used to compute differentially expressed genes. A list of the reference genomes used in the GeneLab pipeline is available in <a class="usa-link" href="#mmc3">Table S2</a> . These reference genomes were the most recent releases at the time each STAR and RSEM indexed references were created. Although it is possible to run STAR mapping through the RSEM toolkit, we elected not to do this because the alignment parameters used in this case are from ENCODE's STAR-RSEM pipeline and are not customizable. Thus, we would have been precluded from using the precise mapping parameters agreed to by the GeneLab AWG.</p>
+<figure class="fig xbox font-sm" id="fig4"><h4 class="obj_head">Figure 4.</h4>
+<p class="img-box line-height-none margin-x-neg-2 tablet:margin-x-0 text-center"><a class="tileshop" href="https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&amp;p=PMC3&amp;id=8044432_gr4.jpg" target="_blank"><img alt="Figure 4" class="graphic zoom-in" height="980" loading="lazy" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2b5/8044432/b896e274d231/gr4.jpg" width="748"/></a></p>
+<div class="p text-right font-secondary"><a class="usa-link" href="figure/fig4/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<figcaption><p>Data processing (pipeline step 2B): gene quantification</p>
+<p>(A) Data processing pipeline. Mapping results from STAR are quantified by RSEM; (B) parameters for RSEM indexed reference files generation; (C) parameters for quantifying gene and isoform counts with RSEM. Tool versions used to process each dataset are included in the RNA-seq processing protocol in the GLDS repository.</p></figcaption></figure><p id="p0085">We elected to adopt a mapping-based approach rather than rapidly quantifying the reads via a k-mer-based counting algorithm, pseudo-aligners, or a quasi-mapping method that utilizes RNA-seq inference procedures such as Kallisto (<a aria-describedby="bib4" class="usa-link" href="#bib4">Bray et al., 2016</a>) or Salmon (<a aria-describedby="bib29" class="usa-link" href="#bib29">Patro et al., 2017</a>) despite their speed advantages. This is because alignment-free quantification tools do not accurately quantify low-abundant and small RNAs especially when biological variation is present (<a aria-describedby="bib50" class="usa-link" href="#bib50">Wu et al., 2018</a>). Furthermore, alignment of reads allows for additional analyses beyond transcript and gene quantification such as measurement of gene body coverage and detection of novel transcripts.</p>
+<p id="p0090">There are several alignment-based mapping tools available and each has advantages and disadvantages. An alignment tool that is sensitive to splice-isoforms is critical to accurately identify how expression of splice-isoforms is affected by the spaceflight environment. DNA-specific aligners such as BWA (<a aria-describedby="bib22" class="usa-link" href="#bib22">Li and Durbin 2009</a>) and Bowtie (<a aria-describedby="bib18" class="usa-link" href="#bib18">Langmead et al., 2009</a>) cannot handle intron-sized gaps and thus an RNA-seq-specific aligner is needed (<a aria-describedby="bib2" class="usa-link" href="#bib2">Baruzzo et al., 2017</a>). In addition to splice-awareness, when selecting an aligner the following criteria were also considered: ability to input both single- and paired-end reads, handle strand-specific data, applicability to a variety of different model organisms with both low- and high-complexity genomic regions, efficient runtime and memory usage, ability to identify chimeric reads, high sensitivity, low rate of false discovery, and ability to output both genome and transcriptome alignments. Several studies have been conducted to compare the wide variety of available RNA-seq specific alignment tools, and of these, the STAR aligner consistently performs better than or on par with the tools tested for the indicated criteria (<a aria-describedby="bib2" class="usa-link" href="#bib2">Baruzzo et al., 2017</a>; <a aria-describedby="bib38" class="usa-link" href="#bib38">Schaarschmidt et al., 2020</a>; <a aria-describedby="bib31" class="usa-link" href="#bib31">Raplee et al. 2019</a>).</p></section><section id="sec2.3"><h3 class="pmc_sec_title">Differential gene expression calculations and addition of gene annotations</h3>
+<p id="p0095">Once reads have been mapped and quantified, differential expression analysis is performed using the DESeq2 R package (<a class="usa-link" href="#fig1">Figure 1</a>; Step 3, <a class="usa-link" href="#fig5">Figure 5</a>A). Unlike the previous steps, a custom R script (GeneLab_DGE_wERCC.R or GeneLab_DGE_noERCC.R) (<a class="usa-link" href="#mmc7">Data S1</a>and <a class="usa-link" href="#mmc8">S2</a>) is used to run DESeq2; to create both unnormalized and normalized counts tables; and to generate a differential gene expression (DGE) output table containing normalized counts for each sample, DGE results, and gene annotations (<a class="usa-link" href="#fig5">Figure 5</a>B). The GeneLab DGE R script also creates computer-readable tables that are used by the GeneLab visualization portal to generate various plots so users can easily view and begin interpreting the processed data. These scripts are provided in the NASA GeneLab_Data_Processing Github repository (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://github.com/nasa/GeneLab_Data_Processing" rel="noopener noreferrer" target="_blank">https://github.com/nasa/GeneLab_Data_Processing</a>). In the following sections we describe each step of these scripts in order.</p>
+<figure class="fig xbox font-sm" id="fig5"><h4 class="obj_head">Figure 5.</h4>
+<p class="img-box line-height-none margin-x-neg-2 tablet:margin-x-0 text-center"><a class="tileshop" href="https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&amp;p=PMC3&amp;id=8044432_gr5.jpg" target="_blank"><img alt="Figure 5" class="graphic zoom-in" height="756" loading="lazy" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2b5/8044432/965e09015c3b/gr5.jpg" width="748"/></a></p>
+<div class="p text-right font-secondary"><a class="usa-link" href="figure/fig5/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<figcaption><p>Differential gene expression calculation (pipeline step 3)</p>
+<p>(A) Data processing pipeline. The R program DESeq2 is run in order to determine which genes are differentially expressed between experimental conditions using gene count files from RSEM.</p>
+<p>(B) Output files generated. The table columns distinguish which script produces each output. The columns distinguish how those output files are used.</p></figcaption></figure><p id="p0100">The GeneLab DGE R script requires three inputs: the quantified count data from the previous (RSEM) step; sample metadata from the Investigation, Study, and Assay (ISA) tables in the ISA.zip file (provided in the GeneLab repository with each dataset) (<a aria-describedby="bib37" class="usa-link" href="#bib37">Sansone et al., 2012</a>; <a aria-describedby="bib35" class="usa-link" href="#bib35">Rocca-Serra et al., 2010</a>); and the organisms.csv file (<a class="usa-link" href="#mmc4">Table S3</a>), which is used to specify the organism used in the study and relevant gene annotations to load. Because samples from some GeneLab RNA-seq datasets contain ERCC spike-in and others do not, there are two versions of the GeneLab DGE R script, one for datasets with ERCC spike-in (GeneLab_DGE_wERCC.R, <a class="usa-link" href="#mmc7">Data S1</a>) and one for those without (GeneLab_DGE_noERCC.R, <a class="usa-link" href="#mmc8">Data S2</a>). Prior to running either script, paths to directories containing the input data and the output data location must be defined. Each script starts by defining the organism used in the study, which should be consistent with the name in the organisms.csv file so that it matches the abbreviations used in the PANTHER database (<a aria-describedby="bib26" class="usa-link" href="#bib26">Mi et al. 2013</a>; <a aria-describedby="bib46" class="usa-link" href="#bib46">Thomas 2003</a>) for that organism. Next, the metadata from the ISA.zip file are imported and formatted for use with the DESeq2 package. During metadata formatting, groups for comparison are defined based on experimental factors, and a sample table is created to specify the group to which each sample belongs. Next, a contrasts matrix is generated, which specifies the groups that will be compared during DGE analysis; each group is compared with every other group in a pairwise manner in both directions (i.e. spaceflight versus ground and ground versus spaceflight). This approach provides the user with the results for all possible group comparisons, allowing each user to select the most relevant comparisons for their particular scientific questions. After metadata formatting, the RSEM gene count data files from each sample are listed and re-ordered (to match the order the samples appear in the metadata), then imported with the R package, tximport (<a aria-describedby="bib42" class="usa-link" href="#bib42">Soneson et al., 2015</a>), and sample names are assigned. Prior to running DESeq2, a value of 1 is added to genes with lengths of zero, which is necessary to make a DESeqDataSet object. A DESeqDataSet object is then created using the formatted metadata and the count data that was imported with tximport.</p>
+<p id="p0105">For datasets that contain samples with ERCC spike-in, we use the GeneLab_DGE_wERCC.R script (<a class="usa-link" href="#mmc7">Data S1</a>). To reduce the possibility of skewing the data during DESeq2 normalization (<a aria-describedby="bib25" class="usa-link" href="#bib25">McIntyre et al., 2011</a>; <a aria-describedby="bib33" class="usa-link" href="#bib33">Risso et al., 2011</a>; <a aria-describedby="bib7" class="usa-link" href="#bib7">Conesa et al., 2016</a>; <a aria-describedby="bib19" class="usa-link" href="#bib19">Law et al., 2016</a>), all genes that have a sum of less than 10 counts across all samples are removed. The cutoff value of 10 is a best practice recommended by the DESeq2 tutorial on Bioconductor. These filtered data are then prepared for normalization and DGE analysis with DESeq2. Because there is no consensus for whether or not ERCC-normalization improves the accuracy of the results (<a aria-describedby="bib32" class="usa-link" href="#bib32">Risso et al., 2014</a>), the GeneLab project and its AWG members decided to perform the DGE analysis both with and without ERCC-normalization (for datasets with samples containing ERCC spike-in).</p>
+<p id="p0110">To enable DESeq2 analysis with and without considering ERCC reads, the DESeqDataSet object is used to create a DESeqDataSet object containing only ERCC reads. Because all samples must contain ERCC spike-in for ERCC-normalization, the DESeqDataSet object containing only ERCC reads is used to identify and remove any samples that do not contain ERCC reads. Next, a DESeqDataSet object containing only non-ERCC reads is created by removing rows containing ERCC reads. These data are then used for DESeq2 analysis.</p>
+<p id="p0115">For DESeq2 analysis with ERCC-normalization (<a class="usa-link" href="#mmc8">Data S2</a>), the size factor object of the non-ERCC data is replaced with group B ERCC size factors for re-scaling in the first DESeq2 step. Group B ERCC genes contain the same concentration in both mix1 and mix 2. Therefore, only group B ERCC genes are used for generating the size factors for re-scaling duirng ERCC-normalization. For DESeq2 analysis without ERCC-normalization, the DESeq2 default algorithm is applied to the DESeqDataSet object containing only non-ERCC reads. The unnormalized and DESeq2-normalized count data as well as the sample table are then outputted as CSV files. The “Unnormalized_Counts.csv,” “Normalized_Counts.csv,” and “ERCC_Normalized_Counts.csv” files for each RNA-seq dataset are available in the GeneLab Data Repository; the “SampleTable.csv” file is used internally for verifying and validating the processed data prior to publication.</p>
+<p id="p0120">There are two types of hypothesis tests that can be run with DESeq2, the likelihood ratio test (LRT), which is similar to an analysis of variance (ANOVA) calculation in linear regression and allows for comparison across all groups, and the Wald test, in which the estimated standard error of a log2 fold change is used to compare differences between two groups. The DGE step of the RCP performs both of these analyses. After normalization, the DESeq2 likelihood ratio test design is applied to the normalized data (both ERCC- and nonERCC-normalized data) to generate the F statistic p value, which is similar to an ANOVA p value and reveals genes that are changed in any number of combinations of all factors defined in the experiment.</p>
+<p id="p0125">To prepare for building a gene/pathway annotation database, the STRINGdb (<a aria-describedby="bib44" class="usa-link" href="#bib44">Szklarczyk et al., 2019</a>) and PANTHER.db (<a aria-describedby="bib46" class="usa-link" href="#bib46">Thomas 2003</a>) libraries are loaded, and the organisms.csv file is read and used to indicate the Bioconductor AnnotationData Package needed (<a aria-describedby="bib14" class="usa-link" href="#bib14">Huber et al., 2015</a>; <a aria-describedby="bib13" class="usa-link" href="#bib13">Gentleman et al., 2004</a>). The current gene annotation database for the organism specified at the beginning of the R script is then loaded.</p>
+<p id="p0130">Next, DGE tables containing normalized counts for each sample, pairwise DGE results, and current gene annotations as well as computer-readable DGE tables (that will be used for visualization) are created first with nonERCC-normalized data and then with ERCC-normalized data. For pairwise DGE analysis, first normalized count data are used to create two output tables: one that is used to create the human-readable DGE output table provided to users with processed data for each dataset and the other respective computer-readable DGE output table that contains additional columns and is used to visualize the data. Next, normalized count data are iterated through Wald Tests to generate pairwise comparisons of all groups based on the contrasts matrix that was generated during metadata formatting. The pairwise DGE analysis results are then added as columns to both DGE output tables.</p>
+<p id="p0135">Then an annotation database is built by first defining the “keytype,” which indicates the primary type of annotation used (for most GeneLab datasets this is ENSEMBL). The keytype is then used to map to annotations in the organism-specific Bioconductor AnnotationData Package, and the following annotation columns are added to the annotation database: SYMBOL, GENENAME, ENSEMBL (if not the primary), REFSEQ, and ENTREZID. STRING and GOSLIM annotation columns are also added to the annotation database using the STRINGdb and PANTHER.db R packages, respectively. All of the aforementioned annotation columns are added to the annotation database to enable users to perform downstream analyses without having to map gene IDs themselves. Once the annotation database is complete, additional calculations are performed on the normalized count data before assembling the final DGE output tables.</p>
+<p id="p0140">Means and standard deviations of normalized count data for each gene across all samples, and for samples within each respective group, are calculated and added as columns to the DGE output tables. A column containing the F statistic p value, calculated previously, is also added to the DGE output tables. The following columns are added only to the computer-readable DGE output table (used for visualization): a column to indicate whether each gene (or pathway) is up- or downregulated for each pairwise comparison, a column to indicate genes that are differentially expressed using a p value cutoff of ≤0.1 and another column using a p value cutoff of ≤0.05, a column indicating the log2 of the p value for each pairwise comparison and another column indicating the log2 of the adjusted p value, both of which are used to create Volcano plots. After all columns are added to the DGE tables, both the human- and computer-readable DGE tables are combined with the current annotation database to create the complete human- and computer-readable DGE tables. An example of the complete human readable DGE tables provided with processed RNAseq datasets in the GeneLab Data Repository is shown in <a class="usa-link" href="#tbl1">Tables 1</a> and <a class="usa-link" href="#tbl2">2</a>. Principal component analysis (PCA) is also performed on the normalized count data and used to create PCA plots for the GeneLab data visualization portal. DGE analysis of datasets without ERCC spike-in is performed exactly the same way as the nonERCC-normalized approach described above, except that no ERCC reads have to be removed from the DESeqDataSet object prior to DESeq analysis.</p>
+<section class="tw xbox font-sm" id="tbl1"><h4 class="obj_head">Table 1.</h4>
+<div class="caption p"><p>Differential gene expression output table—annotations</p></div>
+<div class="tbl-box p" tabindex="0"><table class="content" frame="hsides" rules="groups">
+<thead><tr>
+<th colspan="1" rowspan="1">TAIR</th>
+<th colspan="1" rowspan="1">SYMBOL</th>
+<th colspan="1" rowspan="1">GENENAME</th>
+<th colspan="1" rowspan="1">REFSEQ</th>
+<th colspan="1" rowspan="1">ENTREZID</th>
+<th colspan="1" rowspan="1">STRING_id</th>
+<th colspan="1" rowspan="1">GOSLIM_IDS</th>
+</tr></thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://tair:AT1G01010" rel="noopener noreferrer" target="_blank">AT1G01010</a></td>
+<td colspan="1" rowspan="1">ANAC001</td>
+<td colspan="1" rowspan="1">NA</td>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://ncbi-n:NM_099983" rel="noopener noreferrer" target="_blank">NM_099983</a></td>
+<td align="center" colspan="1" rowspan="1">839580</td>
+<td colspan="1" rowspan="1">3702.AT1G01010.1</td>
+<td colspan="1" rowspan="1">NA</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://tair:AT1G01020" rel="noopener noreferrer" target="_blank">AT1G01020</a></td>
+<td colspan="1" rowspan="1">ARV1</td>
+<td colspan="1" rowspan="1">NA</td>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://ncbi-n:NM_001035846" rel="noopener noreferrer" target="_blank">NM_001035846</a></td>
+<td align="center" colspan="1" rowspan="1">839569</td>
+<td colspan="1" rowspan="1">3702.AT1G01020.1</td>
+<td colspan="1" rowspan="1">GO:0005622, GO:0005737, …</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://tair:AT1G01030" rel="noopener noreferrer" target="_blank">AT1G01030</a></td>
+<td colspan="1" rowspan="1">NGA3</td>
+<td colspan="1" rowspan="1">NA</td>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://ncbi-n:NM_001331244" rel="noopener noreferrer" target="_blank">NM_001331244</a></td>
+<td align="center" colspan="1" rowspan="1">839321</td>
+<td colspan="1" rowspan="1">3702.AT1G01030.1</td>
+<td colspan="1" rowspan="1">NA</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://tair:AT1G01040" rel="noopener noreferrer" target="_blank">AT1G01040</a></td>
+<td colspan="1" rowspan="1">ASU1</td>
+<td colspan="1" rowspan="1">Encodes a Dicer homolog …</td>
+<td colspan="1" rowspan="1"><a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://ncbi-n:NM_001197952" rel="noopener noreferrer" target="_blank">NM_001197952</a></td>
+<td align="center" colspan="1" rowspan="1">839574</td>
+<td colspan="1" rowspan="1">3702.AT1G01040.2</td>
+<td colspan="1" rowspan="1">NA</td>
+</tr>
+</tbody>
+</table></div>
+<div class="p text-right font-secondary"><a class="usa-link" href="table/tbl1/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<div class="tw-foot p"><div class="fn" id="fn3"><p>Truncated version of the differential_expression.csv file provided as GeneLab processed data for GLDS-251. The first 7 columns of the differential gene expression output table contain gene IDs and annotations (for remainder of columns, refer to <a class="usa-link" href="#tbl2">Table 2</a>).</p></div></div></section><section class="tw xbox font-sm" id="tbl2"><h4 class="obj_head">Table 2.</h4>
+<div class="caption p"><p>Differential gene expression output table—statistics</p></div>
+<div class="tbl-box p" tabindex="0"><table class="content" frame="hsides" rules="groups">
+<thead><tr>
+<th colspan="1" rowspan="1">Norm. expr. (sample A)</th>
+<th colspan="1" rowspan="1">Log2fc (comparison A)</th>
+<th colspan="1" rowspan="1">P value (comparison A)</th>
+<th colspan="1" rowspan="1">Adj p value (comparison A)</th>
+<th colspan="1" rowspan="1">Mean (all samples)</th>
+<th colspan="1" rowspan="1">Stdev (all samples)</th>
+<th colspan="1" rowspan="1">LRT p value</th>
+<th colspan="1" rowspan="1">Mean (group A)</th>
+<th colspan="1" rowspan="1">Stdev (group A)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">263.864</td>
+<td align="center" colspan="1" rowspan="1">−0.078</td>
+<td align="center" colspan="1" rowspan="1">0.648</td>
+<td colspan="1" rowspan="1">0.848</td>
+<td align="center" colspan="1" rowspan="1">198.735</td>
+<td align="center" colspan="1" rowspan="1">31.756</td>
+<td colspan="1" rowspan="1">0.484</td>
+<td align="center" colspan="1" rowspan="1">225.550</td>
+<td align="center" colspan="1" rowspan="1">36.759</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">200.493</td>
+<td align="center" colspan="1" rowspan="1">0.341</td>
+<td align="center" colspan="1" rowspan="1">0.033</td>
+<td colspan="1" rowspan="1">0.198</td>
+<td align="center" colspan="1" rowspan="1">147.061</td>
+<td align="center" colspan="1" rowspan="1">19.197</td>
+<td colspan="1" rowspan="1">0.740</td>
+<td align="center" colspan="1" rowspan="1">174.839</td>
+<td align="center" colspan="1" rowspan="1">24.073</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">19.040</td>
+<td align="center" colspan="1" rowspan="1">0.691</td>
+<td align="center" colspan="1" rowspan="1">0.137</td>
+<td colspan="1" rowspan="1">NA</td>
+<td align="center" colspan="1" rowspan="1">11.035</td>
+<td align="center" colspan="1" rowspan="1">3.121</td>
+<td colspan="1" rowspan="1">NA</td>
+<td align="center" colspan="1" rowspan="1">15.706</td>
+<td align="center" colspan="1" rowspan="1">2.889</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">644.811</td>
+<td align="center" colspan="1" rowspan="1">0.126</td>
+<td align="center" colspan="1" rowspan="1">0.366</td>
+<td colspan="1" rowspan="1">0.655</td>
+<td align="center" colspan="1" rowspan="1">669.586</td>
+<td align="center" colspan="1" rowspan="1">68.327</td>
+<td colspan="1" rowspan="1">1.000</td>
+<td align="center" colspan="1" rowspan="1">688.123</td>
+<td align="center" colspan="1" rowspan="1">76.969</td>
+</tr>
+</tbody>
+</table></div>
+<div class="p text-right font-secondary"><a class="usa-link" href="table/tbl2/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<div class="tw-foot p"><div class="fn" id="fn4"><p>Truncated version of the differential_expression.csv file provided as GeneLab processed data for GLDS-251. Following the seven columns of gene IDs and annotations (<a class="usa-link" href="#tbl1">Table 1</a>) are normalized gene expression data for each sample (<strong>Norm. expr. (sample A)</strong>) then results from all possible pairwise comparisons, including log2 fold change (<strong>Log2fc (comparison A)</strong>), p values (<strong>P.value (comparison A)</strong>), and adjusted p values (<strong>Adj.p.value (comparison A)</strong>) calculated from the Wald Tests. Next are the average gene expression (<strong>Mean (all samples)</strong>) and standard deviation (<strong>Stdev (all samples)</strong>) of all samples followed by the F-statistic p value generated from the likelihood ratio test (LRT.p.value), and the last set of columns are the average gene expressions (Group.Mean) and standard deviations (Group.Stdev) of samples within each group.</p></div></div></section><p id="p0145">Both the GeneLab_DGE_wERCC.R and the GeneLab_DGE_noERCC.R scripts produce the following output files: Unnormalized_Counts.csv (∗), Normalized_Counts.csv (∗), SampleTable.csv (#), contrasts.csv (∗), differential_expression.csv (∗), visualization_output_table.csv (∗∗), visualization_PCA_table.csv (∗∗) (<a class="usa-link" href="#fig5">Figure 5</a>B). The GeneLab_DGE_wERCC.R script will also produce the following additional output files: ERCC_rawCounts_unfiltered.csv (#), ERCC_rawCounts_filtered.csv (#), ERCCnorm_contrasts.csv (∗), ERCC_Normalized_Counts.csv (∗), ERCCnorm_differential_expression.csv (∗), visualization_output_table_ERCCnorm.csv (∗∗), visualization_PCA_table_ERCCnorm.csv (∗∗) (<a class="usa-link" href="#tbl1">Tables 1</a> and <a class="usa-link" href="#tbl2">2</a>).</p>
+<p id="p0150">To showcase the value of using a consensus pipeline and publishing the processed data from each step of the pipeline, downstream analyses were performed using processed data from select samples from RNAseq datasets hosted on GeneLab. One of the advantages of providing expression data of all samples in each dataset as well as all possible pairwise DGE comparisons is to allow users the flexibility to pick and choose which samples and which comparisons they would like to focus on. Thus, when selecting samples for downstream analysis, we exercised this flexibility and searched the GeneLab Data Repository for datasets/samples that met a specific set of criteria. These criteria were as follows: (1) datasets that evaluated the same tissue (liver) from the same mouse strain (C57BL/6) and sex (female), (2) only samples derived from animals flown in space and respective ground control samples, (3) studies that used the same preservation protocol (liver samples extracted from frozen carcasses post-mission) and library preparation method (ribo-depletion), and (4) samples that contained ERCC spike-in to evaluate outputs with and without ERCC normalization. Select samples from two GeneLab datasets, GLDS-168 and GLDS-245, met these criteria, and processed data including the Normalized_Counts.csv, differential_expression.csv, ERCC_Normalized_Counts.csv, and the ERCCnorm_differential_expression.csv files from these two datasets were used for downstream analyses.</p>
+<p id="p0155">Prior to downstream analysis, the processed data files were filtered so that only samples that met the criteria listed above were included. Because GLDS-168 contains samples from both the Rodent Research 1 (RR-1) and RR-3 missions and only the RR-1 mission met our first criteria of using the C57BL/6 mouse strain, RR-3 samples were removed from the process data files. GLDS-168 processed data files were subsequently filtered to remove all samples, except spaceflight (FLT) and respective ground control (GC) samples, to meet the second criteria listed above. Lastly, because GLDS-168 contains a set of FLT and GC samples that were spiked with ERCC and another set in which ERCC was not added, the later set of samples were removed to meet the fourth criteria. GLDS-245 contains liver samples from the RR-6 mission, which included a set of animals that were returned to earth alive after ∼30 days of spaceflight and another set of animals that remained in space (aboard the ISS) for a total of ∼60 days before being sacrificed aboard the ISS (note that there were respective control samples for each set of spaceflight animals described). The former set of animals had their livers dissected immediately after euthanasia, whereas livers from the latter set of animals were frozen <em>in situ</em> and dissected from frozen carcasses after return to earth. Thus, only the later (ISS-terminal) set of FLT and respective GC samples met criteria 2 and 3, so the GLDS-245 processed data files were filtered to remove all other samples. In addition, because the downstream analyses focused on the differences between FLT and GC samples in these two datasets, all other comparisons were removed from the differential_expression.csv and ERCCnorm_differential_expression.csv files prior to analysis.</p>
+<p id="p0160">The filtered processed data files (available in Mendeley Data, Mendeley Data: <a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.17632/fv3kd6h7k4.1" rel="noopener noreferrer" target="_blank">https://doi.org/10.17632/fv3kd6h7k4.1</a>) were then used to create Principal Component Analysis (PCA) plots (<a class="usa-link" href="#fig6">Figures 6</a>A, 6B, <a class="usa-link" href="#mmc1">S1</a>A, and S1B), heatmaps containing the top 30 most significant FLT versus GC differentially expressed (and annotated) genes (adj. p value &lt;0.05 and |log2FC| &gt; 1) (<a class="usa-link" href="#fig6">Figures 6</a>C, 6D, <a class="usa-link" href="#mmc1">S1</a>C, and S1D), and to evaluate FLT versus GC gene ontology (GO) differences using Gene Set Enrichment (GSEA) analysis (<a class="usa-link" href="#tbl3">Tables 3</a> and <a class="usa-link" href="#mmc6">S5</a>). These results can then be further evaluated to identify similarities and differences in gene expression between these two studies and draw novel conclusions about the effects of spaceflight that are consistent across spaceflight experiments.</p>
+<figure class="fig xbox font-sm" id="fig6"><h4 class="obj_head">Figure 6.</h4>
+<p class="img-box line-height-none margin-x-neg-2 tablet:margin-x-0 text-center"><a class="tileshop" href="https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&amp;p=PMC3&amp;id=8044432_gr6.jpg" target="_blank"><img alt="Figure 6" class="graphic zoom-in" height="862" loading="lazy" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2b5/8044432/cc6e7d82e9bb/gr6.jpg" width="747"/></a></p>
+<div class="p text-right font-secondary"><a class="usa-link" href="figure/fig6/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<figcaption><p>Global and differential gene expression in spaceflight versus ground control liver samples from GeneLab datasets</p>
+<p>(A and B) Principal component analysis of global gene expression in spaceflight (FLT) and respective ground control (GC) liver samples from the (A) Rodent Research 1 (RR-1) NASA Validation mission (GLDS-168) and (B) RR-6 ISS-terminal mission (GLDS-245). Plots were generated using data in the normalized counts tables for each respective dataset on the NASA GeneLab Data Repository.</p>
+<p>(C and D) Heatmaps showing the top 30 differentially expressed genes in spaceflight (FLT) versus ground control (GC) liver samples from the (C) Rodent Research 1 (RR-1) NASA Validation mission (GLDS-168) and (D) RR-6 ISS-terminal mission (GLDS-245). Heatmaps were generated using data in the differential expression tables for each respective dataset on the NASA GeneLab Data Repository and are colored by relative expression. Adj. p value &lt; 0.05 and |log2FC| &gt; 1. All samples included were derived from frozen carcasses post-mission and utilized the ribo-depletion library preparation method.</p></figcaption></figure><section class="tw xbox font-sm" id="tbl3"><h4 class="obj_head">Table 3.</h4>
+<div class="caption p"><p>Comparison of gene ontology in spaceflight versus ground control liver samples from GeneLab datasets</p></div>
+<div class="tbl-box p" tabindex="0"><table class="content" frame="hsides" rules="groups">
+<thead><tr>
+<th colspan="1" rowspan="1">GeneLab dataset</th>
+<th colspan="1" rowspan="1"># Enriched GO terms (NOM p &lt; 0.01)</th>
+<th colspan="1" rowspan="1"># Enriched GO terms (NOM p &lt; 0.01 &amp; FDR&lt;0.5)</th>
+<th colspan="1" rowspan="1"># Enriched GO terms (NOM p &lt; 0.01 &amp; FDR&lt;0.25)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">GLDS-168</td>
+<td colspan="1" rowspan="1">71, 135</td>
+<td colspan="1" rowspan="1">0, 132</td>
+<td colspan="1" rowspan="1">0, 0</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">GLDS-245</td>
+<td colspan="1" rowspan="1">21, 24</td>
+<td colspan="1" rowspan="1">2, 6</td>
+<td colspan="1" rowspan="1">1, 0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="p text-right font-secondary"><a class="usa-link" href="table/tbl3/" rel="noopener noreferrer" target="_blank">Open in a new tab</a></div>
+<div class="tw-foot p"><div class="fn" id="fn5"><p>The number of enriched gene ontology (GO) terms identified by Gene Set Enrichment Analysis (GSEA, phenotype permutation) was evaluated in spaceflight (FLT) versus ground control (GC) liver samples from the Rodent Research 1 (RR-1) NASA Validation mission (GLDS-168), and RR-6 ISS-terminal mission (GLDS-245). For GO terms, the number on the left corresponds to GO terms enriched in FLT samples and the number on the right corresponds to GO terms enriched in GC samples. These data were generated using the normalized counts for each respective dataset on the NASA GeneLab Data Repository. All samples included were derived from frozen carcasses post-mission and utilized the ribo-depletion library preparation method. GLDS-168, FLT n = 5 and GC n = 5; GLDS-245, FLT n = 10 and GC n = 10. p values and FDR values are indicated.</p></div></div></section></section></section><section id="sec3"><h2 class="pmc_sec_title">Discussion</h2>
+<p id="p0165">The differentially expressed genes calculated by the RCP can be further explored with a variety of tools designed for higher-order analysis. For example, there are tools that can look for enriched pathways, gene ontology terms, or protein and/or metabolite networks. Popular software tools among the GeneLab working group members include WebGestalt (<a aria-describedby="bib20" class="usa-link" href="#bib20">Liao et al., 2019</a>), STRING (<a aria-describedby="bib44" class="usa-link" href="#bib44">Szklarczyk et al., 2019</a>), GSEA (<a aria-describedby="bib43" class="usa-link" href="#bib43">Subramanian et al., 2005</a>), PIANO (<a aria-describedby="bib47" class="usa-link" href="#bib47">Väremo et al. 2013</a>), Reactome (<a aria-describedby="bib44" class="usa-link" href="#bib44">Szklarczyk et al., 2019</a>), and ToppFun (<a aria-describedby="bib6" class="usa-link" href="#bib6">Chen et al., 2009</a>). There is no universal consensus on which tools are the most useful for higher-order analysis (<a aria-describedby="bib28" class="usa-link" href="#bib28">Nguyen et al., 2019</a>). RCP users are encouraged to try multiple tools in order to analyze their data from a variety of perspectives.</p>
+<p id="p0170">The RCP has been designed to handle sequencing experiments that either lack or include the ERCC RNA spike-in mix—a set of 96 polyadenylated RNAs that can be used during differential gene expression calculation to normalize read counts across samples (<a aria-describedby="bib27" class="usa-link" href="#bib27">Munro et al., 2014</a>). However, the use of normalization according to ERCC spike-ins remains controversial among AWG members, and Munro et al. suggested its usage only for determining limit of detection of ratio (LODR), expression ratio variability, and measurement bias (<a aria-describedby="bib27" class="usa-link" href="#bib27">Munro et al., 2014</a>). For this reason, ERCC normalization remains optional in the GeneLab pipeline, and both kinds of DGE outputs are provided in the GeneLab database. In addition, ERCC spike-in could have two other usages. First, it allows us to evaluate whether normalization succeeded in removing systemic bias between libraries by using methods such as Rlog and VST when normalizing the spike-in RNAs along with all other genes. Second, most normalization methods of RNA-seq data assume that most genes are not differentially expressed toward one direction. Comparing spike-in measurements between libraries will help us to estimate the validity of this assumption.</p>
+<p id="p0175">A high number of biological replicates can increase certainty in the differentially expressed genes determined by the RCP. However, conducting experiments in spaceflight often limits the number of biological replicates that a researcher can include. Therefore, it is important to note that at least three biological replicates are required for the pipeline, specifically for DESeq2, to perform its statistical methods. However, at least six replicates are suggested in order to minimize the false discovery rate (FDR) (<a aria-describedby="bib39" class="usa-link" href="#bib39">Schurch et al., 2016</a>). Finally, RNA-seq datasets hosted on GeneLab that do not contain biological replicates are only processed up until unnormalized (raw) counts are obtained, the step right before DESeq2 is used for DGE calculation.</p>
+<p id="p0180">More advanced RCP users might have additional data inquiries that fall beyond the scope of this pipeline. For this reason, there are two parts of the pipeline that include additional output that are not used in our differential gene expression computation. The first is in the output from STAR, mapping output is also provided in genomic coordinates. This is useful for obtaining reads that are mapped outside of the reference transcriptome. For example, this may be used to find novel genes, transcripts, or exons that have not yet been annotated by consortiums. The second part of the pipeline with alternative output files is RSEM. This also provides transcript-level counts that can be used to investigate differential isoform expression. Moreover, intermediate files are provided as outputs to allow users to use components of the pipeline that they find useful.</p>
+<p id="p0185">The GeneLab database also includes other types of transcriptomic data. As discussed in this article, the RCP is not used for microarray data that are fundamentally different, and the AWG is still debating the best approach for cross-dataset comparisons between microarrays. GeneLab also accepts data from long read experiments, such as those produced by Pacific Biosciences' (PacBio) single-molecule real-time (SMRT) sequencing (<a aria-describedby="bib34" class="usa-link" href="#bib34">Roberts et al. 2013</a>) and Oxford Nanopore Technologies' (ONT) nanopore sequencing (<a aria-describedby="bib15" class="usa-link" href="#bib15">Jain et al., 2016</a>). Long-read data would be processed with similar steps to the RCP but will require tools specifically designed for the intricacies of long-read data, such as reads that contain multiple splice junctions and reads that currently have a higher base-calling error rate. Currently, long-reads are typically used for DNA sequencing and were recently highlighted on board of the ISS using ONT for de novo assembly of the <em>Escherichia coli</em> genome from raw reads (<a aria-describedby="bib5" class="usa-link" href="#bib5">Castro-Wallace et al., 2017</a>). However, even though throughput and accuracy remain far inferior to short-reads, long-reads offer some advantages for RNA-seq as well, with less ambiguity for genes and isoforms detection, much faster mapping, potential identification of genes not yet known from reference genomes, and eventually less bias in DGE.</p>
+<p id="p0190">To conclude, the RCP is specifically designed for RNA-seq data from short-read sequencers and has been developed in order to encourage and facilitate analysis of spaceflight multi-omic data. The creation of the RCP by a large community of scientists (GeneLab AWG: <a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://genelab.nasa.gov/awg" rel="noopener noreferrer" target="_blank">https://genelab.nasa.gov/awg</a>) and the sharing of pipeline details in a peer-reviewed article provide analysis transparency and enable data reproducibility.</p>
+<section id="sec3.1"><h3 class="pmc_sec_title">Limitations of the study</h3>
+<p id="p0195">The results of this study are limited to short-read RNA-seq and are not applicable to other transcriptomic profiling methods (e.g. microarray, long-read RNA-seq). In addition, the pipeline cannot compensate for poor library preparation technique or inadequate sample size. Sample preservation protocols between datasets need to also be evaluated, because variations in sample preservation protocol could lead to poor correlation between studies that are otherwise identical (<a aria-describedby="bib30" class="usa-link" href="#bib30">Lai Polo et al., 2020</a>). The number of sequenced reads may also be a limiting factor in the usefulness and accuracy of the differentially expressed genes calculated by DESeq2 and, similarly, during splice isoform analysis.</p>
+<p id="p0200">Note that this article does not discuss strategies and pipelines regarding older transcriptomics data in GeneLab (i.e. more than 100 microarray datasets), as it is much more challenging to provide meta-analysis with microarrays, which are prone to strong batch effects and gene lists that are platform dependent. Future efforts of GeneLab and the AWG will address microarray pipelines.</p>
+<p id="p0205">In the future, we will add functionality to process unique molecular identifiers (UMIs) that can identify PCR duplicates using tools such as UMI tools (<a aria-describedby="bib41" class="usa-link" href="#bib41">Smith et al. 2017</a>). This will allow PCR duplicates to be removed after mapping and before quantification.</p>
+<p id="p0210">In addition, transcriptomic data will be integrated with proteomic and metabolomics data; this will help further understand the significance of gene expression changes to metabolic “fitness” in the spaceflight environment.</p></section><section id="sec3.2"><h3 class="pmc_sec_title">Resource availability</h3>
+<section id="sec3.2.1"><h4 class="pmc_sec_title">Lead contact</h4>
+<p id="p0215">Jonathan M. Galazka.</p></section></section><section id="sec3.3"><h3 class="pmc_sec_title">Materials availability</h3>
+<p id="p0220">No unique reagents were generated in this study.</p>
+<section id="sec3.3.1"><h4 class="pmc_sec_title">Data and code availability</h4>
+<p id="p0225">Spaceflight-relevant RNA-seq data are located in the GeneLab database (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://genelab-data.ndc.nasa.gov/genelab/projects" rel="noopener noreferrer" target="_blank">https://genelab-data.ndc.nasa.gov/genelab/projects</a>). All software packages are open source and are linked in the methods section. Instructions for installing packages using Conda are provided on Github (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://github.com/nasa/GeneLab_Data_Processing/tree/master/RNAseq/RNAseq_Tool_Instal" rel="noopener noreferrer" target="_blank">https://github.com/nasa/GeneLab_Data_Processing/tree/master/RNAseq/RNAseq_Tool_Instal</a>). Custom R scripts for DESeq2 are included as supplemental information and are available in the Github repository GeneLab_Data_Processing (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://github.com/nasa/GeneLab_Data_Processing" rel="noopener noreferrer" target="_blank">https://github.com/nasa/GeneLab_Data_Processing</a>). Original data have been deposited to Mendeley Data: <a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.17632/fv3kd6h7k4.1" rel="noopener noreferrer" target="_blank">https://doi.org/10.17632/fv3kd6h7k4.1</a>).</p></section></section></section><section id="sec4"><h2 class="pmc_sec_title">Methods</h2>
+<p id="p0230">All methods can be found in the accompanying <a class="usa-link" href="#mmc1">transparent methods supplemental file</a>.</p></section><section class="ack" id="ack0010"><h2 class="pmc_sec_title">Acknowledgments</h2>
+<p id="p0240">This work was funded in part by the NASA Space Biology program within the NASA Science Mission Directorate's (SMD) Biological and Physical Sciences (BPS) Division, NASA award numbers NNX15AG56G, 80NSSC19K0132, the Biotechnology and Biological Sciences Research Council (grant number BB/N015894/1), the MRC Versus Arthritis Centre for Musculoskeletal Ageing Research (grant numbers MR/P021220/1 and MR/R502364/1), the Spanish Research Agency (AEI grant number RTI2018-099309-B-I00, co-funded by EU-ERDF), and the National Institute for Health Research Nottingham Biomedical Research Centre. The views expressed are those of the author(s) and not necessarily those of the NHS, the NIHR, or the Department of Health and Social Care.</p>
+<section id="sec6"><h3 class="pmc_sec_title">Author contributions</h3>
+<p id="p0245">All authors developed the initial analysis scheme at the 2019 GeneLab AWG workshop. EGO, AMSB, ZZ, KSR, HF, WAdS, RB, and JMG refined this into a draft pipeline. EGO and AMSB wrote and validated the final processing scripts. EGO and AMSB wrote the original manuscript draft and generated figures. All authors reviewed and edited the final draft.</p></section><section id="sec7"><h3 class="pmc_sec_title">Declaration of interests</h3>
+<p id="p0250">The authors declare no competing interests.</p></section></section><section id="notes1"><p id="misc0010">Published: April 23, 2021</p></section><section class="fn-group" id="fn-group1"><h2 class="pmc_sec_title">Footnotes</h2>
+<div class="fn-group p font-secondary-light font-sm"><div class="fn p" id="appsec1"><p id="p0255">Supplemental information can be found online at <a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1016/j.isci.2021.102361" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.isci.2021.102361</a>.</p></div></div></section><section class="contrib-info" id="_ci93_" lang="en"><h2 class="pmc_sec_title">Contributor Information</h2>
+<p>Sylvain V. Costes, Email: sylvain.v.costes@nasa.gov.</p>
+<p>Jonathan M. Galazka, Email: jonathan.m.galazka@nasa.gov.</p></section><section id="appsec2"><h2 class="pmc_sec_title">Supplemental information</h2>
+<section class="sm xbox font-sm" id="mmc1"><div class="caption p"><span>Document S1. Transparent methods, Figure S1, and Table S6</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc1.pdf">mmc1.pdf</a><sup> (247.6KB, pdf) </sup>
+</div></div></section><section class="sm xbox font-sm" id="mmc2"><div class="caption p"><span>Table S1. GeneLab datasets, related to transparent methods</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc2.xlsx">mmc2.xlsx</a><sup> (17.6KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="mmc3"><div class="caption p"><span>Table S2. Genome &amp; annot files, related to Figures 3 and 4</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc3.xlsx">mmc3.xlsx</a><sup> (10.9KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="mmc4"><div class="caption p"><span>Table S3. Organism to annot map, related to Figure 5</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc4.xlsx">mmc4.xlsx</a><sup> (10.9KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="mmc5"><div class="caption p"><span>Table S4. Pipeline tools, related to transparent methods</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc5.xlsx">mmc5.xlsx</a><sup> (9.9KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="mmc6"><div class="caption p"><span>Table S5. Sample names, related to Figure 6</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc6.xlsx">mmc6.xlsx</a><sup> (9.2KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="mmc7"><div class="caption p"><span>Data S1. DEG script w ERCC norm, related to Figure 5</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc7.zip">mmc7.zip</a><sup> (5.7KB, zip) </sup>
+</div></div></section><section class="sm xbox font-sm" id="mmc8"><div class="caption p"><span>Data S2. DEG script without ERCC norm, related to Figure 5</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc8.zip">mmc8.zip</a><sup> (4.8KB, zip) </sup>
+</div></div></section></section><section class="ref-list" id="cebib0010"><h2 class="pmc_sec_title">References</h2>
+<section id="cebib0010_sec2"><ol class="ref-list font-sm">
+<li id="bib1">
+<cite>Andrews S.  Babraham Institute; 2010. FastQC: A Quality Control Tool for High Throughput Sequence Data. Babraham Bioinformatics.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?Andrews%20S.%20Babraham%20Institute;%202010.%20FastQC:%20A%20Quality%20Control%20Tool%20for%20High%20Throughput%20Sequence%20Data.%20Babraham%20Bioinformatics." rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib2">
+<cite>Baruzzo G., Hayer K.E., Kim E.J., Di Camillo B., FitzGerald G.A., Grant G.R. Simulation-based comprehensive benchmarking of RNA-seq aligners. Nat. Methods. 2017;14:135–139. doi: 10.1038/nmeth.4106.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/nmeth.4106" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5792058/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27941783/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nat.%20Methods&amp;title=Simulation-based%20comprehensive%20benchmarking%20of%20RNA-seq%20aligners&amp;author=G.%20Baruzzo&amp;author=K.E.%20Hayer&amp;author=E.J.%20Kim&amp;author=B.%20Di%20Camillo&amp;author=G.A.%20FitzGerald&amp;volume=14&amp;publication_year=2017&amp;pages=135-139&amp;pmid=27941783&amp;doi=10.1038/nmeth.4106&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib3">
+<cite>Berrios D.C., Galazka J., Grigorev K., Gebre S., Costes S.V. NASA GeneLab: interfaces for the exploration of space omics data. Nucleic Acids Res. 2020 doi: 10.1093/nar/gkaa887.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/nar/gkaa887" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC7778922/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/33080015/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nucleic%20Acids%20Res.&amp;title=NASA%20GeneLab:%20interfaces%20for%20the%20exploration%20of%20space%20omics%20data&amp;author=D.C.%20Berrios&amp;author=J.%20Galazka&amp;author=K.%20Grigorev&amp;author=S.%20Gebre&amp;author=S.V.%20Costes&amp;publication_year=2020&amp;pmid=33080015&amp;doi=10.1093/nar/gkaa887&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib4">
+<cite>Bray N.L., Pimentel H., Melsted P., Pachter L. Near-optimal probabilistic RNA-seq quantification. Nat. Biotechnol. 2016;34:525–527. doi: 10.1038/nbt.3519.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/nbt.3519" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27043002/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nat.%20Biotechnol.&amp;title=Near-optimal%20probabilistic%20RNA-seq%20quantification&amp;author=N.L.%20Bray&amp;author=H.%20Pimentel&amp;author=P.%20Melsted&amp;author=L.%20Pachter&amp;volume=34&amp;publication_year=2016&amp;pages=525-527&amp;pmid=27043002&amp;doi=10.1038/nbt.3519&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib5">
+<cite>Castro-Wallace S.L., Chiu C.Y., John K.K., Stahl S.E., Rubins K.H., McIntyre A.B.R., Dworkin J.P., Lupisella M.L., Smith D.J., Botkin D.J. Nanopore DNA sequencing and genome assembly on the International space station. Sci. Rep. 2017;7:18022. doi: 10.1038/s41598-017-18364-0.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/s41598-017-18364-0" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5740133/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/29269933/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Sci.%20Rep.&amp;title=Nanopore%20DNA%20sequencing%20and%20genome%20assembly%20on%20the%20International%20space%20station&amp;author=S.L.%20Castro-Wallace&amp;author=C.Y.%20Chiu&amp;author=K.K.%20John&amp;author=S.E.%20Stahl&amp;author=K.H.%20Rubins&amp;volume=7&amp;publication_year=2017&amp;pages=18022&amp;pmid=29269933&amp;doi=10.1038/s41598-017-18364-0&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib6">
+<cite>Chen J., Bardes E.E., Aronow B.J., Jegga A.G. ToppGene suite for gene list enrichment analysis and candidate gene prioritization. Nucleic Acids Res. 2009;37:W305–W311. doi: 10.1093/nar/gkp427.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/nar/gkp427" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC2703978/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/19465376/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nucleic%20Acids%20Res.&amp;title=ToppGene%20suite%20for%20gene%20list%20enrichment%20analysis%20and%20candidate%20gene%20prioritization&amp;author=J.%20Chen&amp;author=E.E.%20Bardes&amp;author=B.J.%20Aronow&amp;author=A.G.%20Jegga&amp;volume=37&amp;publication_year=2009&amp;pages=W305-W311&amp;pmid=19465376&amp;doi=10.1093/nar/gkp427&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib7">
+<cite>Conesa A., Madrigal P., Tarazona S., Gomez-Cabrero D., Cervera A., McPherson A., Szcześniak M.W., Gaffney D.J., Elo L.L., Zhang X. A survey of best practices for RNA-seq data analysis. Genome Biol. 2016;17:13. doi: 10.1186/s13059-016-0881-8.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/s13059-016-0881-8" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4728800/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/26813401/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=A%20survey%20of%20best%20practices%20for%20RNA-seq%20data%20analysis&amp;author=A.%20Conesa&amp;author=P.%20Madrigal&amp;author=S.%20Tarazona&amp;author=D.%20Gomez-Cabrero&amp;author=A.%20Cervera&amp;volume=17&amp;publication_year=2016&amp;pages=13&amp;pmid=26813401&amp;doi=10.1186/s13059-016-0881-8&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib8">
+<cite>Costa-Silva J., Domingues D., Lopes F.M. RNA-seq differential expression analysis: an extended review and a software tool. PLoS One. 2017;12:e0190152. doi: 10.1371/journal.pone.0190152.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1371/journal.pone.0190152" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5739479/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/29267363/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=PLoS%20One&amp;title=RNA-seq%20differential%20expression%20analysis:%20an%20extended%20review%20and%20a%20software%20tool&amp;author=J.%20Costa-Silva&amp;author=D.%20Domingues&amp;author=F.M.%20Lopes&amp;volume=12&amp;publication_year=2017&amp;pages=e0190152&amp;pmid=29267363&amp;doi=10.1371/journal.pone.0190152&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib9">
+<cite>Dobin A., Davis C.A., Schlesinger F., Drenkow J., Zaleski C., Jha S., Batut P., Chaisson M., Gingeras T.R. STAR: ultrafast universal RNA-seq aligner. Bioinformatics. 2013;29:15–21. doi: 10.1093/bioinformatics/bts635.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/bioinformatics/bts635" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3530905/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/23104886/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Bioinformatics&amp;title=STAR:%20ultrafast%20universal%20RNA-seq%20aligner&amp;author=A.%20Dobin&amp;author=C.A.%20Davis&amp;author=F.%20Schlesinger&amp;author=J.%20Drenkow&amp;author=C.%20Zaleski&amp;volume=29&amp;publication_year=2013&amp;pages=15-21&amp;pmid=23104886&amp;doi=10.1093/bioinformatics/bts635&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib10">
+<cite>ENCODE Project Consortium, Snyder M.P., Gingeras T.R., Moore J.E., Weng Z., Gerstein M.B., Ren B., Hardison R.C., Stamatoyannopoulos J.A., Graveley B.R. Perspectives on ENCODE. Nature. 2020;583:693–698. doi: 10.1038/s41586-020-2449-8.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/s41586-020-2449-8" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC7410827/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/32728248/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nature&amp;title=Perspectives%20on%20ENCODE&amp;author=%20ENCODE%20Project%20Consortium&amp;author=M.P.%20Snyder&amp;author=T.R.%20Gingeras&amp;author=J.E.%20Moore&amp;author=Z.%20Weng&amp;volume=583&amp;publication_year=2020&amp;pages=693-698&amp;pmid=32728248&amp;doi=10.1038/s41586-020-2449-8&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib11">
+<cite>Ewels P., Magnusson M., Lundin S., Käller M. MultiQC: Summarize analysis results for multiple tools and samples in a single report. Bioinformatics. 2016;32:3047–3048. doi: 10.1093/bioinformatics/btw354.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/bioinformatics/btw354" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5039924/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27312411/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Bioinformatics&amp;title=MultiQC:%20Summarize%20analysis%20results%20for%20multiple%20tools%20and%20samples%20in%20a%20single%20report&amp;author=P.%20Ewels&amp;author=M.%20Magnusson&amp;author=S.%20Lundin&amp;author=M.%20K%C3%A4ller&amp;volume=32&amp;publication_year=2016&amp;pages=3047-3048&amp;pmid=27312411&amp;doi=10.1093/bioinformatics/btw354&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib12">
+<cite>Functional Genomics Data Society  . version 1.0; 2012. MINSEQE: Minimum Information about a high-throughput SEQuencing Experiment.<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="http://fged.org/projects/minseqe/" rel="noopener noreferrer" target="_blank">http://fged.org/projects/minseqe/</a></cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?Functional%20Genomics%20Data%20Society%20.%20version%201.0;%202012.%20MINSEQE:%20Minimum%20Information%20about%20a%20high-throughput%20SEQuencing%20Experiment.http://fged.org/projects/minseqe/" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib13">
+<cite>Gentleman R.C., Carey V.J., Bates D.M., Ben B., Dettling M., Dudoit S., Ellis B., Gautier L., Ge Y., Gentry J. Bioconductor: open software development for computational Biology and bioinformatics. Genome Biol. 2004;5:R80. doi: 10.1186/gb-2004-5-10-r80.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/gb-2004-5-10-r80" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC545600/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/15461798/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=Bioconductor:%20open%20software%20development%20for%20computational%20Biology%20and%20bioinformatics&amp;author=R.C.%20Gentleman&amp;author=V.J.%20Carey&amp;author=D.M.%20Bates&amp;author=B.%20Ben&amp;author=M.%20Dettling&amp;volume=5&amp;publication_year=2004&amp;pages=R80&amp;pmid=15461798&amp;doi=10.1186/gb-2004-5-10-r80&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib14">
+<cite>Huber W., Carey V.J., Gentleman R., Anders S., Carlson M., Carvalho B.S., Bravo H.C., Davis S., Gatto L., Girke T. Orchestrating high-throughput genomic analysis with bioconductor. Nat. Methods. 2015;12:115–121. doi: 10.1038/nmeth.3252.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/nmeth.3252" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4509590/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/25633503/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nat.%20Methods&amp;title=Orchestrating%20high-throughput%20genomic%20analysis%20with%20bioconductor&amp;author=W.%20Huber&amp;author=V.J.%20Carey&amp;author=R.%20Gentleman&amp;author=S.%20Anders&amp;author=M.%20Carlson&amp;volume=12&amp;publication_year=2015&amp;pages=115-121&amp;pmid=25633503&amp;doi=10.1038/nmeth.3252&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib15">
+<cite>Jain M., Olsen H.E., Paten B., Akeson M. Erratum to: the Oxford nanopore MinION: delivery of nanopore sequencing to the genomics community. Genome Biol. 2016;17:256. doi: 10.1186/s13059-016-1103-0.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/s13059-016-1103-0" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5124260/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27887629/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=Erratum%20to:%20the%20Oxford%20nanopore%20MinION:%20delivery%20of%20nanopore%20sequencing%20to%20the%20genomics%20community&amp;author=M.%20Jain&amp;author=H.E.%20Olsen&amp;author=B.%20Paten&amp;author=M.%20Akeson&amp;volume=17&amp;publication_year=2016&amp;pages=256&amp;pmid=27887629&amp;doi=10.1186/s13059-016-1103-0&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib16">
+<cite>Jiang L., Schlesinger F., Davis C.A., Zhang Y., Li R., Salit M., Gingeras T.R., Oliver B.  Genome Research. 2011. Synthetic spike-in standards for RNA-seq experiments.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1101/gr.121095.111" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3166838/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/21816910/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?title=Genome%20Research&amp;author=L.%20Jiang&amp;author=F.%20Schlesinger&amp;author=C.A.%20Davis&amp;author=Y.%20Zhang&amp;author=R.%20Li&amp;publication_year=2011&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib17"><cite>Krueger F. Trim Galore: a wrapper around cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data (version 0.6.5) 2019. <a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://github.com/FelixKrueger/TrimGalore" rel="noopener noreferrer" target="_blank">https://github.com/FelixKrueger/TrimGalore</a></cite></li>
+<li id="bib30">
+<cite>Lai Polo S.-H., Saravia-Butler A.M., Boyko V., Dinh M.T., Chen Y.-C., Fogle H., Reinsch S.S., Ray S., Chakravarty K., Marcu O. RNAseq analysis of rodent spaceflight experiments is confounded by sample collection techniques. iScience. 2020 doi: 10.1101/2020.07.18.209775.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1101/2020.07.18.209775" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC7756143/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/33376967/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=iScience&amp;title=RNAseq%20analysis%20of%20rodent%20spaceflight%20experiments%20is%20confounded%20by%20sample%20collection%20techniques&amp;author=S.-H.%20Lai%20Polo&amp;author=A.M.%20Saravia-Butler&amp;author=V.%20Boyko&amp;author=M.T.%20Dinh&amp;author=Y.-C.%20Chen&amp;publication_year=2020&amp;pmid=33376967&amp;doi=10.1101/2020.07.18.209775&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib18">
+<cite>Langmead B., Cole T., Pop M., Salzberg S.L. Ultrafast and memory-efficient alignment of short DNA sequences to the human genome. Genome Biol. 2009;10:R25. doi: 10.1186/gb-2009-10-3-r25.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/gb-2009-10-3-r25" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC2690996/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/19261174/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=Ultrafast%20and%20memory-efficient%20alignment%20of%20short%20DNA%20sequences%20to%20the%20human%20genome&amp;author=B.%20Langmead&amp;author=T.%20Cole&amp;author=M.%20Pop&amp;author=S.L.%20Salzberg&amp;volume=10&amp;publication_year=2009&amp;pages=R25&amp;pmid=19261174&amp;doi=10.1186/gb-2009-10-3-r25&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib19">
+<cite>Law C.W., Alhamdoosh M., Su S., Dong X., Tian L., Smyth G.K., Ritchie M.E. RNA-seq analysis is easy as 1-2-3 with Limma, Glimma and edgeR. F1000Res. 2016;5 doi: 10.12688/f1000research.9005.3.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.12688/f1000research.9005.3" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4937821/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27441086/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=F1000Res.&amp;title=RNA-seq%20analysis%20is%20easy%20as%201-2-3%20with%20Limma,%20Glimma%20and%20edgeR&amp;author=C.W.%20Law&amp;author=M.%20Alhamdoosh&amp;author=S.%20Su&amp;author=X.%20Dong&amp;author=L.%20Tian&amp;volume=5&amp;publication_year=2016&amp;pmid=27441086&amp;doi=10.12688/f1000research.9005.3&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib20">
+<cite>Liao Y., Wang J., Jaehnig E.J., Shi Z., Zhang B. WebGestalt 2019: gene set analysis toolkit with revamped UIs and APIs. Nucleic Acids Res. 2019;47:W199–W205. doi: 10.1093/nar/gkz401.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/nar/gkz401" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC6602449/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/31114916/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nucleic%20Acids%20Res.&amp;title=WebGestalt%202019:%20gene%20set%20analysis%20toolkit%20with%20revamped%20UIs%20and%20APIs&amp;author=Y.%20Liao&amp;author=J.%20Wang&amp;author=E.J.%20Jaehnig&amp;author=Z.%20Shi&amp;author=B.%20Zhang&amp;volume=47&amp;publication_year=2019&amp;pages=W199-W205&amp;pmid=31114916&amp;doi=10.1093/nar/gkz401&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib21">
+<cite>Li B., Dewey C.N. RSEM: accurate transcript quantification from RNA-seq data with or without a reference genome. BMC Bioinformatics. 2011;12:323. doi: 10.1186/1471-2105-12-323.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/1471-2105-12-323" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3163565/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/21816040/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=BMC%20Bioinformatics&amp;title=RSEM:%20accurate%20transcript%20quantification%20from%20RNA-seq%20data%20with%20or%20without%20a%20reference%20genome&amp;author=B.%20Li&amp;author=C.N.%20Dewey&amp;volume=12&amp;publication_year=2011&amp;pages=323&amp;pmid=21816040&amp;doi=10.1186/1471-2105-12-323&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib22">
+<cite>Li H., Durbin R. Fast and accurate short read alignment with burrows-wheeler transform. Bioinformatics. 2009 doi: 10.1093/bioinformatics/btp324.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/bioinformatics/btp324" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC2705234/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/19451168/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Bioinformatics&amp;title=Fast%20and%20accurate%20short%20read%20alignment%20with%20burrows-wheeler%20transform&amp;author=H.%20Li&amp;author=R.%20Durbin&amp;publication_year=2009&amp;pmid=19451168&amp;doi=10.1093/bioinformatics/btp324&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib23">
+<cite>Love M.I., Huber W., Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol. 2014;15:550. doi: 10.1186/s13059-014-0550-8.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/s13059-014-0550-8" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4302049/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/25516281/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=Moderated%20estimation%20of%20fold%20change%20and%20dispersion%20for%20RNA-seq%20data%20with%20DESeq2&amp;author=M.I.%20Love&amp;author=W.%20Huber&amp;author=S.%20Anders&amp;volume=15&amp;publication_year=2014&amp;pages=550&amp;pmid=25516281&amp;doi=10.1186/s13059-014-0550-8&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib24">
+<cite>Martin M. Cutadapt removes adapter sequences from high-throughput sequencing reads. EMBnet. J. 2011;17:10–12.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=EMBnet.%20J.&amp;title=Cutadapt%20removes%20adapter%20sequences%20from%20high-throughput%20sequencing%20reads&amp;author=M.%20Martin&amp;volume=17&amp;publication_year=2011&amp;pages=10-12&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib25">
+<cite>McIntyre L.M., Lopiano K.K., Morse A.M., Amin V., Oberg A.L., Young L.J., Nuzhdin S.V. RNA-seq: technical variability and sampling. BMC Genomics. 2011;12:293. doi: 10.1186/1471-2164-12-293.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/1471-2164-12-293" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3141664/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/21645359/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=BMC%20Genomics&amp;title=RNA-seq:%20technical%20variability%20and%20sampling&amp;author=L.M.%20McIntyre&amp;author=K.K.%20Lopiano&amp;author=A.M.%20Morse&amp;author=V.%20Amin&amp;author=A.L.%20Oberg&amp;volume=12&amp;publication_year=2011&amp;pages=293&amp;pmid=21645359&amp;doi=10.1186/1471-2164-12-293&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib26">
+<cite>Mi H., Muruganujan A., Thomas P.D. PANTHER in 2013: modeling the evolution of gene function, and other gene attributes, in the context of phylogenetic trees. Nucleic Acids Res. 2013;41:D377–D386. doi: 10.1093/nar/gks1118.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/nar/gks1118" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3531194/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/23193289/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nucleic%20Acids%20Res.&amp;title=PANTHER%20in%202013:%20modeling%20the%20evolution%20of%20gene%20function,%20and%20other%20gene%20attributes,%20in%20the%20context%20of%20phylogenetic%20trees&amp;author=H.%20Mi&amp;author=A.%20Muruganujan&amp;author=P.D.%20Thomas&amp;volume=41&amp;publication_year=2013&amp;pages=D377-D386&amp;pmid=23193289&amp;doi=10.1093/nar/gks1118&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib27">
+<cite>Munro S.A., Lund S.P., Pine P.S., Binder H., Clevert D.-A., Conesa A., Dopazo J., Fasold M., Hochreiter S., Hong H. Assessing technical performance in differential gene expression experiments with external spike-in RNA control ratio mixtures. Nat. Commun. 2014;5:5125. doi: 10.1038/ncomms6125.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/ncomms6125" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/25254650/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nat.%20Commun.&amp;title=Assessing%20technical%20performance%20in%20differential%20gene%20expression%20experiments%20with%20external%20spike-in%20RNA%20control%20ratio%20mixtures&amp;author=S.A.%20Munro&amp;author=S.P.%20Lund&amp;author=P.S.%20Pine&amp;author=H.%20Binder&amp;author=D.-A.%20Clevert&amp;volume=5&amp;publication_year=2014&amp;pages=5125&amp;pmid=25254650&amp;doi=10.1038/ncomms6125&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib28">
+<cite>Nguyen T.-M., Shafi A., Nguyen T., Draghici S. Identifying significantly impacted pathways: a comprehensive review and assessment. Genome Biol. 2019;20:203. doi: 10.1186/s13059-019-1790-4.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/s13059-019-1790-4" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC6784345/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/31597578/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=Identifying%20significantly%20impacted%20pathways:%20a%20comprehensive%20review%20and%20assessment&amp;author=T.-M.%20Nguyen&amp;author=A.%20Shafi&amp;author=T.%20Nguyen&amp;author=S.%20Draghici&amp;volume=20&amp;publication_year=2019&amp;pages=203&amp;pmid=31597578&amp;doi=10.1186/s13059-019-1790-4&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib29">
+<cite>Patro R., Duggal G., Love M.I., Irizarry R.A., Kingsford C. Salmon provides fast and bias-aware quantification of transcript expression. Nat. Methods. 2017;14:417–419. doi: 10.1038/nmeth.4197.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/nmeth.4197" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5600148/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/28263959/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nat.%20Methods&amp;title=Salmon%20provides%20fast%20and%20bias-aware%20quantification%20of%20transcript%20expression&amp;author=R.%20Patro&amp;author=G.%20Duggal&amp;author=M.I.%20Love&amp;author=R.A.%20Irizarry&amp;author=C.%20Kingsford&amp;volume=14&amp;publication_year=2017&amp;pages=417-419&amp;pmid=28263959&amp;doi=10.1038/nmeth.4197&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib31">
+<cite>Raplee I.D., Evsikov A.V., Marín de Evsikova C. Aligning the aligners: comparison of RNA sequencing data alignment and gene expression quantification tools for clinical breast cancer research. J. Personalized Med. 2019;9 doi: 10.3390/jpm9020018.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.3390/jpm9020018" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC6617288/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/30987214/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=J.%C2%A0Personalized%20Med.&amp;title=Aligning%20the%20aligners:%20comparison%20of%20RNA%20sequencing%20data%20alignment%20and%20gene%20expression%20quantification%20tools%20for%20clinical%20breast%20cancer%20research&amp;author=I.D.%20Raplee&amp;author=A.V.%20Evsikov&amp;author=C.%20Mar%C3%ADn%20de%20Evsikova&amp;volume=9&amp;publication_year=2019&amp;pmid=30987214&amp;doi=10.3390/jpm9020018&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib32">
+<cite>Risso D., Ngai J., Speed T.P., Dudoit S. Normalization of RNA-seq data using factor Analysis of control genes or samples. Nat. Biotechnol. 2014;32:896–902. doi: 10.1038/nbt.2931.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/nbt.2931" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4404308/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/25150836/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nat.%20Biotechnol.&amp;title=Normalization%20of%20RNA-seq%20data%20using%20factor%20Analysis%20of%20control%20genes%20or%20samples&amp;author=D.%20Risso&amp;author=J.%20Ngai&amp;author=T.P.%20Speed&amp;author=S.%20Dudoit&amp;volume=32&amp;publication_year=2014&amp;pages=896-902&amp;pmid=25150836&amp;doi=10.1038/nbt.2931&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib33">
+<cite>Risso D., Schwartz K., Sherlock G., Dudoit S. GC-content normalization for RNA-seq data. BMC Bioinformatics. 2011;12:480. doi: 10.1186/1471-2105-12-480.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/1471-2105-12-480" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3315510/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/22177264/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=BMC%20Bioinformatics&amp;title=GC-content%20normalization%20for%20RNA-seq%20data&amp;author=D.%20Risso&amp;author=K.%20Schwartz&amp;author=G.%20Sherlock&amp;author=S.%20Dudoit&amp;volume=12&amp;publication_year=2011&amp;pages=480&amp;pmid=22177264&amp;doi=10.1186/1471-2105-12-480&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib34">
+<cite>Roberts R.J., Carneiro M.O., Schatz M.C. The advantages of SMRT sequencing. Genome Biol. 2013;14:405. doi: 10.1186/gb-2013-14-7-405.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/gb-2013-14-7-405" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3953343/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/23822731/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=The%20advantages%20of%20SMRT%20sequencing&amp;author=R.J.%20Roberts&amp;author=M.O.%20Carneiro&amp;author=M.C.%20Schatz&amp;volume=14&amp;publication_year=2013&amp;pages=405&amp;pmid=23822731&amp;doi=10.1186/gb-2013-14-7-405&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib35">
+<cite>Rocca-Serra P., Brandizi M., Maguire E., Sklyar N., Taylor C., Begley K., Field D., Harris S., Hide W., Hofmann O. ISA software suite: supporting standards-compliant experimental annotation and enabling curation at the community level. Bioinformatics. 2010 doi: 10.1093/bioinformatics/btq415.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/bioinformatics/btq415" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC2935443/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/20679334/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Bioinformatics&amp;title=ISA%20software%20suite:%20supporting%20standards-compliant%20experimental%20annotation%20and%20enabling%20curation%20at%20the%20community%20level&amp;author=P.%20Rocca-Serra&amp;author=M.%20Brandizi&amp;author=E.%20Maguire&amp;author=N.%20Sklyar&amp;author=C.%20Taylor&amp;publication_year=2010&amp;pmid=20679334&amp;doi=10.1093/bioinformatics/btq415&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib36">
+<cite>Rutter L., Barker R., Bezdan D., Cope H., Costes S.V., Degoricija L., Fisch K.M., Gabitto M., Gebre S., Giacomello S. A new era for space Life science: International standards for space omics processing (ISSOP) Patterns. 2020;1 doi: 10.1016/j.patter.2020.100148.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1016/j.patter.2020.100148" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC7733874/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/33336201/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Patterns&amp;title=A%20new%20era%20for%20space%20Life%20science:%20International%20standards%20for%20space%20omics%20processing%20(ISSOP)&amp;author=L.%20Rutter&amp;author=R.%20Barker&amp;author=D.%20Bezdan&amp;author=H.%20Cope&amp;author=S.V.%20Costes&amp;volume=1&amp;publication_year=2020&amp;pmid=33336201&amp;doi=10.1016/j.patter.2020.100148&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib37">
+<cite>Sansone S.A., Rocca-Serra P., Field D., Maguire E., Taylor C., Hofmann O., Fang H., Neumann S., Tong W., Amaral-Zettler L. Toward interoperable bioscience data. Nat. Genet. 2012;44:121–126. doi: 10.1038/ng.1054.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1038/ng.1054" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3428019/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/22281772/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nat.%20Genet.&amp;title=Toward%20interoperable%20bioscience%20data&amp;author=S.A.%20Sansone&amp;author=P.%20Rocca-Serra&amp;author=D.%20Field&amp;author=E.%20Maguire&amp;author=C.%20Taylor&amp;volume=44&amp;publication_year=2012&amp;pages=121-126&amp;pmid=22281772&amp;doi=10.1038/ng.1054&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib38">
+<cite>Schaarschmidt S., Fischer A., Zuther E., Hincha D.K. Evaluation of seven different RNA-seq alignment tools based on experimental data from the model plant Arabidopsis thaliana. Int. J. Mol. Sci. 2020;21 doi: 10.3390/ijms21051720.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.3390/ijms21051720" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC7084517/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/32138290/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Int.%20J.%20Mol.%20Sci.&amp;title=Evaluation%20of%20seven%20different%20RNA-seq%20alignment%20tools%20based%20on%20experimental%20data%20from%20the%20model%20plant%20Arabidopsis%20thaliana&amp;author=S.%20Schaarschmidt&amp;author=A.%20Fischer&amp;author=E.%20Zuther&amp;author=D.K.%20Hincha&amp;volume=21&amp;publication_year=2020&amp;pmid=32138290&amp;doi=10.3390/ijms21051720&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib39">
+<cite>Schurch N.J., Schofield P., Gierliński M., Cole C., Sherstnev A., Singh V., Wrobel N., Gharbi K., Simpson G., Owen-Hughes T. How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use? RNA. 2016 doi: 10.1261/rna.053959.115.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1261/rna.053959.115" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4878611/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27022035/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=RNA&amp;title=How%20many%20biological%20replicates%20are%20needed%20in%20an%20RNA-seq%20experiment%20and%20which%20differential%20expression%20tool%20should%20you%20use?&amp;author=N.J.%20Schurch&amp;author=P.%20Schofield&amp;author=M.%20Gierli%C5%84ski&amp;author=C.%20Cole&amp;author=A.%20Sherstnev&amp;publication_year=2016&amp;pmid=27022035&amp;doi=10.1261/rna.053959.115&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib40">
+<cite>Scott R.T., Grigorev K., Mackintosh G., Gebre S.G., Mason C.E., Del Alto M.E., Costes S.V.  Vol. 33. Cell Rep.; 2020. Advancing the integration of Biosciences data sharing to further enable space exploration.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1016/j.celrep.2020.108441" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/33242404/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?Scott%20R.T.,%20Grigorev%20K.,%20Mackintosh%20G.,%20Gebre%20S.G.,%20Mason%20C.E.,%20Del%20Alto%20M.E.,%20Costes%20S.V.%20Vol.%2033.%20Cell%20Rep.;%202020.%20Advancing%20the%20integration%20of%20Biosciences%20data%20sharing%20to%20further%20enable%20space%20exploration." rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib41">
+<cite>Smith T., Heger A., Sudbery I. UMI-tools: modeling sequencing errors in unique molecular identifiers to improve quantification accuracy. Genome Res. 2017;27:491–499. doi: 10.1101/gr.209601.116.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1101/gr.209601.116" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5340976/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/28100584/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Res.&amp;title=UMI-tools:%20modeling%20sequencing%20errors%20in%20unique%20molecular%20identifiers%20to%20improve%20quantification%20accuracy&amp;author=T.%20Smith&amp;author=A.%20Heger&amp;author=I.%20Sudbery&amp;volume=27&amp;publication_year=2017&amp;pages=491-499&amp;pmid=28100584&amp;doi=10.1101/gr.209601.116&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib42">
+<cite>Soneson C., Love M., Robinson M. Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences. F1000Res. 2015;4:1521. doi: 10.12688/f1000research.7563.1. [version 2; Peer Review: 2 Approved]</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.12688/f1000research.7563.1" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4712774/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/26925227/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=F1000Res.&amp;title=Differential%20analyses%20for%20RNA-seq:%20transcript-level%20estimates%20improve%20gene-level%20inferences&amp;author=C.%20Soneson&amp;author=M.%20Love&amp;author=M.%20Robinson&amp;volume=4&amp;publication_year=2015&amp;pages=1521&amp;pmid=26925227&amp;doi=10.12688/f1000research.7563.1&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib43">
+<cite>Subramanian A., Tamayo P., Mootha V.K., Mukherjee S., Ebert B.L., Gillette M.A., Paulovich A., Pomeroy S.L., Golub T.R., Lander E.S. Gene set Enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc. Natl. Acad. Sci. U S A. 2005;102:15545–15550. doi: 10.1073/pnas.0506580102.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1073/pnas.0506580102" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC1239896/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/16199517/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Proc.%20Natl.%20Acad.%20Sci.%20U%20S%20A&amp;title=Gene%20set%20Enrichment%20analysis:%20a%20knowledge-based%20approach%20for%20interpreting%20genome-wide%20expression%20profiles&amp;author=A.%20Subramanian&amp;author=P.%20Tamayo&amp;author=V.K.%20Mootha&amp;author=S.%20Mukherjee&amp;author=B.L.%20Ebert&amp;volume=102&amp;publication_year=2005&amp;pages=15545-15550&amp;pmid=16199517&amp;doi=10.1073/pnas.0506580102&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib44">
+<cite>Szklarczyk D., Gable A.L., Lyon D., Junge A.  Nucleic Acids. 2019. STRING v11: protein–protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets.<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://academic.oup.com/nar/article-abstract/47/D1/D607/5198476" rel="noopener noreferrer" target="_blank">https://academic.oup.com/nar/article-abstract/47/D1/D607/5198476</a></cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/nar/gky1131" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC6323986/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/30476243/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?title=Nucleic%20Acids&amp;author=D.%20Szklarczyk&amp;author=A.L.%20Gable&amp;author=D.%20Lyon&amp;author=A.%20Junge&amp;publication_year=2019&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib45">
+<cite>Teng M., Love M.I., Davis C.A., Djebali S., Dobin A., Graveley B.R., Li S., Mason C.E., Olson S., Pervouchine D. A benchmark for RNA-seq quantification pipelines. Genome Biol. 2016;17:74. doi: 10.1186/s13059-016-0940-1.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/s13059-016-0940-1" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4842274/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27107712/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Biol.&amp;title=A%20benchmark%20for%20RNA-seq%20quantification%20pipelines&amp;author=M.%20Teng&amp;author=M.I.%20Love&amp;author=C.A.%20Davis&amp;author=S.%20Djebali&amp;author=A.%20Dobin&amp;volume=17&amp;publication_year=2016&amp;pages=74&amp;pmid=27107712&amp;doi=10.1186/s13059-016-0940-1&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib46">
+<cite>Thomas P.D. PANTHER: a library of protein families and subfamilies indexed by function. Genome Res. 2003 doi: 10.1101/gr.772403.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1101/gr.772403" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC403709/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/12952881/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Genome%20Res.&amp;title=PANTHER:%20a%20library%20of%20protein%20families%20and%20subfamilies%20indexed%20by%20function&amp;author=P.D.%20Thomas&amp;publication_year=2003&amp;pmid=12952881&amp;doi=10.1101/gr.772403&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib47">
+<cite>Väremo L., Nielsen J., Nookaew I. Enriching the gene set analysis of genome-wide data by incorporating directionality of gene expression and combining statistical hypotheses and methods. Nucleic Acids Res. 2013;41:4378–4391. doi: 10.1093/nar/gkt111.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1093/nar/gkt111" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC3632109/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/23444143/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=Nucleic%20Acids%20Res.&amp;title=Enriching%20the%20gene%20set%20analysis%20of%20genome-wide%20data%20by%20incorporating%20directionality%20of%20gene%20expression%20and%20combining%20statistical%20hypotheses%20and%20methods&amp;author=L.%20V%C3%A4remo&amp;author=J.%20Nielsen&amp;author=I.%20Nookaew&amp;volume=41&amp;publication_year=2013&amp;pages=4378-4391&amp;pmid=23444143&amp;doi=10.1093/nar/gkt111&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib49">
+<cite>Williams C.R., Baccarella A., Parrish J.Z., Kim C.C. Trimming of sequence reads alters RNA-seq gene expression estimates. BMC Bioinformatics. 2016;17:103. doi: 10.1186/s12859-016-0956-2.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/s12859-016-0956-2" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC4766705/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/26911985/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=BMC%20Bioinformatics&amp;title=Trimming%20of%20sequence%20reads%20alters%20RNA-seq%20gene%20expression%20estimates&amp;author=C.R.%20Williams&amp;author=A.%20Baccarella&amp;author=J.Z.%20Parrish&amp;author=C.C.%20Kim&amp;volume=17&amp;publication_year=2016&amp;pages=103&amp;pmid=26911985&amp;doi=10.1186/s12859-016-0956-2&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib50">
+<cite>Wu D.C., Yao J., Ho K.S., Lambowitz A.M., Wilke C.O. Limitations of alignment-free tools in total RNA-seq quantification. BMC Genomics. 2018;19:510. doi: 10.1186/s12864-018-4869-5.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1186/s12864-018-4869-5" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC6042521/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/29969991/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=BMC%20Genomics&amp;title=Limitations%20of%20alignment-free%20tools%20in%20total%20RNA-seq%20quantification&amp;author=D.C.%20Wu&amp;author=J.%20Yao&amp;author=K.S.%20Ho&amp;author=A.M.%20Lambowitz&amp;author=C.O.%20Wilke&amp;volume=19&amp;publication_year=2018&amp;pages=510&amp;pmid=29969991&amp;doi=10.1186/s12864-018-4869-5&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+<li id="bib51">
+<cite>Yang C., Wu P.-Y., Tong L., Phan J.H., Wang M.D. The impact of RNA-seq aligners on gene expression estimation. ACM BCM. 2015;2015:462–471. doi: 10.1145/2808719.2808767.</cite> [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.1145/2808719.2808767" rel="noopener noreferrer" target="_blank">DOI</a>] [<a class="usa-link" href="/articles/PMC5003035/">PMC free article</a>] [<a class="usa-link" href="https://pubmed.ncbi.nlm.nih.gov/27583310/">PubMed</a>] [<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://scholar.google.com/scholar_lookup?journal=ACM%20BCM&amp;title=The%20impact%20of%20RNA-seq%20aligners%20on%20gene%20expression%20estimation&amp;author=C.%20Yang&amp;author=P.-Y.%20Wu&amp;author=L.%20Tong&amp;author=J.H.%20Phan&amp;author=M.D.%20Wang&amp;volume=2015&amp;publication_year=2015&amp;pages=462-471&amp;pmid=27583310&amp;doi=10.1145/2808719.2808767&amp;" rel="noopener noreferrer" target="_blank">Google Scholar</a>]</li>
+</ol></section></section><section class="associated-data" id="_ad93_" lang="en"><h2 class="pmc_sec_title">Associated Data</h2>
+<p class="font-secondary"><em>This section collects any data citations, data availability statements, or supplementary materials included in this article.</em></p>
+<section class="supplementary-materials" id="_adsm93_" lang="en"><h3 class="pmc_sec_title">Supplementary Materials</h3>
+<section class="sm xbox font-sm" id="db_ds_supplementary-material1_reqid_"><div class="caption p"><span>Document S1. Transparent methods, Figure S1, and Table S6</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc1.pdf">mmc1.pdf</a><sup> (247.6KB, pdf) </sup>
+</div></div></section><section class="sm xbox font-sm" id="db_ds_supplementary-material2_reqid_"><div class="caption p"><span>Table S1. GeneLab datasets, related to transparent methods</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc2.xlsx">mmc2.xlsx</a><sup> (17.6KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="db_ds_supplementary-material3_reqid_"><div class="caption p"><span>Table S2. Genome &amp; annot files, related to Figures 3 and 4</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc3.xlsx">mmc3.xlsx</a><sup> (10.9KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="db_ds_supplementary-material4_reqid_"><div class="caption p"><span>Table S3. Organism to annot map, related to Figure 5</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc4.xlsx">mmc4.xlsx</a><sup> (10.9KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="db_ds_supplementary-material5_reqid_"><div class="caption p"><span>Table S4. Pipeline tools, related to transparent methods</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc5.xlsx">mmc5.xlsx</a><sup> (9.9KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="db_ds_supplementary-material6_reqid_"><div class="caption p"><span>Table S5. Sample names, related to Figure 6</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc6.xlsx">mmc6.xlsx</a><sup> (9.2KB, xlsx) </sup>
+</div></div></section><section class="sm xbox font-sm" id="db_ds_supplementary-material7_reqid_"><div class="caption p"><span>Data S1. DEG script w ERCC norm, related to Figure 5</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc7.zip">mmc7.zip</a><sup> (5.7KB, zip) </sup>
+</div></div></section><section class="sm xbox font-sm" id="db_ds_supplementary-material8_reqid_"><div class="caption p"><span>Data S2. DEG script without ERCC norm, related to Figure 5</span></div>
+<div class="media p"><div class="caption">
+<a class="usa-link" data-ga-action="click_feat_suppl" href="/articles/instance/8044432/bin/mmc8.zip">mmc8.zip</a><sup> (4.8KB, zip) </sup>
+</div></div></section></section><section class="data-availability-statement" id="_adda93_" lang="en"><h3 class="pmc_sec_title">Data Availability Statement</h3>
+<p>Spaceflight-relevant RNA-seq data are located in the GeneLab database (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://genelab-data.ndc.nasa.gov/genelab/projects" rel="noopener noreferrer" target="_blank">https://genelab-data.ndc.nasa.gov/genelab/projects</a>). All software packages are open source and are linked in the methods section. Instructions for installing packages using Conda are provided on Github (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://github.com/nasa/GeneLab_Data_Processing/tree/master/RNAseq/RNAseq_Tool_Instal" rel="noopener noreferrer" target="_blank">https://github.com/nasa/GeneLab_Data_Processing/tree/master/RNAseq/RNAseq_Tool_Instal</a>). Custom R scripts for DESeq2 are included as supplemental information and are available in the Github repository GeneLab_Data_Processing (<a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://github.com/nasa/GeneLab_Data_Processing" rel="noopener noreferrer" target="_blank">https://github.com/nasa/GeneLab_Data_Processing</a>). Original data have been deposited to Mendeley Data: <a class="usa-link usa-link--external" data-ga-action="click_feat_suppl" href="https://doi.org/10.17632/fv3kd6h7k4.1" rel="noopener noreferrer" target="_blank">https://doi.org/10.17632/fv3kd6h7k4.1</a>).</p></section></section></section></section></article>
+</main></body></html>
