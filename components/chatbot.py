@@ -1,39 +1,43 @@
 import streamlit as st
-import random
-import time
+from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
+from agents.agent import graph  # your compiled graph
 
-def response_generator():
-    response = random.choice(
-        [
-            "Hello there! How can I assist you today?",
-            "Hi, human! Is there anything I can help you with?",
-            "Do you need help?",
-        ]
-    )
-    for word in response.split():
-        yield word + " "
-        time.sleep(0.05)
+# --- Initial configuration ---
+st.set_page_config(page_title="LangGraph Chatbot", layout="centered")
 
+# Initialize default conversation history
+if "messages_d1" not in st.session_state:
+    st.session_state.messages_d1 = []
 
+# --- Chatbot interface ---
 def chatbot_interface(session_messages):
-    """Renderiza un chatbot simple en la interfaz."""   
+    """Renders a chatbot connected to your LangGraph"""
+    chat_container = st.container()
 
-    # Display chat messages from history on app rerun
-    chat_container = st.container(height=400)
+    # Display previous messages
     with chat_container:
         for message in session_messages:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-    # React to user input
-    if prompt := st.chat_input("What is up?"):
-        # Display user message in chat message container
-        with chat_container:
-            st.chat_message("user").markdown(prompt)
-            # Add user message to chat history
-            session_messages.append({"role": "user", "content": prompt})
+    # User input
+    if prompt := st.chat_input("Type your message..."):
+        # Display user message
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        session_messages.append({"role": "user", "content": prompt})
 
-            with st.chat_message("assistant"):
-                response = st.write_stream(response_generator())
-            # Add assistant response to chat history
+        # Graph (LangGraph) response
+        with st.chat_message("assistant"):
+            st_callback = StreamlitCallbackHandler(st.container())
+            try:
+                result = graph.invoke({"question": prompt}, {"callbacks": [st_callback]})
+                response = result.get("answer", "No response.")
+            except Exception as e:
+                response = f"⚠️ Error running the graph: {e}"
+
+            st.markdown(response)
             session_messages.append({"role": "assistant", "content": response})
+
+# Run the chatbot with the specific dashboard history
+chatbot_interface(st.session_state.messages_d1)

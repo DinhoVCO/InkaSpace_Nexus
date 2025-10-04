@@ -9,3 +9,4 @@ langchain-text-splitters
 tiktoken
 langchain
 langgraph
+langchain_community
