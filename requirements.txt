@@ -8,3 +8,4 @@ langchain-qdrant
 langchain-text-splitters
 tiktoken
 lxml
+streamlit-agraph

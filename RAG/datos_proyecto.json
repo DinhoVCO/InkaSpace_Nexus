@@ -1,0 +1,33 @@
+{
+    "project_title": "Phosphoinositide Signaling and Plant Gravitropism: A Transgenic ApproachReduce",
+    "fiscal_year": "FY 2005",
+    "division": "Space Biology",
+    "research_discipline/element": "",
+    "start_date": "07/15/2001",
+    "end_date": "07/14/2005",
+    "task_last_updated": "05/12/2005",
+    "research_discipline_element": "Fiscal Year:FY 2005Division:Space BiologyResearch Discipline/Element:Space Biology: Cell & Molecular Biology | Plant Biology",
+    "pdf_download_link": "tbpdf.cfm?id=3539",
+    "principal_investigator": {},
+    "project_information": {
+        "responsible_center": "NASA ARC",
+        "unique_id": "2525",
+        "solicitation__funding_source": "2000 Space Biology 00-OBPR-01",
+        "grantcontract_no": "NAG 2-1502",
+        "project_type": "Ground",
+        "no_of_post_docs": "0",
+        "no_of_phd_candidates": "0",
+        "no_of_master's_candidates": "0",
+        "no_of_bachelor's_candidates": "6",
+        "space_biology_element": "(1) Cell & Molecular Biology\n(2) Plant Biology",
+        "space_biology_cross-element_discipline": "None",
+        "space_biology_special_category": "None",
+        "task_description": "Plants exhibit differential growth in response to a change in their spatial orientation relative to the gravity vector. To date, the signaling processes linking the perception of a gravistimulus to the initiation of a differential growth response are poorly understood.  Using the pulvinus of cereal grasses  as a model system, we have shown that both rapid and long term increases in inositol 1,4,5-trisphosphate (InsP3) correlate positively with the gravitropic bending response of both oat and maize stems (Perera et al., 1999, Proc Nat Acad Sci 96:5838-5843; Perera et al., 2001, Plant Physiol 125:1499-1507).  Our previous work has revealed that  InsP3 is a major player in the signal transduction cascade mediating the gravitropic response and suggests that the PI pathway is an important target for regulating cellular responses to gravity.      \tOur hypothesis is that the long term increase in InsP3 is essential for differential growth.  We propose to take a reverse genetic approach to affect the long term differential increase in InsP3 and alter PI metabolism.\n1.\tAbolish the differential increase of InsP3 by expression of  a human  type I inositol polyphosphate 5 phosphatase (InsP 5-ptase) that specifically hydrolyzes InsP3.  We predict that the graviresponse of these transgenic plants will be attenuated.\n2.\tIncrease synthesis of  PtdInsP2 by up regulating  PtdInsP 5-kinase expression (the rate limiting enzyme in PtdInsP2 biosynthesis in plants). We anticipate that the gravisensitivity of these transgenic plants will be enhanced.\nBy altering InsP3 and PI metabolism and thereby affecting differential growth we will add to the basic understanding of the role of the PI pathway in plant gravitropism as well as the mechanisms by which cells  perceive and respond to a change in orientation.",
+        "research_impact/earth_benefits": "A major contribution of this work will be a clearer understanding of the role of  the PI pathway and InsP3 in plant gravitropic responses as well as insight into the mechanisms by which cells perceive and respond to a change in orientation.\nA second, important contribution will be the transgenic plants produced.  These plants which should have low levels of  InsP3, will enable other scientists to quickly identify a putative role for IP3 in their stimulus of interest.  In addition to providing a rapid method for screening for PI pathway involvement, the InsP 5-ptase and PtdInsP 5-kinase transgenic plants will allow scientists to investigate cross-talk between InsP3 and other signaling pathways.\nA final contribution will be towards the future design of stress tolerant transgenic plants.  We anticipate that the InsP 5-ptase overexpressing plants will have reduced sensitivity to environmental stresses, which could have a major impact on the survivability and  productivity of plants under unfavorable conditions including space flight and non-terrestrial environments."
+    },
+    "task_progress_and_bibliography": {
+        "task_progress": "1. We have carried out a comprehensive analysis of the gravitropic responses of transgenic Arabidopsis plants expressing InsP 5ptase.  At least 3-4 independent transgenic lines have been characterized with respect to the gravitropic bending response of roots, hypocotyls and inflorescence stems.  We have found that gravitropic response is reduced by ~ 30 % compared with wild type in roots, shoots and inflorescence stems of the transgenic plants.  In collaboration with Dr. Gloria Muday of Wake Forest Univ, we have examined the root bending response using the ADAPT system. We have determined that the major difference in the root response between the wild type and transgenic plants appears to be in the rate of curvature after initiation of bending thereby resulting in the reduced response.\n2. We have also completed the InsP3 analysis during a time course of bending in inflorescence stems.  With gravistimulation, InsP3 levels increase in the wild type stems with a peak ~ 5 min and again between 15-20 min.  These increases in InsP3 precede visible bending and therefore are in good agreement with our previous work on cereal stem pulvini.  InsP3 levels in the transgenic stems appear to fluctuate and increase as well; however the overall levels are drastically reduced compared with the wild type (~ 5% of wild type values).\n3. We have further characterized the drought tolerance phenotype exhibited by the transgenic plants.  Our major findings are that the transgenic plants lose less water from their leaves compared with the wild type. Guard cells of transgenic plants respond similarly as wild type to light and dark treatments. However, transgenic guard cells are more responsive to ABA, which may partly explain the lowered water loss.  In addition, induction of ABA-responsive genes is enhanced in transgenic leaves compared with wild type.",
+        "bibliography_description": "Description: (Last Updated: 05/30/2025)",
+        "bibliography_articles": "Ver 'Show Cumulative Bibliography'"
+    }
+}
