@@ -1,0 +1,441 @@
+Appl Environ Microbiol
+
+. 2014 Jan;80(1):104–109. doi: [10.1128/AEM.03136-13](https://doi.org/10.1128/AEM.03136-13)
+
+# Resistance of *Bacillus subtilis* Spore DNA to Lethal Ionizing Radiation Damage Relies Primarily on Spore Core Components and DNA Repair, with Minor Effects of Oxygen Radical Detoxification
+
+[Ralf Moeller](https://pubmed.ncbi.nlm.nih.gov/?term=%22Moeller%20R%22%5BAuthor%5D)
+
+### Ralf Moeller
+
+aGerman Aerospace Center (DLR e.V.), Institute of Aerospace Medicine, Radiation Biology Department, Cologne, Germany
+
+Find articles by [Ralf Moeller](https://pubmed.ncbi.nlm.nih.gov/?term=%22Moeller%20R%22%5BAuthor%5D)
+
+a,✉, [Marina Raguse](https://pubmed.ncbi.nlm.nih.gov/?term=%22Raguse%20M%22%5BAuthor%5D)
+
+### Marina Raguse
+
+aGerman Aerospace Center (DLR e.V.), Institute of Aerospace Medicine, Radiation Biology Department, Cologne, Germany
+
+Find articles by [Marina Raguse](https://pubmed.ncbi.nlm.nih.gov/?term=%22Raguse%20M%22%5BAuthor%5D)
+
+a, [Günther Reitz](https://pubmed.ncbi.nlm.nih.gov/?term=%22Reitz%20G%22%5BAuthor%5D)
+
+### Günther Reitz
+
+aGerman Aerospace Center (DLR e.V.), Institute of Aerospace Medicine, Radiation Biology Department, Cologne, Germany
+
+Find articles by [Günther Reitz](https://pubmed.ncbi.nlm.nih.gov/?term=%22Reitz%20G%22%5BAuthor%5D)
+
+a, [Ryuichi Okayasu](https://pubmed.ncbi.nlm.nih.gov/?term=%22Okayasu%20R%22%5BAuthor%5D)
+
+### Ryuichi Okayasu
+
+bInternational Open Laboratory, National Institute of Radiological Sciences, Chiba-shi, Japan
+
+Find articles by [Ryuichi Okayasu](https://pubmed.ncbi.nlm.nih.gov/?term=%22Okayasu%20R%22%5BAuthor%5D)
+
+b, [Zuofeng Li](https://pubmed.ncbi.nlm.nih.gov/?term=%22Li%20Z%22%5BAuthor%5D)
+
+### Zuofeng Li
+
+cUniversity of Florida, Proton Therapy Institute, Jacksonville, Florida, USA
+
+Find articles by [Zuofeng Li](https://pubmed.ncbi.nlm.nih.gov/?term=%22Li%20Z%22%5BAuthor%5D)
+
+c, [Stuart Klein](https://pubmed.ncbi.nlm.nih.gov/?term=%22Klein%20S%22%5BAuthor%5D)
+
+### Stuart Klein
+
+cUniversity of Florida, Proton Therapy Institute, Jacksonville, Florida, USA
+
+Find articles by [Stuart Klein](https://pubmed.ncbi.nlm.nih.gov/?term=%22Klein%20S%22%5BAuthor%5D)
+
+c, [Peter Setlow](https://pubmed.ncbi.nlm.nih.gov/?term=%22Setlow%20P%22%5BAuthor%5D)
+
+### Peter Setlow
+
+dDepartment of Molecular, Microbial and Structural Biology, University of Connecticut Health Center, Farmington, Connecticut, USA
+
+Find articles by [Peter Setlow](https://pubmed.ncbi.nlm.nih.gov/?term=%22Setlow%20P%22%5BAuthor%5D)
+
+d, [Wayne L Nicholson](https://pubmed.ncbi.nlm.nih.gov/?term=%22Nicholson%20WL%22%5BAuthor%5D)
+
+### Wayne L Nicholson
+
+eDepartment of Microbiology and Cell Science, University of Florida, Merritt Island, Florida, USA
+
+Find articles by [Wayne L Nicholson](https://pubmed.ncbi.nlm.nih.gov/?term=%22Nicholson%20WL%22%5BAuthor%5D)
+
+e
+
+* Author information
+* Article notes
+* Copyright and License information
+
+aGerman Aerospace Center (DLR e.V.), Institute of Aerospace Medicine, Radiation Biology Department, Cologne, Germany
+
+bInternational Open Laboratory, National Institute of Radiological Sciences, Chiba-shi, Japan
+
+cUniversity of Florida, Proton Therapy Institute, Jacksonville, Florida, USA
+
+dDepartment of Molecular, Microbial and Structural Biology, University of Connecticut Health Center, Farmington, Connecticut, USA
+
+eDepartment of Microbiology and Cell Science, University of Florida, Merritt Island, Florida, USA
+
+✉
+
+Address correspondence to Ralf Moeller, ralf.moeller@dlr.de.
+
+✉
+
+Corresponding author.
+
+Received 2013 Sep 17; Accepted 2013 Oct 10.
+
+Copyright © 2014, American Society for Microbiology. All Rights Reserved.
+
+[PMC Copyright notice](/about/copyright/)
+
+PMCID: PMC3911009  PMID: [24123749](https://pubmed.ncbi.nlm.nih.gov/24123749/)
+
+## Abstract
+
+The roles of various core components, including α/β/γ-type small acid-soluble spore proteins (SASP), dipicolinic acid (DPA), core water content, and DNA repair by apurinic/apyrimidinic (AP) endonucleases or nonhomologous end joining (NHEJ), in *Bacillus subtilis* spore resistance to different types of ionizing radiation including X rays, protons, and high-energy charged iron ions have been studied. Spores deficient in DNA repair by NHEJ or AP endonucleases, the oxidative stress response, or protection by major α/β-type SASP, DPA, and decreased core water content were significantly more sensitive to ionizing radiation than wild-type spores, with highest sensitivity to high-energy-charged iron ions. DNA repair via NHEJ and AP endonucleases appears to be the most important mechanism for spore resistance to ionizing radiation, whereas oxygen radical detoxification via the MrgA-mediated oxidative stress response or KatX catalase activity plays only a very minor role. Synergistic radioprotective effects of α/β-type but not γ-type SASP were also identified, indicating that α/β-type SASP's binding to spore DNA is important in preventing DNA damage due to reactive oxygen species generated by ionizing radiation.
+
+## INTRODUCTION
+
+Spores of *Bacillus subtilis* have been used extensively as biological indicators for industrial purposes such as sterilization or decontamination. Spores have also been shown to be suitable dosimeters for probing terrestrial and extraterrestrial ionizing radiation in environmental and astrobiological studies ([1](#B1)[–](#B2)[3](#B3); reviewed in references [4](#B4), [5](#B5), [6](#B6), and [7](#B7)). Ionizing radiation can damage cellular components through direct transfer of radiation energy into biomolecules (e.g., DNA, RNA, proteins) and indirectly by generating reactive oxygen species (ROS) from the radiolysis of intracellular H2O ([8](#B8)[–](#B9)[11](#B11)). The biological effects of ionizing radiation are thought to arise from the formation of single- and double-strand breaks (SSB and DSB) in cellular DNA and clustered DNA damage, e.g., two or more closely spaced lesions, including abasic sites, base lesions, SSB, and DSB. The biological effects of ionizing radiation depend on the quality and the dose of radiation and on the cell type ([9](#B9)[–](#B10)[11](#B11)). Linear energy transfer (LET) represents the energy lost per unit distance as an ionizing particle travels through a material, and it is used to quantify the effects of ionizing radiation on biological specimens ([5](#B5), [10](#B10)[–](#B11)[13](#B13)). High-LET radiation sources include protons, and high-energy-charged (HZE) particles give densely ionizing radiation, since they lose their energy in a small distance and thus cause dense ionization along their tracks and can give localized multiple DNA-damaging events. Low-LET radiation sources, such as X rays, give sparsely ionizing radiation, since they produce ionizations sparsely along their track and, hence, almost homogeneously within a cell. The biological effects of high-LET radiation are in general much higher than those of low-LET radiation of the same energy ([10](#B10), [12](#B12), [13](#B13)). This is because high-LET radiation deposits most of its energy within the volume of one cell and the damage to DNA is therefore larger ([9](#B9)[–](#B10)[11](#B11)). This is attributable to the formation of clusters of damage that result in two or more DNA lesions along the tracks of high-LET radiation sources, i.e., the physical path of the applied ionizing radiation source in a cell.
+
+Previous studies have indicated that in both pro- and eukaryotic cells or under highly scavenging conditions mimicking those for ROS scavenging in the cell, one-fourth of the lesions induced in DNA by low-LET radiation can be ascribed to direct effects increasing up to 80% for high-LET particles ([9](#B9), [11](#B11), [12](#B12)). Hydrogen peroxide (H2O2) and hydroxyl radicals (HO·) are major oxidizing species produced by the radiolysis of water, and superoxide ions (O2·−) are formed in the presence of dissolved oxygen ([12](#B12), [13](#B13)). Lethal and mutagenic effects induced by ionizing radiation are thought to be the result of DNA damage caused during the course of irradiation ([11](#B11), [14](#B14)[–](#B15)[16](#B16)). Spore DNA resides in the innermost spore compartment, the core, and dormant spores of *B. subtilis* possess a complex arsenal of protective attributes in the core, in particular a low core water content as well as abundant novel core constituents such as (i) the calcium chelate of dipicolinic acid (Ca-DPA), which comprises ∼25% of core dry weight, and (ii) small, acid-soluble spore proteins (SASP) of the α/β type, which bind spore DNA and protect it from many types of damage, including UV photoproducts, apurinic/apyrimidinic (AP) sites, and oxidative lesions ([17](#B17), [18](#B18), [47](#B47); reviewed in references [4](#B4), [6](#B6), and [19](#B19)). Spore DNA is saturated with a group of unique proteins called α/β-type SASP, which are encoded by multiple genes and synthesized only during sporulation in the developing spore. These α/β-type SASP are nonspecific DNA-binding proteins that bind to random-sequence double-strand DNA and comprise approximately 5% of total spore protein (reviewed in references [6](#B6) and [18](#B18)). The high levels of α/β-type SASP in spores are sufficient to saturate the spore DNA, and the DNA within this nucleoprotein complex is protected from a variety of environmental insults ([4](#B4), [7](#B7)).
+
+Germinating spores also can detoxify ROS using enzymes such as catalase (KatX) and superoxide dismutase (SodA), although these enzymes play no role in dormant spore resistance to oxidizing agents, most likely because enzymes in the spore core are inactive due to the core's low water content ([20](#B20)[–](#B21)[23](#B23)). Mechanisms to prevent damage caused by ROS, in particular damage to DNA, include protective DNA-binding proteins as well as enzymes such as alkyl hydroperoxide reductases, catalases, and superoxide dismutases, which can destroy the oxidizing agents alkyl hydroperoxides, hydrogen peroxide, and superoxide, respectively. A study of the role of oxidative stress responsive proteins such as the DNA-binding protein MrgA, alkyl hydroperoxide reductase, catalases, and superoxide dismutases in the resistance of *B. subtilis* spores to oxidative stress caused by paraquat and hydrogen peroxide exposure showed that inactivation of genes coding for the protective enzymes or MrgA had no effect on the spores' heat or hydrogen peroxide resistance ([21](#B21)). Spore DNA damage can also be repaired during germination via a number of different pathways such as direct reversal, nonhomologous end joining (NHEJ, encoded by YkoV and YkoU), base and nucleotide excision repair (BER and NER, respectively), mismatch repair, recombination-mediated repair, and translesion synthesis ([24](#B24)[–](#B25)[28](#B28); reviewed in references [6](#B6) and [29](#B29)). Two AP endonucleases, ExoA and Nfo, have also been implicated in the repair of AP sites caused by oxidizing agents in germinating *B. subtilis* spores ([24](#B24)). However, there has been no systematic study of the relationship between the spore core protective features (i.e., α/β/γ-type SASP, DPA, and core hydration), the oxidative stress response (by MrgA), ROS detoxification (via SodA or KatX), and DNA repair (by NHEJ or BER) in spores' ionizing radiation resistance, and this is the subject of the present work.
+
+## MATERIALS AND METHODS
+
+### Bacterial strains, growth, sporulation, and spore purification.
+
+The *B. subtilis* strains used in this work are listed in [Table 1](#T1), and all are isogenic with the wild-type strain PS832. Spores were obtained by cultivation under vigorous aeration at 37°C for 7 days in double-strength liquid Schaeffer sporulation medium ([30](#B30)), and spores were purified and stored as described previously ([31](#B31)[–](#B32)[33](#B33)). When appropriate, chloramphenicol (5 μg/ml), neomycin (10 μg/ml), spectinomycin (100 μg/ml), erythromycin (1 μg/ml), or tetracycline (10 μg/ml) was added to the medium. Spore preparations consisted of single spores with no detectable clumps and were free (>99%) of growing cells, germinated spores, and cell debris, as seen in the phase-contrast microscope ([32](#B32)[–](#B33)[34](#B34)).
+
+#### TABLE 1.
+
+*B. subtilis* strains used in this study
+
+| Strain | Relevant genotype and phenotype | Reference |
+| --- | --- | --- |
+| PS832 | Trp+ revertant of strain 168 (wild type) | [40](#B40) |
+| PS283*[a](#TF1-1)* | Δ*sspA*, SASP-α−, Cmr | [45](#B45) |
+| PS338*[a](#TF1-1)* | Δ*sspB*, SASP-β−, Cmr | [45](#B45) |
+| PS483*[a](#TF1-1)* | Δ*sspE*, SASP-γ−, Cmr | [38](#B38) |
+| PS356*[b](#TF1-2)* | Δ*sspA* Δ*sspB*, α−β− | [22](#B22) |
+| PS482*[a](#TF1-1)* | Δ*sspA* Δ*sspB* Δ*sspE*, α−β−γ−, Cmr | [46](#B46) |
+| PS1899*[a](#TF1-1)* | Δ*dacB*::Cmr | [22](#B22) |
+| PS2211*[a](#TF1-1)*,*[b](#TF1-2)* | Δ*dacB*::Cmr, α−β− | [22](#B22) |
+| FB122*[c](#TF1-3)*,*[d](#TF1-4)* | Δ*sleB*::Spcr Δ*spoVF*::Tetr, DPA− | [39](#B39) |
+| PS3664*[a](#TF1-1)*,*[b](#TF1-2)*,*[c](#TF1-3)*,*[d](#TF1-4)* | Δ*sleB*::Spcr Δ*spoVF*::Tetr, DPA−, α−β− | [47](#B47) |
+| PS2496*[a](#TF1-1)* | Δ*mrgA*::Cmr | [21](#B21) |
+| PS2507*[a](#TF1-1)*,*[b](#TF1-2)* | Δ*mrgA*::Cmr, α−β− | [21](#B21) |
+| PS2495*[a](#TF1-1)* | Δ*sodA*::Cmr | [21](#B21) |
+| PS2506*[a](#TF1-1)*,*[b](#TF1-2)* | Δ*sodA*::Cmr, α−β− | [21](#B21) |
+| PS2558*[a](#TF1-1)* | Δ*katX*::Cmr | [21](#B21) |
+| PS2559*[a](#TF1-1)*,*[b](#TF1-2)* | Δ*katX*::Cmr, α−β− | [21](#B21) |
+| PERM454*[d](#TF1-4)*,*[e](#TF1-5)* | Δ*exoA*::Tetr Δ*nfo*::Neor | [24](#B24) |
+| PERM450*[a](#TF1-1)*,*[b](#TF1-2)*,*[d](#TF1-4)*,*[e](#TF1-5)* | Δ*exoA*::Tetr Δ*nfo*::Neor, α−β− | [24](#B24) |
+| PS3722*[f](#TF1-6)* | Δ*ykoVU*::Ermr | [25](#B25) |
+| PS3751*[a](#TF1-1)*,*[b](#TF1-2)*,*[f](#TF1-6)* | Δ*ykoVU*::Ermr, α−β− | [25](#B25) |
+
+[Open in a new tab](table/T1/)
+
+a
+
+Cmr, resistant to chloramphenicol (5 μg/ml).
+
+b
+
+α−β−, spores lack SASP-α and -β and thus ∼80% of the spore's pool of α/β-type SASP ([35](#B35)).
+
+c
+
+Spcr, resistant to spectinomycin (100 μg/ml).
+
+d
+
+Tetr, resistant to tetracycline (10 μg/ml).
+
+e
+
+Neor, resistant to neomycin (10 μg/ml).
+
+f
+
+Ermr, resistant to erythromycin (1 μg/ml).
+
+### Measurement of spore resistance to ionizing radiation.
+
+Preparation of spore samples for radiation exposure has been described in detail previously ([33](#B33), [34](#B34)). In brief, suspensions of spores of the different *B. subtilis* strains ([Table 1](#T1)) were prepared in sterile distilled water to a final concentration of 1 × 108 spores per ml. Triplicate samples of spores in water (100 μl) were individually exposed to three different types of ionizing radiation: X rays (200 keV/15 mA), protons (with energy of 218 MeV, LET of 0.4 keV/μm, and a range of 301 mm in water), and high-energy-charged iron ions (Fe; with energy of 500 MeV/nucleon, LET of 200 keV/μm, and a range of 99 mm in water). X ray, proton, and Fe irradiations were conducted at the German Aerospace Center, Institute of Aerospace Medicine (DLR-ME), in Cologne, Germany, at the University of Florida Proton Therapy Institute (UF-PTI), Jacksonville, Florida, USA, and at the heavy ion medical accelerator (HIMAC) facility at the National Institute for Radiological Sciences (NIRS) in Chiba, Japan, respectively. Details on the irradiation geometry of the NIRS-HIMAC, DLR-ME, and UF-PTI facilities, beam monitoring, dosimetry, and dose calculations have been described ([34](#B34)[–](#B35)[37](#B37)).
+
+### Numerical and statistical analysis.
+
+Spore survival was determined from appropriate dilutions in distilled water as colony-forming ability after incubation overnight at 37°C on nutrient broth (NB) agar plates (Difco, Detroit, MI, USA) ([33](#B33), [34](#B34), [36](#B36)). The surviving fraction of *B. subtilis* spores was determined from the ratio *N*/*N*0, where *N* is the number of CFU of the irradiated sample and *N*0 that of the nonirradiated controls. Spore inactivation curves were obtained as described previously ([34](#B34)). Data are reported as *D*10-values, the dose of ionizing radiation killing 90% of the initial spore population ([34](#B34)). All data are expressed as averages ± standard deviations (*n* = 3). The significance of the differences in the survival rates and relative sensitivities were determined by analysis of variance (ANOVA), using SigmaPlot software Version 12.0 (Systat Software GmbH, Erkrath, Germany). Values were evaluated in multigroup pairwise combinations, and differences with *P* values of <0.05 were considered statistically significant ([33](#B33), [34](#B34), [36](#B36)).
+
+## RESULTS
+
+The importance of the two types of SASP, the DNA-binding α/β type and non-DNA-binding γ type, alone and in combination with various other protective spore core components, including core water content and DPA, has been assessed to establish their roles as radioprotectants. *B. subtilis* spores have several additional potential mechanisms for minimizing damage to spore DNA including BER via AP endonucleases (by ExoA and Nfo), DNA double-strand break repair (via NHEJ by YkoU and V), and radical detoxification (superoxide dismutase SodA and major spore catalase KatX), as well as via the oxidative stress response (DNA-binding protein MrgA); spores of strains lacking these various gene products have been also included in this study. Wild-type and mutant spores ([Table 1](#T1)) were subjected to three different types of ionizing radiation, X rays, protons, and high-energy Fe ions.
+
+### Role of spore core components in ionizing radiation resistance.
+
+Spore structures (e.g., the spore coat and cortex) and components in the spore core (e.g., Ca-DPA, α/β-type SASP) have previously been demonstrated to protect spores from inactivation after exposure to various sporicidal treatments such as exposure to UV radiation, hydrogen peroxide, or heat (reviewed in references [4](#B4), [6](#B6), and [7](#B7)). Spores lacking various spore core components were irradiated with X rays ([Fig. 1A](#F1)), protons ([Fig. 1B](#F1)), or Fe ions ([Fig. 1C](#F1)). In order, from most to least sensitive, were spores of mutants in *sspA* (encoding one of two major α/β-type SASP [[38](#B38)]) > *sspB* (encoding the less abundant major α/β-type SASP [[38](#B38)]) > *dacB*, previously shown to exhibit a 1.6-fold-increased core water content (52 to 65%) compared to that of wild-type spores (34 to 41%) ([22](#B22), [23](#B23)) > *sleB* plus *spoVF* (which allow isolation of stable spores that lack Ca-DPA [[39](#B39)]) > *sspE* (encoding the only γ-type SASP; termed γ− spores), which is equivalent to the wild type ([Fig. 1](#F1)).
+
+#### FIG 1.
+
+[![FIG 1](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5fa1/3911009/0b5d07bb94d9/zam9991049840001.jpg)](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=3911009_zam9991049840001.jpg)
+
+[Open in a new tab](figure/F1/)
+
+Spore resistance to irradiation with X rays (A), protons (B), and high-energy charged Fe ions (C). Spores differing in various core components, including major α/β-type SASP, the single γ-type SASP, and Ca-DPA (due to loss of DPA synthetase encoded by *spoVF*), or core water content (due to the *dacB* mutation), with (white bars) and without (gray bars) protection by α/β-type SASP. Spores were irradiated in water, and *D*10 values are expressed as averages ± standard deviations (*n* = 3) as described in the text. Lowercase letters above the bars denote groups significantly different by ANOVA (*P* < 0.05). Note the differences in the *y* axes of panels A, B, and C.
+
+Radiation resistance of spores carrying mutations in *sspE*, *dacB*, or both *sleB* and *spoVF* was tested either in a wild-type background or in an *sspA sspB* background lacking both major α/β-type SASP (termed α−β− spores) ([Fig. 2](#F2)). The combined effects on spore sensitivity, from most sensitive to least, were as follows: α−β−
+*dacB* > α−β−
+*sleB spoVF* > α−β− ≫ wild-type ≈ γ− ([Fig. 2](#F2)). The results show that spore core dehydration and DPA, but not γ-type SASP, function in addition to α/β-type SASP as radioprotectants in the spore core.
+
+#### FIG 2.
+
+[![FIG 2](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5fa1/3911009/51b8eeff3f9d/zam9991049840002.jpg)](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=3911009_zam9991049840002.jpg)
+
+[Open in a new tab](figure/F2/)
+
+Impact of spore core-specific components on spore resistance to different types of ionizing radiation: X rays (A), protons (B), and high-energy charged Fe ions (C) with (white bars) and without (gray bars) protection by α/β-type SASP. Relative spore sensitivity was expressed as the ratio of the *D*10 value of spores of each mutant strain to the *D*10 value of spores of the corresponding reference strain (wild-type or α−β−) from each irradiation, using data from [Fig. 1](#F1). Data are averages and standard deviations (*n* = 3). Actual data values are given above the corresponding columns in [Fig. 1](#F1). Lowercase letters next to the bars denote groups significantly different by ANOVA (*P* < 0.05).
+
+### Role of oxidative stress responses and DNA repair in spore ionizing radiation resistance.
+
+Spores of strains defective in ROS detoxification, the oxidative stress response DNA-binding protein MrgA, or DNA repair were exposed to X rays, protons, and Fe ions, and their sensitivities were compared ([Fig. 3](#F3)). Spores deficient in radical detoxification (*sodA* or *katX* spores) were no more sensitive than wild-type spores to any type of ionizing radiation tested ([Fig. 3](#F3)), as expected given the minimal activity of enzymes in the spore core. Spores lacking a major oxidative-stress-protective protein (*mrgA* spores) were significantly more sensitive than wild-type spores to X rays and Fe ions, but not to protons, which could be due to the different spectra of lesions induced by the three types of radiation ([9](#B9), [11](#B11), [15](#B15)) ([Fig. 3](#F3)). Spores lacking BER (*exoA nfo* spores) and double-strand break repair (*ykoVU* spores) were both significantly more sensitive to all types of radiation than wild-type spores ([Fig. 3](#F3)). Comparison of the spore radiation resistance in wild-type and α−β− backgrounds showed that in response to X rays only the *ykoVU* spores showed an additive effect with the loss of α/β-type SASP ([Fig. 4A](#F4)). In response to proton exposure, the effects of the *katX*, *mrgA*, *exoA nfo*, and *ykoVU* mutations (but not *sodA*) were all potentiated in the α−β− background ([Fig. 4B](#F4)). In response to Fe ions, only the *exoA nfo* (BER-deficient) and *ykoVU* (NHEJ-deficient) mutant spores demonstrated a significantly enhanced sensitivity in the α−β− background ([Fig. 4C](#F4)).
+
+#### FIG 3.
+
+[![FIG 3](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5fa1/3911009/f68d33126b54/zam9991049840003.jpg)](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=3911009_zam9991049840003.jpg)
+
+[Open in a new tab](figure/F3/)
+
+Spore resistance to irradiation with X rays (A), protons (B), and high-energy charged Fe ions (C). Spores deficient in radical detoxification by SodA (superoxide dismutase), KatX (major spore catalase), DNA protection by MrgA (oxidative stress resistance DNA-binding protein), DNA repair by ExoA and Nfo, or YkoV and YkoU (with [white bars] and without [gray bars] protection by α/β-type SASP), were exposed in water, and *D*10 values are expressed as averages ± standard deviations (*n* = 3) as described in the text. Lowercase letters above the bars denote groups significantly different by ANOVA (*P* < 0.05). Note the differences in the *y* axes of panels A, B, and C.
+
+#### FIG 4.
+
+[![FIG 4](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5fa1/3911009/fa460962e9ca/zam9991049840004.jpg)](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=3911009_zam9991049840004.jpg)
+
+[Open in a new tab](figure/F4/)
+
+Relative ionizing radiation sensitivities of spores lacking radical detoxification by SodA or KatX, DNA protection by MrgA, or DNA repair by ExoA plus Nfo or YkoV plus YkoU to X rays (A), protons (B), and high-energy charged Fe ions (C) with (white bars) and without (gray bars) protection by α/β-type SASP. Relative spore sensitivity is expressed as the ratio of the *D*10 value of spores of each mutant strain to the *D*10 value of spores of the corresponding reference strain (wild-type or α−β−) from each irradiation, using data from [Fig. 3](#F3). Data are averages and standard deviations (*n* = 3). Actual data values are given above the corresponding columns. Lowercase letters next to the bars denote groups significantly different by ANOVA (*P* < 0.05).
+
+## DISCUSSION
+
+In regard to the characteristic resistance to ionizing radiation, spores of the Gram-positive bacterium *B. subtilis* have often been used to evaluate sterilization efforts in areas of food preservation, medical sterilization, and decontamination of potential biohazardous materials ([3](#B3), [4](#B4), [6](#B6)). Ionizing radiation is known to cause damage to numerous targets within the cell, including DNA, due both to (i) direct interaction of the radiation with the target molecule and to (ii) indirect effects due to the production of reactive species such as oxygen radicals ([9](#B9), [10](#B10), [12](#B12), [13](#B13), [15](#B15)). Ionizing radiation induces a large variety of damages to DNA bases and through interaction with the sugar moiety can cause formation of DNA strand breaks, either SSB or DSB. DNA strand breaks were reported to be the major lesions in the genome of spores exposed to ionizing radiation (reviewed in references [4](#B4) and [7](#B7)), caused either directly by the highly energetic photons or accelerated particles or indirectly via interaction of radiation-induced free radicals, e.g., ROS, with the DNA ([9](#B9), [13](#B13), [15](#B15), [16](#B16)). The results of several radiobiological studies at accelerators and in space experiments lead to the assumption that at least two qualitatively different lesions are formed depending on the type and energy of the applied ionizing radiation. The spore's structure and chemical composition play major roles in spore resistance ([6](#B6), [7](#B7), [18](#B18)). The spore's general structure is very different from that of a growing cell, with a number of features and constituents unique to spores ([4](#B4)). Several of these features have been shown to be involved in spore resistance to some chemicals and physical treatments, but little is known of their role in spore resistance to ionizing radiation. Spore DNA is saturated with a group of SASP that bind to DNA largely on the outside of the DNA helix and straighten and stiffen the DNA while changing the DNA to an A-like helix (reviewed in reference [6](#B6) and references therein). As a consequence, DNA properties in spores are dramatically different from those in vegetative cells, e.g., spore DNA complexed with SASP is much more resistant to chemical attack, thermal degradation, and UV radiation ([6](#B6), [7](#B7), [17](#B17), [22](#B22), [40](#B40)), strongly suggesting that SASP may also be important for spore resistance to ionizing radiation, as indicated in earlier studies testing mutants lacking a single SASP ([17](#B17), [33](#B33)).
+
+The current work has shown that protective components in the spore core are important determinants of spore resistance to X ray, proton, and heavy Fe ion bombardment with the order of importance being as follows: α/β-type SASP ≫ core dehydration > DPA. In contrast, the single major γ-type SASP does not bind to DNA and plays no protective role in spore ionizing radiation resistance, as has also been found when spore resistance to many other agents has been tested ([23](#B23), [37](#B37); reviewed in reference [6](#B6)) ([Fig. 1](#F1) and [2](#F2)). In the dormant state, spores remain metabolically inactive, and thus substantial DNA, protein, tRNA, and ribosome damage may accumulate, and the spores are incapable of repairing and/or degrading such damaged DNA and proteins ([6](#B6), [7](#B7), [18](#B18)). Consequently, damage to DNA, proteins, or other essential components of bacterial spores poses a unique problem, since such repair of such damage does not occur until the processes of germination and outgrowth, when spores reactivate and prepare to return to vegetative growth ([6](#B6), [7](#B7), [28](#B28)). Repair of DSB and base modification/loss via NHEJ and BER appear to be important mechanisms for spore resistance to ionizing radiation, and the MrgA-mediated oxidative stress response (with effects in wild-type spores for X-ray stress and in α−β− spores for proton radiation resistance) plays a lesser role. In contrast, ROS detoxification by catalase or superoxide dismutase appears to play a very minor role, if any, in spore resistance to ionizing radiation, as is also the case in spore resistance to oxidizing agents such as hydrogen peroxide and superoxide ([20](#B20), [21](#B21)) ([Fig. 3](#F3) and [4](#F4)). Clearly the data indicate that spore DNA is a major target of lethal ionizing radiation damage, based on the observation that the major factors contributing significantly to spore survival ([Fig. 3](#F3) and [4](#F4)) in response to different types of ionizing radiation are known to be important in either DNA protection in spores or DNA repair in spore germination and outgrowth. The findings in this communication thus complement the results from microarray experiments demonstrating upregulation of stress-related regulons responding to DNA damage (SOS response) and oxidative stress (PerR regulon) during germination of spores exposed to space conditions, including the effects of galactic cosmic radiation ([41](#B41)).
+
+Spores appear to have two possible ways to minimize deleterious effects of ionizing radiation: (i) by protecting dormant spore DNA from damage in the first place ([Fig. 1](#F1) and [2](#F2)) and (ii) by ensuring detoxification and repair of direct and indirect damage during spore germination ([Fig. 3](#F3) and [4](#F4)). Because ionizing radiation causes such a wide spectrum of direct and indirect DNA damage, it will be interesting to determine the contributions of additional error-free and error-prone DNA repair pathways (e.g., mismatch repair, translesion synthesis, and homologous recombination [[29](#B29), [42](#B42)[–](#B43)[44](#B44)]), to gain further detailed insights into spore resistance to ionizing radiation.
+
+## ACKNOWLEDGMENTS
+
+We thank Andrea Schröder and Petra Schwendner for their excellent technical assistance during parts of this work and Mario Pedraza-Reyes for his generous donation of *B. subtilis* strains. We are very grateful to all UF-PTI and HIMAC operators for their excellent support during proton and Fe ion irradiations. We express gratitude to Thomas Berger and Daniel Matthiä for their consulting, providing technical data and discussion.
+
+R.M., M.R., and G.R. were supported by DLR grant DLR-FuE-Projekt ISS Nutzung in der Biodiagnostik, Programm RF-FuW, Teilprogramm 475, and DLR *Forschungssemester*-fellowship (to R.M.). Work in the Setlow lab was supported by a U.S. Department of Defense Multi-University Research Initiative through the U.S. Army Research Laboratory and the U.S. Army Research Office under contract number W911NF-09-1-0286.
+
+These results will be included in the research reports of the HIMAC project 13J302 (*hiiSPORES* project).
+
+## Footnotes
+
+**Published ahead of print** 11 October 2013
+
+## REFERENCES
+
+* 1.Blatchley ER, Meeusen A, Aronson AI, Brewster L.
+  2005.
+  Inactivation of Bacillus spores by ultraviolet or gamma radiation. J. Environ. Eng.
+  131:1245–1252. 10.1061/(ASCE)0733-9372(2005)131:9(1245) [[DOI](https://doi.org/10.1061/%28ASCE%290733-9372%282005%29131%3A9%281245%29)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Environ.%20Eng.&title=Inactivation%20of%20Bacillus%20spores%20by%20ultraviolet%20or%20gamma%20radiation&author=ER%20Blatchley&author=A%20Meeusen&author=AI%20Aronson&author=L%20Brewster&volume=131&publication_year=2005&pages=1245-1252&doi=10.1061/(ASCE)0733-9372(2005)131:9(1245)&)]
+* 2.Horneck G.
+  1994.
+  HZE particle effects in space. Acta Astronaut.
+  11:749–755 [[DOI](https://doi.org/10.1016/0094-5765%2894%2990170-8)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/11538453/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Acta%20Astronaut.&title=HZE%20particle%20effects%20in%20space&author=G%20Horneck&volume=11&publication_year=1994&pages=749-755&pmid=11538453&doi=10.1016/0094-5765(94)90170-8&)]
+* 3.Niebuhr SE, Dickson JS.
+  2003.
+  Destruction of Bacillus anthracis strain Sterne 34F2 spores in postal envelopes by exposure to electron beam irradiation. Lett. Appl. Microbiol.
+  37:17–20. 10.1046/j.1472-765X.2003.01337.x [[DOI](https://doi.org/10.1046/j.1472-765X.2003.01337.x)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/12803549/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Lett.%20Appl.%20Microbiol.&title=Destruction%20of%20Bacillus%20anthracis%20strain%20Sterne%2034F2%20spores%20in%20postal%20envelopes%20by%20exposure%20to%20electron%20beam%20irradiation&author=SE%20Niebuhr&author=JS%20Dickson&volume=37&publication_year=2003&pages=17-20&pmid=12803549&doi=10.1046/j.1472-765X.2003.01337.x&)]
+* 4.Nicholson WL, Munakata N, Horneck G, Melosh HJ, Setlow P.
+  2000.
+  Resistance of bacterial endospores to extreme terrestrial and extraterrestrial environments. Microbiol. Mol. Biol. Rev.
+  64:548–572. 10.1128/MMBR.64.3.548-572.2000 [[DOI](https://doi.org/10.1128/MMBR.64.3.548-572.2000)] [[PMC free article](/articles/PMC99004/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/10974126/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Microbiol.%20Mol.%20Biol.%20Rev.&title=Resistance%20of%20bacterial%20endospores%20to%20extreme%20terrestrial%20and%20extraterrestrial%20environments&author=WL%20Nicholson&author=N%20Munakata&author=G%20Horneck&author=HJ%20Melosh&author=P%20Setlow&volume=64&publication_year=2000&pages=548-572&pmid=10974126&doi=10.1128/MMBR.64.3.548-572.2000&)]
+* 5.Horneck G, Klaus DM, Mancinelli RL.
+  2010.
+  Space microbiology. Microbiol. Mol. Biol. Rev.
+  74:121–156. 10.1128/MMBR.00016-09 [[DOI](https://doi.org/10.1128/MMBR.00016-09)] [[PMC free article](/articles/PMC2832349/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/20197502/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Microbiol.%20Mol.%20Biol.%20Rev.&title=Space%20microbiology&author=G%20Horneck&author=DM%20Klaus&author=RL%20Mancinelli&volume=74&publication_year=2010&pages=121-156&pmid=20197502&doi=10.1128/MMBR.00016-09&)]
+* 6.Setlow P.
+  2006.
+  Spores of Bacillus subtilis: their resistance to and killing by radiation, heat and chemicals. J. Appl. Microbiol.
+  101:514–525. 10.1111/j.1365-2672.2005.02736.x [[DOI](https://doi.org/10.1111/j.1365-2672.2005.02736.x)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/16907802/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Appl.%20Microbiol.&title=Spores%20of%20Bacillus%20subtilis:%20their%20resistance%20to%20and%20killing%20by%20radiation,%20heat%20and%20chemicals&author=P%20Setlow&volume=101&publication_year=2006&pages=514-525&pmid=16907802&doi=10.1111/j.1365-2672.2005.02736.x&)]
+* 7.Setlow P.
+  2007.
+  I will survive: DNA protection in bacterial spores. Trends Microbiol.
+  15:172–180. 10.1016/j.tim.2007.02.004 [[DOI](https://doi.org/10.1016/j.tim.2007.02.004)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/17336071/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Trends%20Microbiol.&title=I%20will%20survive:%20DNA%20protection%20in%20bacterial%20spores&author=P%20Setlow&volume=15&publication_year=2007&pages=172-180&pmid=17336071&doi=10.1016/j.tim.2007.02.004&)]
+* 8.Cadet J, Delatour T, Douki T, Gasparutto D, Pouget JP, Ravanat JL, Sauvaigo S.
+  1999.
+  Hydroxyl radicals and DNA base damage. Mutat. Res.
+  424:9–21 [[DOI](https://doi.org/10.1016/s0027-5107%2899%2900004-4)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/10064846/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Mutat.%20Res.&title=Hydroxyl%20radicals%20and%20DNA%20base%20damage&author=J%20Cadet&author=T%20Delatour&author=T%20Douki&author=D%20Gasparutto&author=JP%20Pouget&volume=424&publication_year=1999&pages=9-21&pmid=10064846&doi=10.1016/s0027-5107(99)00004-4&)]
+* 9.Goodhead DT.
+  1994.
+  Initial events in the cellular effects of ionizing radiations: clustered damage in DNA. Int. J. Radiat. Biol.
+  65:7–17 [[DOI](https://doi.org/10.1080/09553009414550021)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/7905912/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Int.%20J.%20Radiat.%20Biol.&title=Initial%20events%20in%20the%20cellular%20effects%20of%20ionizing%20radiations:%20clustered%20damage%20in%20DNA&author=DT%20Goodhead&volume=65&publication_year=1994&pages=7-17&pmid=7905912&doi=10.1080/09553009414550021&)]
+* 10.Hutchinson F.
+  1985.
+  Chemical changes induced in DNA by ionizing radiation. Prog. Nucleic Acid Res. Mol. Biol.
+  32:115–154 [[DOI](https://doi.org/10.1016/s0079-6603%2808%2960347-5)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/3003798/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Prog.%20Nucleic%20Acid%20Res.%20Mol.%20Biol.&title=Chemical%20changes%20induced%20in%20DNA%20by%20ionizing%20radiation&author=F%20Hutchinson&volume=32&publication_year=1985&pages=115-154&pmid=3003798&doi=10.1016/s0079-6603(08)60347-5&)]
+* 11.Hada M, Sutherland BM.
+  2006.
+  Spectrum of complex DNA damages depends on the incident radiation. Radiat. Res.
+  165:223–230. 10.1667/RR3498.1 [[DOI](https://doi.org/10.1667/RR3498.1)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/16435920/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Radiat.%20Res.&title=Spectrum%20of%20complex%20DNA%20damages%20depends%20on%20the%20incident%20radiation&author=M%20Hada&author=BM%20Sutherland&volume=165&publication_year=2006&pages=223-230&pmid=16435920&doi=10.1667/RR3498.1&)]
+* 12.Sutherland BM, Bennett PV, Sidorkina O, Laval J.
+  2000.
+  Clustered damages and total lesions induced in DNA by ionizing radiation: oxidized bases and strand breaks. Biochemistry
+  39:8026–8031. 10.1021/bi9927989 [[DOI](https://doi.org/10.1021/bi9927989)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/10891084/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Biochemistry&title=Clustered%20damages%20and%20total%20lesions%20induced%20in%20DNA%20by%20ionizing%20radiation:%20oxidized%20bases%20and%20strand%20breaks&author=BM%20Sutherland&author=PV%20Bennett&author=O%20Sidorkina&author=J%20Laval&volume=39&publication_year=2000&pages=8026-8031&pmid=10891084&doi=10.1021/bi9927989&)]
+* 13.Lomax ME, Gulston MK, O'Neill P.
+  2002.
+  Chemical aspects of clustered DNA damage induction by ionising radiation. Radiat. Prot. Dosimetry
+  99:63–68. 10.1093/oxfordjournals.rpd.a006840 [[DOI](https://doi.org/10.1093/oxfordjournals.rpd.a006840)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/12194362/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Radiat.%20Prot.%20Dosimetry&title=Chemical%20aspects%20of%20clustered%20DNA%20damage%20induction%20by%20ionising%20radiation&author=ME%20Lomax&author=MK%20Gulston&author=P%20O'Neill&volume=99&publication_year=2002&pages=63-68&pmid=12194362&doi=10.1093/oxfordjournals.rpd.a006840&)]
+* 14.Dianov GL, O'Neill P, Goodhead DT.
+  2001.
+  Securing genome stability by orchestrating DNA repair: removal of radiation-induced clustered lesions in DNA. Bioessays
+  23:745–749. 10.1002/bies.1104 [[DOI](https://doi.org/10.1002/bies.1104)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/11494323/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Bioessays&title=Securing%20genome%20stability%20by%20orchestrating%20DNA%20repair:%20removal%20of%20radiation-induced%20clustered%20lesions%20in%20DNA&author=GL%20Dianov&author=P%20O'Neill&author=DT%20Goodhead&volume=23&publication_year=2001&pages=745-749&pmid=11494323&doi=10.1002/bies.1104&)]
+* 15.Yokoya A, Shikazono N, Fujii K, Urushibara A, Akamatsu K, Watanabe R.
+  2008.
+  DNA damage induced by the direct effect of radiation. Radiat. Phys. Chem.
+  77:1280–1285. 10.1016/j.radphyschem.2008.05.021 [[DOI](https://doi.org/10.1016/j.radphyschem.2008.05.021)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Radiat.%20Phys.%20Chem.&title=DNA%20damage%20induced%20by%20the%20direct%20effect%20of%20radiation&author=A%20Yokoya&author=N%20Shikazono&author=K%20Fujii&author=A%20Urushibara&author=K%20Akamatsu&volume=77&publication_year=2008&pages=1280-1285&doi=10.1016/j.radphyschem.2008.05.021&)]
+* 16.Asaithamby A, Chen DJ.
+  2011.
+  Mechanism of cluster DNA damage repair in response to high-atomic number and energy particles radiation. Mutat. Res.
+  711:87–99. 10.1016/j.mrfmmm.2010.11.002 [[DOI](https://doi.org/10.1016/j.mrfmmm.2010.11.002)] [[PMC free article](/articles/PMC3318975/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/21126526/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Mutat.%20Res.&title=Mechanism%20of%20cluster%20DNA%20damage%20repair%20in%20response%20to%20high-atomic%20number%20and%20energy%20particles%20radiation&author=A%20Asaithamby&author=DJ%20Chen&volume=711&publication_year=2011&pages=87-99&pmid=21126526&doi=10.1016/j.mrfmmm.2010.11.002&)]
+* 17.Granger AC, Gaidamakova EK, Matrosova VY, Daly MJ, Setlow P.
+  2011.
+  Effects of Mn and Fe levels on Bacillus subtilis spore resistance and effects of Mn2+, other divalent cations, orthophosphate, and dipicolinic acid on protein resistance to ionizing radiation. Appl. Environ. Microbiol.
+  77:32–40. 10.1128/AEM.01965-10 [[DOI](https://doi.org/10.1128/AEM.01965-10)] [[PMC free article](/articles/PMC3019732/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/21057011/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Appl.%20Environ.%20Microbiol.&title=Effects%20of%20Mn%20and%20Fe%20levels%20on%20Bacillus%20subtilis%20spore%20resistance%20and%20effects%20of%20Mn2+,%20other%20divalent%20cations,%20orthophosphate,%20and%20dipicolinic%20acid%20on%20protein%20resistance%20to%20ionizing%20radiation&author=AC%20Granger&author=EK%20Gaidamakova&author=VY%20Matrosova&author=MJ%20Daly&author=P%20Setlow&volume=77&publication_year=2011&pages=32-40&pmid=21057011&doi=10.1128/AEM.01965-10&)]
+* 18.Leggett MJ, McDonnell G, Denyer SP, Setlow P, Maillard JY.
+  2012.
+  Bacterial spore structures and their protective role in biocide resistance. J. Appl. Microbiol.
+  113:485–498. 10.1111/j.1365-2672.2012.05336.x [[DOI](https://doi.org/10.1111/j.1365-2672.2012.05336.x)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/22574673/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Appl.%20Microbiol.&title=Bacterial%20spore%20structures%20and%20their%20protective%20role%20in%20biocide%20resistance&author=MJ%20Leggett&author=G%20McDonnell&author=SP%20Denyer&author=P%20Setlow&author=JY%20Maillard&volume=113&publication_year=2012&pages=485-498&pmid=22574673&doi=10.1111/j.1365-2672.2012.05336.x&)]
+* 19.McKenney PT, Driks A, Eichenberger P.
+  2013.
+  The Bacillus subtilis endospore: assembly and functions of the multilayered coat. Nat. Rev. Microbiol.
+  11:33–44 [[DOI](https://doi.org/10.1038/nrmicro2921)] [[PMC free article](/articles/PMC9910062/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/23202530/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Nat.%20Rev.%20Microbiol.&title=The%20Bacillus%20subtilis%20endospore:%20assembly%20and%20functions%20of%20the%20multilayered%20coat&author=PT%20McKenney&author=A%20Driks&author=P%20Eichenberger&volume=11&publication_year=2013&pages=33-44&pmid=23202530&doi=10.1038/nrmicro2921&)]
+* 20.Bagyan I, Casillas-Martinez L, Setlow P.
+  1998.
+  The *katX* gene, which codes for the catalase in spores of Bacillus subtilis, is a forespore-specific gene controlled by SigmaF, and KatX is essential for hydrogen peroxide resistance of the germinating spore. J. Bacteriol.
+  180:2057–2062 [[DOI](https://doi.org/10.1128/jb.180.8.2057-2062.1998)] [[PMC free article](/articles/PMC107130/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/9555886/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=The%20katX%20gene,%20which%20codes%20for%20the%20catalase%20in%20spores%20of%20Bacillus%20subtilis,%20is%20a%20forespore-specific%20gene%20controlled%20by%20SigmaF,%20and%20KatX%20is%20essential%20for%20hydrogen%20peroxide%20resistance%20of%20the%20germinating%20spore&author=I%20Bagyan&author=L%20Casillas-Martinez&author=P%20Setlow&volume=180&publication_year=1998&pages=2057-2062&pmid=9555886&doi=10.1128/jb.180.8.2057-2062.1998&)]
+* 21.Casillas-Martinez L, Setlow P.
+  1997.
+  Alkyl hydroperoxide reductase, catalase, MrgA, and superoxide dismutase are not involved in resistance of Bacillus subtilis spores to heat or oxidizing agents. J. Bacteriol.
+  179:7420–7425 [[DOI](https://doi.org/10.1128/jb.179.23.7420-7425.1997)] [[PMC free article](/articles/PMC179693/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/9393707/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Alkyl%20hydroperoxide%20reductase,%20catalase,%20MrgA,%20and%20superoxide%20dismutase%20are%20not%20involved%20in%20resistance%20of%20Bacillus%20subtilis%20spores%20to%20heat%20or%20oxidizing%20agents&author=L%20Casillas-Martinez&author=P%20Setlow&volume=179&publication_year=1997&pages=7420-7425&pmid=9393707&doi=10.1128/jb.179.23.7420-7425.1997&)]
+* 22.Popham DL, Sengupta S, Setlow P.
+  1995.
+  Heat, hydrogen peroxide, and UV resistance of Bacillus subtilis spores with increased core water content and with or without major DNA-binding proteins. Appl. Environ. Microbiol.
+  61:3633–3638 [[DOI](https://doi.org/10.1128/aem.61.10.3633-3638.1995)] [[PMC free article](/articles/PMC167661/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/7486999/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Appl.%20Environ.%20Microbiol.&title=Heat,%20hydrogen%20peroxide,%20and%20UV%20resistance%20of%20Bacillus%20subtilis%20spores%20with%20increased%20core%20water%20content%20and%20with%20or%20without%20major%20DNA-binding%20proteins&author=DL%20Popham&author=S%20Sengupta&author=P%20Setlow&volume=61&publication_year=1995&pages=3633-3638&pmid=7486999&doi=10.1128/aem.61.10.3633-3638.1995&)]
+* 23.Moeller R, Setlow P, Reitz G, Nicholson WL.
+  2009.
+  Roles of small, acid-soluble spore proteins and core water content in survival of Bacillus subtilis spores exposed to environmental solar UV radiation. Appl. Environ. Microbiol.
+  75:5202–5208. 10.1128/AEM.00789-09 [[DOI](https://doi.org/10.1128/AEM.00789-09)] [[PMC free article](/articles/PMC2725452/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/19542328/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Appl.%20Environ.%20Microbiol.&title=Roles%20of%20small,%20acid-soluble%20spore%20proteins%20and%20core%20water%20content%20in%20survival%20of%20Bacillus%20subtilis%20spores%20exposed%20to%20environmental%20solar%20UV%20radiation&author=R%20Moeller&author=P%20Setlow&author=G%20Reitz&author=WL%20Nicholson&volume=75&publication_year=2009&pages=5202-5208&pmid=19542328&doi=10.1128/AEM.00789-09&)]
+* 24.Ibarra JR, Orozco AD, Rojas JA, López K, Setlow P, Yasbin RE, Pedraza-Reyes M.
+  2008.
+  Role of the Nfo and ExoA apurinic/apyrimidinic endonucleases in repair of DNA damage during outgrowth of Bacillus subtilis spores. J. Bacteriol.
+  190:2031–2038. 10.1128/JB.01625-07 [[DOI](https://doi.org/10.1128/JB.01625-07)] [[PMC free article](/articles/PMC2258865/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/18203828/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Role%20of%20the%20Nfo%20and%20ExoA%20apurinic/apyrimidinic%20endonucleases%20in%20repair%20of%20DNA%20damage%20during%20outgrowth%20of%20Bacillus%20subtilis%20spores&author=JR%20Ibarra&author=AD%20Orozco&author=JA%20Rojas&author=K%20L%C3%B3pez&author=P%20Setlow&volume=190&publication_year=2008&pages=2031-2038&pmid=18203828&doi=10.1128/JB.01625-07&)]
+* 25.Wang ST, Setlow B, Conlon EM, Lyon JL, Imamura D, Sato T, Setlow P, Losick R, Eichenberger P.
+  2006.
+  The forespore line of gene expression in Bacillus subtilis. J. Mol. Biol.
+  358:16–37. 10.1016/j.jmb.2006.01.059 [[DOI](https://doi.org/10.1016/j.jmb.2006.01.059)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/16497325/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Mol.%20Biol.&title=The%20forespore%20line%20of%20gene%20expression%20in%20Bacillus%20subtilis&author=ST%20Wang&author=B%20Setlow&author=EM%20Conlon&author=JL%20Lyon&author=D%20Imamura&volume=358&publication_year=2006&pages=16-37&pmid=16497325&doi=10.1016/j.jmb.2006.01.059&)]
+* 26.Pitcher RS, Brissett NC, Doherty AJ.
+  2007.
+  Nonhomologous end-joining in bacteria: a microbial perspective. Annu. Rev. Microbiol.
+  61:259–282. 10.1146/annurev.micro.61.080706.093354 [[DOI](https://doi.org/10.1146/annurev.micro.61.080706.093354)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/17506672/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Annu.%20Rev.%20Microbiol.&title=Nonhomologous%20end-joining%20in%20bacteria:%20a%20microbial%20perspective&author=RS%20Pitcher&author=NC%20Brissett&author=AJ%20Doherty&volume=61&publication_year=2007&pages=259-282&pmid=17506672&doi=10.1146/annurev.micro.61.080706.093354&)]
+* 27.Salas-Pacheco JM, Setlow B, Setlow P, Pedraza-Reyes M.
+  2005.
+  Role of the Nfo (YqfS) and ExoA apurinic/apyrimidinic endonucleases in protecting Bacillus subtilis spores from DNA damage. J. Bacteriol.
+  187:7374–7381. 10.1128/JB.187.21.7374-7381.2005 [[DOI](https://doi.org/10.1128/JB.187.21.7374-7381.2005)] [[PMC free article](/articles/PMC1272979/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/16237020/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Role%20of%20the%20Nfo%20(YqfS)%20and%20ExoA%20apurinic/apyrimidinic%20endonucleases%20in%20protecting%20Bacillus%20subtilis%20spores%20from%20DNA%20damage&author=JM%20Salas-Pacheco&author=B%20Setlow&author=P%20Setlow&author=M%20Pedraza-Reyes&volume=187&publication_year=2005&pages=7374-7381&pmid=16237020&doi=10.1128/JB.187.21.7374-7381.2005&)]
+* 28.Setlow B, Setlow P.
+  1996.
+  Role of DNA repair in Bacillus subtilis spore resistance. J. Bacteriol.
+  178:3486–3495 [[DOI](https://doi.org/10.1128/jb.178.12.3486-3495.1996)] [[PMC free article](/articles/PMC178117/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/8655545/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Role%20of%20DNA%20repair%20in%20Bacillus%20subtilis%20spore%20resistance&author=B%20Setlow&author=P%20Setlow&volume=178&publication_year=1996&pages=3486-3495&pmid=8655545&doi=10.1128/jb.178.12.3486-3495.1996&)]
+* 29.Lenhart JS, Schroeder JW, Walsh BW, Simmons LA.
+  2012.
+  DNA repair and genome maintenance in Bacillus subtilis. Microbiol. Mol. Biol. Rev.
+  76:530–564. 10.1128/MMBR.05020-11 [[DOI](https://doi.org/10.1128/MMBR.05020-11)] [[PMC free article](/articles/PMC3429619/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/22933559/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Microbiol.%20Mol.%20Biol.%20Rev.&title=DNA%20repair%20and%20genome%20maintenance%20in%20Bacillus%20subtilis&author=JS%20Lenhart&author=JW%20Schroeder&author=BW%20Walsh&author=LA%20Simmons&volume=76&publication_year=2012&pages=530-564&pmid=22933559&doi=10.1128/MMBR.05020-11&)]
+* 30.Schaeffer P, Millet J, Aubert JP.
+  1965.
+  Catabolic repression of bacterial sporulation. Proc. Natl. Acad. Sci. U. S. A.
+  45:704–711 [[DOI](https://doi.org/10.1073/pnas.54.3.704)] [[PMC free article](/articles/PMC219731/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/4956288/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Proc.%20Natl.%20Acad.%20Sci.%20U.%20S.%20A.&title=Catabolic%20repression%20of%20bacterial%20sporulation&author=P%20Schaeffer&author=J%20Millet&author=JP%20Aubert&volume=45&publication_year=1965&pages=704-711&pmid=4956288&doi=10.1073/pnas.54.3.704&)]
+* 31.Nicholson WL, Setlow P.
+  1990.
+  Sporulation, germination, and outgrowth, p 391–450
+  *In*
+  Harwood CR, Cutting SM. (ed), Molecular biological methods for *Bacillus*.
+  J. Wiley and Sons, Sussex, England [[Google Scholar](https://scholar.google.com/scholar_lookup?title=Molecular%20biological%20methods%20for%20Bacillus.&author=WL%20Nicholson&author=P%20Setlow&publication_year=1990&)]
+* 32.Moeller R, Stackebrandt E, Reitz G, Berger T, Rettberg P, Doherty AJ, Horneck G, Nicholson WL.
+  2007.
+  Role of DNA repair by non-homologous end joining (NHEJ) in Bacillus subtilis spore resistance to extreme dryness, mono- and polychromatic UV and ionizing radiation. J. Bacteriol.
+  189:3306–3311. 10.1128/JB.00018-07 [[DOI](https://doi.org/10.1128/JB.00018-07)] [[PMC free article](/articles/PMC1855867/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/17293412/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Role%20of%20DNA%20repair%20by%20non-homologous%20end%20joining%20(NHEJ)%20in%20Bacillus%20subtilis%20spore%20resistance%20to%20extreme%20dryness,%20mono-%20and%20polychromatic%20UV%20and%20ionizing%20radiation&author=R%20Moeller&author=E%20Stackebrandt&author=G%20Reitz&author=T%20Berger&author=P%20Rettberg&volume=189&publication_year=2007&pages=3306-3311&pmid=17293412&doi=10.1128/JB.00018-07&)]
+* 33.Moeller R, Setlow P, Horneck G, Berger T, Reitz G, Rettberg P, Doherty AJ, Okayasu R, Nicholson WL.
+  2008.
+  Roles of the major, small, acid-soluble spore proteins and spore-specific and universal DNA repair mechanisms in resistance of Bacillus subtilis spores to ionizing radiation from X-rays and high-energy charged-particle bombardment. J. Bacteriol.
+  190:1134–1140. 10.1128/JB.01644-07 [[DOI](https://doi.org/10.1128/JB.01644-07)] [[PMC free article](/articles/PMC2223577/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/18055591/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Roles%20of%20the%20major,%20small,%20acid-soluble%20spore%20proteins%20and%20spore-specific%20and%20universal%20DNA%20repair%20mechanisms%20in%20resistance%20of%20Bacillus%20subtilis%20spores%20to%20ionizing%20radiation%20from%20X-rays%20and%20high-energy%20charged-particle%20bombardment&author=R%20Moeller&author=P%20Setlow&author=G%20Horneck&author=T%20Berger&author=G%20Reitz&volume=190&publication_year=2008&pages=1134-1140&pmid=18055591&doi=10.1128/JB.01644-07&)]
+* 34.Okayasu R, Okada M, Okabe A, Noguchi M, Takakura K, Takahashi S.
+  2006.
+  Repair of DNA damage induced by accelerated heavy ions in mammalian cells proficient and deficient in the non-homologous end-joining pathway. Radiat. Res.
+  165:59–67. 10.1667/RR3489.1 [[DOI](https://doi.org/10.1667/RR3489.1)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/16392963/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Radiat.%20Res.&title=Repair%20of%20DNA%20damage%20induced%20by%20accelerated%20heavy%20ions%20in%20mammalian%20cells%20proficient%20and%20deficient%20in%20the%20non-homologous%20end-joining%20pathway&author=R%20Okayasu&author=M%20Okada&author=A%20Okabe&author=M%20Noguchi&author=K%20Takakura&volume=165&publication_year=2006&pages=59-67&pmid=16392963&doi=10.1667/RR3489.1&)]
+* 35.Moeller R, Reitz G, Li Z, Klein S, Nicholson WL.
+  2012.
+  Multifactorial resistance of Bacillus subtilis spores to high-energy proton radiation: role of spore structural components and the homologous recombination and non-homologous end joining DNA repair pathways. Astrobiology
+  12:1069–1077. 10.1089/ast.2012.0890 [[DOI](https://doi.org/10.1089/ast.2012.0890)] [[PMC free article](/articles/PMC3491616/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/23088412/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Astrobiology&title=Multifactorial%20resistance%20of%20Bacillus%20subtilis%20spores%20to%20high-energy%20proton%20radiation:%20role%20of%20spore%20structural%20components%20and%20the%20homologous%20recombination%20and%20non-homologous%20end%20joining%20DNA%20repair%20pathways&author=R%20Moeller&author=G%20Reitz&author=Z%20Li&author=S%20Klein&author=WL%20Nicholson&volume=12&publication_year=2012&pages=1069-1077&pmid=23088412&doi=10.1089/ast.2012.0890&)]
+* 36.Su Z, Lopatiuk-Tirpak O, Zeidan O, Sruprisan SI, Meeks SL, Slopsema R, Flampouri S, Li Z.
+  2012.
+  An experimental investigation into the effect of periodic motion on proton dosimetry using polymer gel dosimeters and a programmable motion platform. Phys. Med. Biol.
+  57:649–663. 10.1088/0031-9155/57/3/649 [[DOI](https://doi.org/10.1088/0031-9155/57/3/649)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/22241573/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Phys.%20Med.%20Biol.&title=An%20experimental%20investigation%20into%20the%20effect%20of%20periodic%20motion%20on%20proton%20dosimetry%20using%20polymer%20gel%20dosimeters%20and%20a%20programmable%20motion%20platform&author=Z%20Su&author=O%20Lopatiuk-Tirpak&author=O%20Zeidan&author=SI%20Sruprisan&author=SL%20Meeks&volume=57&publication_year=2012&pages=649-663&pmid=22241573&doi=10.1088/0031-9155/57/3/649&)]
+* 37.Setlow B, Setlow P.
+  1993.
+  Binding of small, acid-soluble spore proteins to DNA plays a significant role in the resistance of Bacillus subtilis spores to hydrogen peroxide. Appl. Environ. Microbiol.
+  59:3418–3423 [[DOI](https://doi.org/10.1128/aem.59.10.3418-3423.1993)] [[PMC free article](/articles/PMC182468/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/8250563/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Appl.%20Environ.%20Microbiol.&title=Binding%20of%20small,%20acid-soluble%20spore%20proteins%20to%20DNA%20plays%20a%20significant%20role%20in%20the%20resistance%20of%20Bacillus%20subtilis%20spores%20to%20hydrogen%20peroxide&author=B%20Setlow&author=P%20Setlow&volume=59&publication_year=1993&pages=3418-3423&pmid=8250563&doi=10.1128/aem.59.10.3418-3423.1993&)]
+* 38.Hackett RH, Setlow P.
+  1988.
+  Properties of spores of Bacillus subtilis strains which lack the major small, acid-soluble protein. J. Bacteriol.
+  170:1403–1404 [[DOI](https://doi.org/10.1128/jb.170.3.1403-1404.1988)] [[PMC free article](/articles/PMC210926/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/3125155/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Properties%20of%20spores%20of%20Bacillus%20subtilis%20strains%20which%20lack%20the%20major%20small,%20acid-soluble%20protein&author=RH%20Hackett&author=P%20Setlow&volume=170&publication_year=1988&pages=1403-1404&pmid=3125155&doi=10.1128/jb.170.3.1403-1404.1988&)]
+* 39.Magge A, Granger AC, Wahome PG, Setlow B, Vepachedu VR, Loshon CA, Peng L, Chen D, Li YQ, Setlow P.
+  2008.
+  Role of dipicolinic acid in the germination, stability, and viability of spores of Bacillus subtilis. J. Bacteriol.
+  190:4798–4807. 10.1128/JB.00477-08 [[DOI](https://doi.org/10.1128/JB.00477-08)] [[PMC free article](/articles/PMC2446992/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/18469099/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Role%20of%20dipicolinic%20acid%20in%20the%20germination,%20stability,%20and%20viability%20of%20spores%20of%20Bacillus%20subtilis&author=A%20Magge&author=AC%20Granger&author=PG%20Wahome&author=B%20Setlow&author=VR%20Vepachedu&volume=190&publication_year=2008&pages=4798-4807&pmid=18469099&doi=10.1128/JB.00477-08&)]
+* 40.Loshon CA, Genest PC, Setlow B, Setlow P.
+  1999.
+  Formaldehyde kills spores of Bacillus subtilis by DNA damage and small, acid-soluble spore proteins of the alpha/beta-type protect spores against this DNA damage. J. Appl. Microbiol.
+  87:8–14 [[DOI](https://doi.org/10.1046/j.1365-2672.1999.00783.x)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/10432583/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Appl.%20Microbiol.&title=Formaldehyde%20kills%20spores%20of%20Bacillus%20subtilis%20by%20DNA%20damage%20and%20small,%20acid-soluble%20spore%20proteins%20of%20the%20alpha/beta-type%20protect%20spores%20against%20this%20DNA%20damage&author=CA%20Loshon&author=PC%20Genest&author=B%20Setlow&author=P%20Setlow&volume=87&publication_year=1999&pages=8-14&pmid=10432583&doi=10.1046/j.1365-2672.1999.00783.x&)]
+* 41.Nicholson WL, Moeller R, Team PROTECT. Horneck G.
+  2012.
+  Transcriptomic responses of germinating Bacillus subtilis spores exposed to 1.5 years of space parameters and simulated martian conditions on the EXPOSE-E experiment PROTECT. Astrobiology
+  12:469–486. 10.1089/ast.2011.0748 [[DOI](https://doi.org/10.1089/ast.2011.0748)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/22680693/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Astrobiology&title=Transcriptomic%20responses%20of%20germinating%20Bacillus%20subtilis%20spores%20exposed%20to%201.5%20years%20of%20space%20parameters%20and%20simulated%20martian%20conditions%20on%20the%20EXPOSE-E%20experiment%20PROTECT&author=WL%20Nicholson&author=R%20Moeller&author=G%20Horneck&volume=12&publication_year=2012&pages=469-486&pmid=22680693&doi=10.1089/ast.2011.0748&)]
+* 42.Ayora S, Carrasco B, Cárdenas PP, César CE, Cañas C, Yadav T, Marchisone C, Alonso JC.
+  2011.
+  Double-strand break repair in bacteria: a view from Bacillus subtilis. FEMS Microbiol. Rev.
+  35:1055–1081. 10.1111/j.1574-6976.2011.00272.x [[DOI](https://doi.org/10.1111/j.1574-6976.2011.00272.x)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/21517913/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=FEMS%20Microbiol.%20Rev.&title=Double-strand%20break%20repair%20in%20bacteria:%20a%20view%20from%20Bacillus%20subtilis&author=S%20Ayora&author=B%20Carrasco&author=PP%20C%C3%A1rdenas&author=CE%20C%C3%A9sar&author=C%20Ca%C3%B1as&volume=35&publication_year=2011&pages=1055-1081&pmid=21517913&doi=10.1111/j.1574-6976.2011.00272.x&)]
+* 43.Bolz NJ, Lenhart JS, Weindorf SC, Simmons LA.
+  2012.
+  Residues in the N-terminal domain of MutL required for mismatch repair in Bacillus subtilis. J. Bacteriol.
+  194:5361–5367. 10.1128/JB.01142-12 [[DOI](https://doi.org/10.1128/JB.01142-12)] [[PMC free article](/articles/PMC3457209/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/22843852/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Residues%20in%20the%20N-terminal%20domain%20of%20MutL%20required%20for%20mismatch%20repair%20in%20Bacillus%20subtilis&author=NJ%20Bolz&author=JS%20Lenhart&author=SC%20Weindorf&author=LA%20Simmons&volume=194&publication_year=2012&pages=5361-5367&pmid=22843852&doi=10.1128/JB.01142-12&)]
+* 44.Rivas-Castillo AM, Yasbin RE, Robleto E, Nicholson WL, Pedraza-Reyes M.
+  2010.
+  Role of the Y-family DNA polymerases YqjH and YqjW in protecting sporulating Bacillus subtilis cells from DNA damage. Curr. Microbiol.
+  60:263–267. 10.1007/s00284-009-9535-3 [[DOI](https://doi.org/10.1007/s00284-009-9535-3)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/19924481/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Curr.%20Microbiol.&title=Role%20of%20the%20Y-family%20DNA%20polymerases%20YqjH%20and%20YqjW%20in%20protecting%20sporulating%20Bacillus%20subtilis%20cells%20from%20DNA%20damage&author=AM%20Rivas-Castillo&author=RE%20Yasbin&author=E%20Robleto&author=WL%20Nicholson&author=M%20Pedraza-Reyes&volume=60&publication_year=2010&pages=263-267&pmid=19924481&doi=10.1007/s00284-009-9535-3&)]
+* 45.Mason JM, Setlow P.
+  1986.
+  Essential role of small, acid-soluble spore proteins in resistance of Bacillus subtilis spores to UV light. J. Bacteriol.
+  167:174–178 [[DOI](https://doi.org/10.1128/jb.167.1.174-178.1986)] [[PMC free article](/articles/PMC212857/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/3087950/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Essential%20role%20of%20small,%20acid-soluble%20spore%20proteins%20in%20resistance%20of%20Bacillus%20subtilis%20spores%20to%20UV%20light&author=JM%20Mason&author=P%20Setlow&volume=167&publication_year=1986&pages=174-178&pmid=3087950&doi=10.1128/jb.167.1.174-178.1986&)]
+* 46.Wuytack EY, Boven S, Michiels CW.
+  1998.
+  Comparative study of pressure-induced germination of Bacillus subtilis spores at low and high pressures. Appl. Environ. Microbiol.
+  64:3220–3224 [[DOI](https://doi.org/10.1128/aem.64.9.3220-3224.1998)] [[PMC free article](/articles/PMC106713/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/9726863/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=Appl.%20Environ.%20Microbiol.&title=Comparative%20study%20of%20pressure-induced%20germination%20of%20Bacillus%20subtilis%20spores%20at%20low%20and%20high%20pressures&author=EY%20Wuytack&author=S%20Boven&author=CW%20Michiels&volume=64&publication_year=1998&pages=3220-3224&pmid=9726863&doi=10.1128/aem.64.9.3220-3224.1998&)]
+* 47.Setlow B, Atluri S, Kitchel R, Koziol-Dube K, Setlow P.
+  2006.
+  Role of dipicolinic acid in resistance and stability of spores of Bacillus subtilis with or without DNA-protective alpha/beta-type small acid-soluble proteins. J. Bacteriol.
+  188:3740–3747. 10.1128/JB.00212-06 [[DOI](https://doi.org/10.1128/JB.00212-06)] [[PMC free article](/articles/PMC1482921/)] [[PubMed](https://pubmed.ncbi.nlm.nih.gov/16707666/)] [[Google Scholar](https://scholar.google.com/scholar_lookup?journal=J.%20Bacteriol.&title=Role%20of%20dipicolinic%20acid%20in%20resistance%20and%20stability%20of%20spores%20of%20Bacillus%20subtilis%20with%20or%20without%20DNA-protective%20alpha/beta-type%20small%20acid-soluble%20proteins&author=B%20Setlow&author=S%20Atluri&author=R%20Kitchel&author=K%20Koziol-Dube&author=P%20Setlow&volume=188&publication_year=2006&pages=3740-3747&pmid=16707666&doi=10.1128/JB.00212-06&)]
