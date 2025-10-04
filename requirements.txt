@@ -7,3 +7,5 @@ langchain-mistralai
 langchain-qdrant
 langchain-text-splitters
 tiktoken
+langchain
+langgraph
