@@ -6,3 +6,4 @@ markitdown
 langchain-mistralai
 langchain-qdrant
 langchain-text-splitters
+tiktoken
