@@ -1,5 +1,7 @@
 import streamlit as st
 from components.chatbot import chatbot_interface
+from agents.agent_mission_planner import graph  # your compiled graph
+
 
 def render_main_content(user_type):
     """Muestra el contenido de la página principal del dashboard."""
@@ -20,7 +22,7 @@ def render_main_content(user_type):
         st.header("🤖 ChatBot")
         if "messages_d3" not in st.session_state:
             st.session_state.messages_d3 = []
-        chatbot_interface(st.session_state.messages_d3)
+        chatbot_interface(st.session_state.messages_d3, graph)
                 
     with col3:
         st.header("Herramientas")
