@@ -21,7 +21,7 @@ QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 
 
 # qdrant_dir = sys.argv[1]
-collection_name = "biology_articles_v3"
+collection_name = "biology_articles"
 
 
 # Open local (embedded) Qdrant DB folder

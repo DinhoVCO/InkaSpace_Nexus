@@ -2,7 +2,7 @@
 import streamlit as st
 from miscellaneous.d3_main import render_main_content
 from miscellaneous.d3_graph import render_graph_page
-from miscellaneous.d2_analysis import render_analysis_page
+from miscellaneous.d3_analysis import render_analysis_page
 
 
 def display_dashboard(user_type):

@@ -72,5 +72,5 @@ def process_markdown_directory(json_file_path: str, collection: str):
 if __name__ == "__main__":
     process_markdown_directory(
         json_file_path="RAG/all_proyects.json",
-        collection="tasks_proyects"
+        collection="task_proyects"
     )
