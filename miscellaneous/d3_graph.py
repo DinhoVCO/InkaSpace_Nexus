@@ -40,7 +40,7 @@ def get_similar_tasks(task_query: str, k=10) -> list[str]:
     """
     st.toast(f"Running similarity search for: '{task_query}'...")
 
-    retrieved_docs = store.similarity_search(task_query, k=10)
+    retrieved_docs = store.similarity_search(task_query, k)
     results=[]
     for doc in retrieved_docs:
         results.append(doc.metadata['id'])
@@ -161,10 +161,14 @@ def render_graph_page():
         st.session_state.similar_tasks = []
 
     with st.form(key='search_form'):
-        search_query = st.text_input(
-            label="Search by project or research title:",
-            placeholder="E.g.: Mice in Bion-M 1 space mission"
-        )
+        col_query, col_number = st.columns([8, 2])
+        with col_query:
+            search_query = st.text_input(
+                label="Search by project or research title:",
+                placeholder="E.g.: Mice in Bion-M 1 space mission"
+            )
+        with col_number:
+            top_k = st.number_input("Number of similar tasks to retrieve:", min_value=1, max_value=15, value=7, step=1)
         col_search, col_clear, _ = st.columns([1, 1.5, 8])
         with col_search:
             submitted = st.form_submit_button("Search")
@@ -172,7 +176,7 @@ def render_graph_page():
             cleared = st.form_submit_button("Clear Search")
 
     if submitted and search_query:
-        st.session_state.similar_tasks = get_similar_tasks(search_query)
+        st.session_state.similar_tasks = get_similar_tasks(search_query, top_k)
         if not st.session_state.similar_tasks:
             st.warning("No similar tasks found for the provided ID.")
             st.session_state.graph_visible = False

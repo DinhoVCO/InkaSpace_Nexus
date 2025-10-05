@@ -13,7 +13,7 @@ def chatbot_interface(session_messages, graph_to_call):
     """Renderiza y gestiona el chatbot conectado a tu LangGraph conversacional."""
     
     # Muestra los mensajes previos del historial
-    chat_container = st.container(height=500, border=True)
+    chat_container = st.container(height=450, border=True)
 
     # Display previous messages
     with chat_container:
