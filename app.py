@@ -29,9 +29,8 @@ def main():
 
         with col2:
             st.image("images/logo_nexus.png", use_container_width=True)
-        #st.image("images/logo_nexus.png", width=150)
-        #st.title("NASA Nexus 🚀")
-        st.markdown("<h1 style='text-align: center;'>NASA Nexus 🚀</h1>", unsafe_allow_html=True)
+
+        st.markdown("<h1 style='text-align: center;'>InkaSpace Nexus 🚀</h1>", unsafe_allow_html=True)
 
 
         # Define the new user types based on the target audience

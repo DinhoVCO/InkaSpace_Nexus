@@ -11,3 +11,5 @@ lxml
 streamlit-agraph
 langchain_community
 langgraph
+plotly
+markdown_pdf 

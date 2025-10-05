@@ -11,7 +11,6 @@ if "messages" not in st.session_state:
 # --- Interfaz del Chatbot ---
 def chatbot_interface(session_messages, graph_to_call, selected_sections=None):
     """Renderiza y gestiona el chatbot conectado a tu LangGraph conversacional."""
-    print("Selected Sections:", selected_sections)  # Debugging line
     # Muestra los mensajes previos del historial
     chat_container = st.container(height=450, border=True)
 
@@ -32,7 +31,7 @@ def chatbot_interface(session_messages, graph_to_call, selected_sections=None):
             # Genera y muestra la respuesta del grafo
             with st.chat_message("assistant"):
                 # Usamos un spinner para indicar que el bot está "pensando"
-                with st.spinner("Pensando..."):
+                with st.spinner("Thinking..."):
                     st_callback = StreamlitCallbackHandler(st.container())
 
                     # --- CAMBIO CLAVE: INVOCACIÓN DEL GRAFO CONVERSACIONAL ---

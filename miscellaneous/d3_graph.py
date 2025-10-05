@@ -290,7 +290,9 @@ def render_graph_page():
                     st.markdown(f"### {art['title']}")
                     st.markdown(f"**Authors:** {art['authors']}")
                     st.markdown(f"**PMCID:** `{art['pmcid']}` — **Date:** {art['publication_date']}")
-                    st.link_button("🔗 View article", f"https://www.ncbi.nlm.nih.gov/pmc/articles/{art["pmcid"]}/")
+                    st.link_button("🔗 View article", f"https://www.ncbi.nlm.nih.gov/pmc/articles/{art['pmcid']}/")
+
+                    #st.link_button("🔗 View article", f"https://www.ncbi.nlm.nih.gov/pmc/articles/{art["pmcid"]}/")
                     # col1, col2 = st.columns([0.2, 0.8])
                     # with col1:
                     #     @st.dialog("Summarize article")
