@@ -19,7 +19,10 @@ from qdrant_client import QdrantClient
 load_dotenv()
 QDRANT_URL = os.getenv("QDRANT_URL")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-collection_name = "biology_articles_v3"
+
+
+
+collection_name = "biology_articles"
 
 # ==============================================================================
 # 1. CONFIGURACIÓN DEL RETRIEVER Y EL LLM (Sin cambios)

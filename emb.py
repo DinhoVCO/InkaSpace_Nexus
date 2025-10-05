@@ -85,5 +85,5 @@ def process_markdown_directory(in_dir: str, collection: str):
 if __name__ == "__main__":
     process_markdown_directory(
         in_dir="RAG/md_out/",
-        collection="biology_articles_v3"
+        collection="biology_articles"
     )

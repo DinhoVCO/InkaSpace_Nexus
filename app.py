@@ -37,7 +37,7 @@ def main():
         # Define the new user types based on the target audience
         user_options = [
             "Select an option",
-            "Scientist 🔬",
+            "Scientist 🧬",
             "Manager 💼",
             "Mission architect 👷🏻‍♂️"
         ]
@@ -56,7 +56,7 @@ def main():
         else:
             st.info("""
                     Select a user type to see the corresponding dashboard\n\n
-                     - **Scientists** 🔬 who are generating new hypotheses\n
+                     - **Scientists** 🧬 who are generating new hypotheses\n
                      - **Managers** 💼 identifying opportunities for investment\n
                      - **Mission architects** 👷🏻‍♂️ looking to explore the Moon and Mars safely and efficiently
             """, icon="ℹ️")
@@ -64,7 +64,7 @@ def main():
     # If a user is already selected, show the corresponding dashboard
     else:
         # Match the selected user type to its corresponding dashboard function
-        if st.session_state.user_type == "Scientist 🔬":
+        if st.session_state.user_type == "Scientist 🧬":
             display_dashboard_1(st.session_state.user_type)
         elif st.session_state.user_type == "Manager 💼":
             display_dashboard_2(st.session_state.user_type)
