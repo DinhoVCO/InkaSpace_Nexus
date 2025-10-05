@@ -10,6 +10,26 @@ def render_main_content(user_type):
     #st.write("---")
 
     col1, col2, col3 = st.columns([1.5, 4, 1.5])
+    with col3:
+        st.markdown("Filter")
+        sections = [
+            "Abstract",
+            "Introduction",
+            "Results and Discussion", # Corregido "REselts and Discution"
+            "Conclusion",
+            "Any Section"
+        ]
+
+        for section in sections:
+            st.session_state.setdefault(section, True)
+
+        
+        with st.expander("Filter by Section", expanded=True):
+            for section in sections:
+                st.checkbox(section, key=section)
+
+        # Recolectar las secciones que están marcadas
+        selected_sections = [s for s in sections if st.session_state[s]]
     with col1:
         st.header("Información Clave")
         st.metric(label="Ventas del Mes", value="1,250", delta="120")
@@ -18,9 +38,8 @@ def render_main_content(user_type):
         st.header("🤖 ChatBot")
         if "messages_d1" not in st.session_state:
             st.session_state.messages_d1 = []
-        chatbot_interface(st.session_state.messages_d1, graph)
+        chatbot_interface(st.session_state.messages_d1, graph, selected_sections)
                 
-    with col3:
-        st.header("Herramientas")
-        st.button("Exportar Datos a CSV", use_container_width=True)
+
+
 

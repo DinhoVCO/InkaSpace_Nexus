@@ -49,7 +49,7 @@ def get_similar_tasks(task_query: str, k=10) -> list[str]:
     """
     st.toast(f"Running similarity search for: '{task_query}'...")
 
-    retrieved_docs = store.similarity_search(task_query, k=10)
+    retrieved_docs = store.similarity_search(task_query, k)
     results=[]
     for doc in retrieved_docs:
         results.append(doc.metadata['id'])
