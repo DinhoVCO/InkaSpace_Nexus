@@ -3,6 +3,28 @@ import streamlit as st
 # from components.kw_graph import get_graph 
 from streamlit_agraph import agraph, Node, Edge, Config
 import json
+from qdrant_client import QdrantClient
+from langchain_mistralai import MistralAIEmbeddings
+from langchain_qdrant import QdrantVectorStore
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+QDRANT_URL = os.getenv("QDRANT_URL")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+CELLECTION_NAME = "tasks_proyects"
+client = QdrantClient(
+        url=QDRANT_URL, 
+        api_key=QDRANT_API_KEY,
+    )
+embeddings = MistralAIEmbeddings(model="mistral-embed")
+store = QdrantVectorStore(
+        client=client,
+        collection_name=CELLECTION_NAME,
+        embedding=embeddings,
+    )
+
+
 
 # --- Mock of the get_graph function so the script can be run ---
 def get_graph(nodes, edges, config):
@@ -12,23 +34,19 @@ def get_graph(nodes, edges, config):
 # ==============================================================================
 # TODO: REPLACE THIS FUNCTION WITH YOUR OWN SEARCH LOGIC
 # ==============================================================================
-def get_similar_tasks(task_id_query: str) -> list[str]:
+def get_similar_tasks(task_query: str, k=10) -> list[str]:
     """
     SIMULATED function that returns a list of similar task IDs.
     """
-    st.toast(f"Running similarity search for: '{task_id_query}'...")
+    st.toast(f"Running similarity search for: '{task_query}'...")
 
-    mock_data = {
-        "80NSSC21K0300": ["80NSSC21K0300", "80NSSC22K0400", "80NSSC20K0500"],
-        "NNX16AT22A": ["NNX16AT22A", "NNX15AC31G", "NNX17AB61G"],
-        "10062": ["10155", "10174"] 
-    }
-    
-    results = mock_data.get(task_id_query.strip(), [])
-    # If there are no results but the user searched for something, return only that ID to visualize it
-    if not results and task_id_query:
-         return [task_id_query.strip()] 
+    retrieved_docs = store.similarity_search(task_query, k=10)
+    results=[]
+    for doc in retrieved_docs:
+        results.append(doc.metadata['id'])
     return results
+
+
 # ==============================================================================
 # END OF THE AREA TO REPLACE
 # ==============================================================================
@@ -136,7 +154,7 @@ def get_edges_and_nodes(
 def render_graph_page():
 
     st.set_page_config(layout="wide")
-    st.title("Knowledge Graph Grants Projects")
+    st.title("Knowledge Graph")
     
     if 'graph_visible' not in st.session_state:
         st.session_state.graph_visible = False
