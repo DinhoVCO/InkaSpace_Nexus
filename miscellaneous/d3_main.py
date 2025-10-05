@@ -1,6 +1,6 @@
 import streamlit as st
 from components.chatbot import chatbot_interface
-from agents.agent_mission_planner import graph  # your compiled graph
+from agents.agent_mission_architects import graph  # your compiled graph
 
 
 def render_main_content(user_type):

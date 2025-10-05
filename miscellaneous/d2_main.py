@@ -1,6 +1,6 @@
 import streamlit as st
 from components.chatbot import chatbot_interface
-from agents.agent_manager import graph  # your compiled graph
+from agents.agent_managers import graph  # your compiled graph
 
 def render_main_content(user_type):
     """Muestra el contenido de la página principal del dashboard."""

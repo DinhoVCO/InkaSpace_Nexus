@@ -49,14 +49,17 @@ def chatbot_interface(session_messages, graph_to_call, selected_sections=None):
                     try:
                         # La entrada ahora es un diccionario con la clave "messages"
                         result = graph_to_call.invoke(
-                            {"messages": formatted_messages},
+                            {
+                                "messages": formatted_messages, 
+                                "selected_sections": selected_sections or []
+                            },
                             {"callbacks": [st_callback]}
                         )
                         
                         # 3. Extraemos la respuesta del último mensaje del resultado
                         # El grafo devuelve el estado final, donde el último mensaje es la respuesta de la IA
                         response_message = result["messages"][-1]
-                        response = response_message.content
+                        response = response_message
 
                     except Exception as e:
                         response = f"⚠️ Ocurrió un error al procesar tu solicitud: {e}"
