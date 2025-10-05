@@ -23,7 +23,7 @@ def render_main_content(user_type):
     col1, col2, col3 = st.columns([1.5, 4, 1.5])
 
     with col1:
-        st.markdown("#### Filter Vector Stores")
+        st.header("Filter By Section")
         
         sections = [
             "Abstract", "Introduction", "Results and Discussion", 
@@ -39,6 +39,7 @@ def render_main_content(user_type):
         selected_sections = [s for s in sections if st.session_state[s]]
 
     with col3:
+        st.header("Report Generation")
         
         if st.button("🔬 Generate Research Summary"):
             if "messages_d1" in st.session_state and st.session_state.messages_d1:
@@ -86,7 +87,7 @@ def render_main_content(user_type):
             
 
     with col2:
-        st.header("🤖 ChatBot")
+        st.header("🤖 AI CHATBOT ")
         if "messages_d1" not in st.session_state:
             st.session_state.messages_d1 = [
                 {"role": "assistant", "content": "Hello! How can I help you with scientific articles today?"}

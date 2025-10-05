@@ -31,7 +31,7 @@ def chatbot_interface(session_messages, graph_to_call, selected_sections=None):
             # Genera y muestra la respuesta del grafo
             with st.chat_message("assistant"):
                 # Usamos un spinner para indicar que el bot está "pensando"
-                with st.spinner("Pensando..."):
+                with st.spinner("Thinking..."):
                     st_callback = StreamlitCallbackHandler(st.container())
 
                     # --- CAMBIO CLAVE: INVOCACIÓN DEL GRAFO CONVERSACIONAL ---
