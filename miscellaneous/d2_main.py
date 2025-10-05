@@ -4,7 +4,6 @@ from agents.agent_scientific import graph  # your compiled graph
 from markdown_pdf import MarkdownPdf
 from markdown_pdf import Section
 import io
-import textwrap # Importa textwrap para solucionar el problema de indentación
 from langchain_mistralai import ChatMistralAI
 from langchain_core.messages import HumanMessage
 from utils.prompts import REPORT_PROMPT_TEMPLATE_EN as REPORT_PROMPT_TEMPLATE
