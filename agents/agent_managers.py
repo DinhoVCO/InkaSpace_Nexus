@@ -63,7 +63,7 @@ class State(TypedDict):
 # -----------------------------
 def retrieve_manager(state: dict, k=5) -> dict:
     """
-    Retrieves the top-k most relevant NASA project documents (Manager profile)
+    Retrieves the top-k most relevant project documents (Manager profile)
     from Qdrant and builds a concise summary including project scope,
     funding information, progress, and Earth/space impact.
     """

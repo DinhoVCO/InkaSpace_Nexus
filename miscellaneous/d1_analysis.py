@@ -54,12 +54,12 @@ def render_analysis_page():
     df_projects["project_type"] = df_projects["project_information"].apply(lambda x: extract_field(x, "project_type"))
     df_projects["discipline"] = df_projects["research_discipline_element"].fillna("").str.extract(r"Division:(.*)$", expand=False)
 
-    # ---------- DATAFRAME NASA TASKS ----------
+    # ---------- DATAFRAME  TASKS ----------
     df_tasks = pd.DataFrame(tasks)
     df_tasks["PI Name"] = df_tasks["PI Name"].fillna("Unknown")
 
     # ---------- CONFIGURACIÓN STREAMLIT ----------
-    st.set_page_config(page_title="NASA Space Biology Dashboard", layout="wide")
+    st.set_page_config(page_title="Space Biology Dashboard", layout="wide")
     st.title("🧬 Scientist Dashboard")
 
     st.subheader("🔎 Filter")
@@ -133,7 +133,7 @@ def render_analysis_page():
 
     # ---------- TAB PROYECTOS ----------
     with tab2:
-        st.subheader("NASA Project Statistics")
+        st.subheader("Project Statistics")
 
         col1, col2 = st.columns(2)
 
@@ -148,7 +148,7 @@ def render_analysis_page():
             type_counts = filtered_projects["project_type"].value_counts().reset_index()
             type_counts.columns = ["Project Type", "Quantity"]
             fig_type = px.pie(type_counts, values="Quantity", names="Project Type",
-                            title="Types of NASA projects")
+                            title="Types of Projects")
             st.plotly_chart(fig_type, use_container_width=True)
 
         st.subheader("Distribution by discipline")
@@ -201,7 +201,7 @@ def render_analysis_page():
             x="PI Name",
             y="Publications",
             text="Publications",
-            title="Top 20 Researchers with the Most Publications NASA"
+            title="Top 20 Researchers with the Most Publications"
         )
         st.plotly_chart(fig_pi, use_container_width=True)
 
@@ -209,7 +209,7 @@ def render_analysis_page():
 
     # ---------- PIE DE PÁGINA ----------
     st.markdown("---")
-    st.caption("🛰️ Source: NASA OSDR, Task Book, Space Biology Publications (2025).")
+    st.caption("🛰️ Source: OSDR, Task Book, Space Biology Publications (2025).")
 
 
 

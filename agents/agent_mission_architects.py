@@ -72,7 +72,7 @@ class State(TypedDict):
 # -----------------------------
 def retrieve_architect(state: dict, k=5) -> dict:
     """
-    Retrieves top-k relevant scientific papers and NASA projects related to
+    Retrieves top-k relevant scientific papers and projects related to
     space mission design, safety, and biological/engineering integration.
     Combines both Qdrant collections: all scientific articles and project results.
     """
@@ -95,7 +95,7 @@ def retrieve_architect(state: dict, k=5) -> dict:
         meta = doc.metadata or {}
 
         # Identify if it’s an article or a project
-        doc_type = "Scientific Article" if "title" in meta else "NASA Project"
+        doc_type = "Scientific Article" if "title" in meta else "Scientific Project"
 
         # --- Extract common metadata ---
         title = meta.get("title") or meta.get("project_title", "Untitled")

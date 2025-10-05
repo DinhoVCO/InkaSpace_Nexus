@@ -44,7 +44,7 @@ def render_analysis_page():
     df_tasks["PI Name"] = df_tasks["PI Name"].fillna("Unknown")
 
     # ------------------ Streamlit Setup ------------------
-    st.set_page_config(page_title="NASA Space Biology — Mission Architect View", layout="wide")
+    st.set_page_config(page_title="Space Biology — Mission Architect View", layout="wide")
     st.title("👷🏻‍♂️ Mission Architect Dashboard")
 
     st.subheader("🔎 Filters")
@@ -204,4 +204,4 @@ def render_analysis_page():
 
     # ---------- Footer ----------
     st.markdown("---")
-    st.caption("🛰️ Data Source: NASA OSDR, Task Book, and Space Biology Publications (2025).")
+    st.caption("🛰️ Data Source: OSDR, Task Book, and Space Biology Publications (2025).")

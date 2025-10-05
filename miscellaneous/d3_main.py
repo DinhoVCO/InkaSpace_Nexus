@@ -6,7 +6,7 @@ from markdown_pdf import Section
 import io
 from langchain_mistralai import ChatMistralAI
 from langchain_core.messages import HumanMessage
-from utils.prompts import REPORT_PROMPT_TEMPLATE_EN as REPORT_PROMPT_TEMPLATE
+from utils.prompts import MISSION_CONCEPT_PROMPT_TEMPLATE_EN
 
 llm = ChatMistralAI(
     model="open-mixtral-8x7b",
@@ -51,7 +51,7 @@ def render_main_content(user_type):
                     conversation_transcript = "\n---\n".join(transcript_list)
 
                     # 2. Preparar el prompt y los mensajes para el LLM
-                    final_prompt = REPORT_PROMPT_TEMPLATE.format(conversation_transcript=conversation_transcript)
+                    final_prompt = MISSION_CONCEPT_PROMPT_TEMPLATE_EN.format(conversation_transcript=conversation_transcript)
                     messages = [HumanMessage(content=final_prompt)]
 
                     # 3. Invocar el LLM para generar el reporte

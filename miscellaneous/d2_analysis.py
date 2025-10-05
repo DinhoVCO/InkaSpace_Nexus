@@ -51,7 +51,7 @@ def render_analysis_page():
     df_tasks["PI Name"] = df_tasks["PI Name"].fillna("Unknown")
 
     # ------------------ Streamlit Layout ------------------
-    st.set_page_config(page_title="NASA Space Biology Dashboard - Manager", layout="wide")
+    st.set_page_config(page_title="Space Biology Dashboard - Manager", layout="wide")
     st.title("💼 Manager Dashboard")
 
 
@@ -219,4 +219,4 @@ def render_analysis_page():
 
     # ---------- Footer ----------
     st.markdown("---")
-    st.caption("🛰️ Data sources: NASA OSDR, Task Book, and Space Biology Publications (2025).")
+    st.caption("🛰️ Data sources: OSDR, Task Book, and Space Biology Publications (2025).")

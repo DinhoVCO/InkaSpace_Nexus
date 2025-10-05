@@ -24,7 +24,7 @@ def main():
 
     # If no user is selected, show the selection screen
     if st.session_state.user_type is None:
-        st.set_page_config(page_title="User Selection", layout="centered")
+        st.set_page_config(page_title="InkaSpace NEXUS", layout="centered")
         col1, col2, col3 = st.columns([1.5, 1, 1.5]) # Adjust the ratio for desired spacing
 
         with col2:
