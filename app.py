@@ -4,7 +4,7 @@ import streamlit as st
 # Asumimos que tienes estos archivos, si no, deberías crearlos
 # For demonstration purposes, we'll create placeholder functions if files don't exist.
 
-from dashboards.dashboard_1 import display_dashboard as display_dashboard_1
+#import dashboards.scientist_dashboard as scientist_db
 from dashboards.dashboard_2 import display_dashboard as display_dashboard_2
 from dashboards.dashboard_3 import display_dashboard as display_dashboard_3
 
@@ -65,7 +65,9 @@ def main():
     else:
         # Match the selected user type to its corresponding dashboard function
         if st.session_state.user_type == "Scientist 🔬":
-            display_dashboard_1(st.session_state.user_type)
+            pg = st.navigation(["dashboards/dashboard_1.py"])
+            pg.run()
+            # display_dashboard_1(st.session_state.user_type)
         elif st.session_state.user_type == "Manager 💼":
             display_dashboard_2(st.session_state.user_type)
         elif st.session_state.user_type == "Mission architect 👷🏻‍♂️":
