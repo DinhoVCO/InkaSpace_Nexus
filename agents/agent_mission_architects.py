@@ -6,15 +6,16 @@ import re
 from dotenv import load_dotenv
 from typing_extensions import List, TypedDict
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import TypedDict, Annotated, List
 
 from langchain import hub
 from langchain_core.documents import Document
 from langchain.chat_models import init_chat_model
+from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 from qdrant_client import QdrantClient
 from langchain_mistralai import MistralAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from langgraph.graph import START, StateGraph
-
 
 # -----------------------------
 # Environment setup
@@ -59,9 +60,9 @@ llm = init_chat_model("open-mixtral-8x7b", model_provider="mistralai")
 # Define pipeline state schema
 # -----------------------------
 class State(TypedDict):
-    question: str
+    messages: Annotated[List[BaseMessage], lambda x, y: x + y]
     context: List[Document]
-    summary: str
+    summary: List[str]
     answer: str
     selected_sections: List[str]
 
@@ -75,11 +76,12 @@ def retrieve_architect(state: dict, k=5) -> dict:
     space mission design, safety, and biological/engineering integration.
     Combines both Qdrant collections: all scientific articles and project results.
     """
-    print(f"[retrieve_architect] Searching for '{state['question']}' across collections...")
+    question = state["messages"][-1].content
+    print(f"[retrieve_architect] Searching for '{question}' across collections...")
 
     # --- 1. Retrieve from both collections ---
-    docs_bio = store_all.similarity_search(query=state["question"], k=k)
-    docs_proj = store_results.similarity_search(query=state["question"], k=k)
+    docs_bio = store_all.similarity_search(query=question, k=k)
+    docs_proj = store_results.similarity_search(query=question, k=k)
 
     retrieved_docs = docs_bio + docs_proj
 
@@ -152,21 +154,20 @@ def generate(state: State) -> State:
     integrating biological and experimental research context.
     """
     context = state.get("summary", "")
+    chat_history = state["messages"][:-1]
 
+    question = state["messages"][-1].content
     messages = prompt_mission_architects.invoke({
-        "question": state["question"],
-        "context": context
+        "question": question,
+        "context": context,
+        "chat_history": chat_history
     })
 
     print("[generate] Sending data to LLM (Mission Architect Agent)...")
     response = llm.invoke(messages)
     answer = response.content.strip()
 
-    state.update({
-        "answer": answer,
-    })
-    print("[generate] LLM response generated successfully.")
-    return state
+    return {"messages": [answer]}
 
 
 # -----------------------------
