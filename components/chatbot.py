@@ -1,17 +1,18 @@
 import streamlit as st
 from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
-#from agents.agent import graph  # your compiled graph
+from langchain_core.messages import HumanMessage, AIMessage
 
-# --- Initial configuration ---
-st.set_page_config(page_title="LangGraph Chatbot", layout="centered")
 
-# Initialize default conversation history
-if "messages_d1" not in st.session_state:
-    st.session_state.messages_d1 = []
+# --- Inicialización del historial de chat en st.session_state ---
+# Usamos 'messages' en lugar de 'messages_d1' para mayor claridad
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-# --- Chatbot interface ---
-def chatbot_interface(session_messages, graph):
-    """Renders a chatbot connected to your LangGraph"""
+# --- Interfaz del Chatbot ---
+def chatbot_interface(session_messages, graph_to_call):
+    """Renderiza y gestiona el chatbot conectado a tu LangGraph conversacional."""
+    
+    # Muestra los mensajes previos del historial
     chat_container = st.container(height=500, border=True)
 
     # Display previous messages
@@ -20,24 +21,48 @@ def chatbot_interface(session_messages, graph):
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-    # User input
-    if prompt := st.chat_input("Type your message..."):
+    # Captura la nueva entrada del usuario
+    if prompt := st.chat_input("Escribe tu pregunta sobre biología espacial aquí..."):
         with chat_container:
-            # Display user message
+            # Añade y muestra el mensaje del usuario en la interfaz
+            session_messages.append({"role": "user", "content": prompt})
             with st.chat_message("user"):
                 st.markdown(prompt)
-            session_messages.append({"role": "user", "content": prompt})
 
-            # Graph (LangGraph) response
+            # Genera y muestra la respuesta del grafo
             with st.chat_message("assistant"):
-                st_callback = StreamlitCallbackHandler(st.container())
-                try:
-                    result = graph.invoke({"question": prompt}, {"callbacks": [st_callback]})
-                    response = result.get("answer", "No response.")
-                except Exception as e:
-                    response = f"⚠️ Error running the graph: {e}"
+                # Usamos un spinner para indicar que el bot está "pensando"
+                with st.spinner("Pensando..."):
+                    st_callback = StreamlitCallbackHandler(st.container())
 
-                st.markdown(response)
-                session_messages.append({"role": "assistant", "content": response})
+                    # --- CAMBIO CLAVE: INVOCACIÓN DEL GRAFO CONVERSACIONAL ---
+                    
+                    # 1. Formateamos el historial de Streamlit al formato de LangChain
+                    formatted_messages = []
+                    for msg in session_messages:
+                        if msg["role"] == "user":
+                            formatted_messages.append(HumanMessage(content=msg["content"]))
+                        elif msg["role"] == "assistant":
+                            formatted_messages.append(AIMessage(content=msg["content"]))
 
-# Run the chatbot with the specific dashboard history
+                    # 2. Invocamos el grafo con el historial completo
+                    try:
+                        # La entrada ahora es un diccionario con la clave "messages"
+                        result = graph_to_call.invoke(
+                            {"messages": formatted_messages},
+                            {"callbacks": [st_callback]}
+                        )
+                        
+                        # 3. Extraemos la respuesta del último mensaje del resultado
+                        # El grafo devuelve el estado final, donde el último mensaje es la respuesta de la IA
+                        response_message = result["messages"][-1]
+                        response = response_message.content
+
+                    except Exception as e:
+                        response = f"⚠️ Ocurrió un error al procesar tu solicitud: {e}"
+                    # --- FIN DEL CAMBIO CLAVE ---
+
+                    st.markdown(response)
+            
+            # Añadimos la respuesta del asistente al historial de la sesión
+            session_messages.append({"role": "assistant", "content": response})
