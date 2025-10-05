@@ -41,11 +41,11 @@ def render_main_content(user_type):
         st.header("Report Generation")
         
         if st.button("🔬 Generate Research Summary"):
-            if "messages_d1" in st.session_state and st.session_state.messages_d1:
+            if "messages_d3" in st.session_state and st.session_state.messages_d3:
                 with st.spinner("Analyzing conversation and generating AI report... This may take a moment."):
                     # 1. Formatear la conversación completa en un solo string
                     transcript_list = []
-                    for msg in st.session_state.messages_d1:
+                    for msg in st.session_state.messages_d3:
                         role = "Researcher (User)" if msg["role"] == "user" else "AI Assistant"
                         transcript_list.append(f"**{role}:**\n{msg['content']}\n")
                     conversation_transcript = "\n---\n".join(transcript_list)
@@ -87,9 +87,9 @@ def render_main_content(user_type):
 
     with col2:
         st.header("🤖 AI CHATBOT ")
-        if "messages_d1" not in st.session_state:
-            st.session_state.messages_d1 = [
+        if "messages_d3" not in st.session_state:
+            st.session_state.messages_d3 = [
                 {"role": "assistant", "content": "Hello! How can I help you with scientific articles today?"}
             ]
         # Pasa las secciones seleccionadas a tu chatbot si es necesario
-        chatbot_interface(st.session_state.messages_d1, graph, selected_sections)
+        chatbot_interface(st.session_state.messages_d3, graph, selected_sections)
