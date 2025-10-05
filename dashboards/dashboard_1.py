@@ -29,8 +29,8 @@ def display_dashboard(user_type):
             st.session_state.view = 'graph'
             st.rerun()
             
-        if st.button("Configuration", use_container_width=True):
-            st.session_state.view = 'configuration'
+        if st.button("Analysis", use_container_width=True):
+            st.session_state.view = 'analysis'
             st.rerun()
 
         st.write("---")
@@ -48,7 +48,7 @@ def display_dashboard(user_type):
         render_main_content(user_type)
     elif st.session_state.view == 'graph':
         render_graph_page()
-    elif st.session_state.view == 'configuration':
+    elif st.session_state.view == 'analysis':
         render_analysis_page()
     else:
         # Fallback in case the state gets corrupted

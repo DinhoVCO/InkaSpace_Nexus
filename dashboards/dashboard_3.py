@@ -2,6 +2,7 @@
 import streamlit as st
 from miscellaneous.d3_main import render_main_content
 from miscellaneous.d3_graph import render_graph_page
+from miscellaneous.d2_analysis import render_analysis_page
 
 
 def display_dashboard(user_type):
@@ -27,6 +28,10 @@ def display_dashboard(user_type):
             st.session_state.view = 'graph'
             st.rerun()
 
+        if st.button("Analysis", use_container_width=True):
+            st.session_state.view = 'analysis'
+            st.rerun()
+
         st.write("---")
 
         # Button to change user (resets the state)
@@ -42,6 +47,8 @@ def display_dashboard(user_type):
         render_main_content(user_type)
     elif st.session_state.view == 'graph':
         render_graph_page()
+    elif st.session_state.view == 'analysis':
+        render_analysis_page()
     else:
         # Fallback in case the state gets corrupted
         st.warning("Unrecognized view. Returning to the main page.")
