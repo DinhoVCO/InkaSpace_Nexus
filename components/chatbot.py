@@ -21,7 +21,7 @@ def chatbot_interface(session_messages, graph_to_call, selected_sections=None, p
                 st.markdown(message["content"])
 
     # Captura la nueva entrada del usuario
-    if prompt := st.chat_input("Escribe tu pregunta sobre biología espacial aquí..."):
+    if prompt := st.chat_input("Write your question..."):
         with chat_container:
             # Añade y muestra el mensaje del usuario en la interfaz
             session_messages.append({"role": "user", "content": prompt})

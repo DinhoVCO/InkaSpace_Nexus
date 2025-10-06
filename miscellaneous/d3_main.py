@@ -83,7 +83,7 @@ def render_main_content(user_type):
         st.header("🤖 AI CHATBOT ")
         if "messages_d3" not in st.session_state:
             st.session_state.messages_d3 = [
-                {"role": "assistant", "content": "Hello! How can I help you with scientific articles today?"}
+                {"role": "assistant", "content": "Hello! How can I help you today?"}
             ]
         # Pasa las secciones seleccionadas a tu chatbot si es necesario
         chatbot_interface(st.session_state.messages_d3, graph, prompt_type=st.session_state.prompt_type_selector)
