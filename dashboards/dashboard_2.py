@@ -1,6 +1,9 @@
 # dashboard_1.py (modified to handle internal views)
 import streamlit as st
 from miscellaneous.d2_main import render_main_content
+from miscellaneous.d2_graph import render_graph_page
+from miscellaneous.d2_analysis import render_analysis_page
+
 
 def display_dashboard(user_type):
     """
@@ -17,8 +20,15 @@ def display_dashboard(user_type):
 
         # --- NAVIGATION BUTTONS ---
         # Each button changes the 'view' state and forces a rerun
-        if st.button("Main Page", use_container_width=True):
+        if st.button("AI Search Agent", use_container_width=True):
             st.session_state.view = 'main'
+            st.rerun()
+        
+        if st.button("Research Graph", use_container_width=True):
+            st.session_state.view = 'graph'
+            st.rerun()
+        if st.button("Analysis", use_container_width=True):
+            st.session_state.view = 'analysis'
             st.rerun()
 
         st.write("---")
@@ -34,6 +44,10 @@ def display_dashboard(user_type):
     
     if st.session_state.view == 'main':
         render_main_content(user_type)
+    elif st.session_state.view == 'graph':
+        render_graph_page()
+    elif st.session_state.view == 'analysis':
+        render_analysis_page()
     else:
         # Fallback in case the state gets corrupted
         st.warning("Unrecognized view. Returning to the main page.")

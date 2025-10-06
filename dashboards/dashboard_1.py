@@ -2,7 +2,7 @@
 import streamlit as st
 from miscellaneous.d1_main import render_main_content
 from miscellaneous.d1_analysis import render_analysis_page
-from miscellaneous.d1_configuration import render_configuration_page
+from miscellaneous.d1_graph import render_graph_page
 
 # --- MAIN DASHBOARD FUNCTION ---
 
@@ -21,16 +21,16 @@ def display_dashboard(user_type):
 
         # --- NAVIGATION BUTTONS ---
         # Each button changes the 'view' state and forces a rerun
-        if st.button("Main Page", use_container_width=True):
+        if st.button("AI Search Agent", use_container_width=True):
             st.session_state.view = 'main'
             st.rerun()
         
-        if st.button("Data Analysis", use_container_width=True):
-            st.session_state.view = 'analysis'
+        if st.button("Research Graph", use_container_width=True):
+            st.session_state.view = 'graph'
             st.rerun()
             
-        if st.button("Configuration", use_container_width=True):
-            st.session_state.view = 'configuration'
+        if st.button("Analysis", use_container_width=True):
+            st.session_state.view = 'analysis'
             st.rerun()
 
         st.write("---")
@@ -46,10 +46,10 @@ def display_dashboard(user_type):
     
     if st.session_state.view == 'main':
         render_main_content(user_type)
+    elif st.session_state.view == 'graph':
+        render_graph_page()
     elif st.session_state.view == 'analysis':
         render_analysis_page()
-    elif st.session_state.view == 'configuration':
-        render_configuration_page()
     else:
         # Fallback in case the state gets corrupted
         st.warning("Unrecognized view. Returning to the main page.")

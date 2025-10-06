@@ -24,20 +24,19 @@ def main():
 
     # If no user is selected, show the selection screen
     if st.session_state.user_type is None:
-        st.set_page_config(page_title="User Selection", layout="centered")
+        st.set_page_config(page_title="InkaSpace NEXUS", layout="centered")
         col1, col2, col3 = st.columns([1.5, 1, 1.5]) # Adjust the ratio for desired spacing
 
         with col2:
             st.image("images/logo_nexus.png", use_container_width=True)
-        #st.image("images/logo_nexus.png", width=150)
-        #st.title("NASA Nexus 🚀")
-        st.markdown("<h1 style='text-align: center;'>NASA Nexus 🚀</h1>", unsafe_allow_html=True)
+
+        st.markdown("<h1 style='text-align: center;'>InkaSpace Nexus 🚀</h1>", unsafe_allow_html=True)
 
 
         # Define the new user types based on the target audience
         user_options = [
             "Select an option",
-            "Scientist 🔬",
+            "Scientist 🧬",
             "Manager 💼",
             "Mission architect 👷🏻‍♂️"
         ]
@@ -56,7 +55,7 @@ def main():
         else:
             st.info("""
                     Select a user type to see the corresponding dashboard\n\n
-                     - **Scientists** 🔬 who are generating new hypotheses\n
+                     - **Scientists** 🧬 who are generating new hypotheses\n
                      - **Managers** 💼 identifying opportunities for investment\n
                      - **Mission architects** 👷🏻‍♂️ looking to explore the Moon and Mars safely and efficiently
             """, icon="ℹ️")
@@ -64,7 +63,7 @@ def main():
     # If a user is already selected, show the corresponding dashboard
     else:
         # Match the selected user type to its corresponding dashboard function
-        if st.session_state.user_type == "Scientist 🔬":
+        if st.session_state.user_type == "Scientist 🧬":
             display_dashboard_1(st.session_state.user_type)
         elif st.session_state.user_type == "Manager 💼":
             display_dashboard_2(st.session_state.user_type)

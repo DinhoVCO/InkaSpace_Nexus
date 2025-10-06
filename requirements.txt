@@ -6,3 +6,10 @@ markitdown
 langchain-mistralai
 langchain-qdrant
 langchain-text-splitters
+tiktoken
+lxml
+streamlit-agraph
+langchain_community
+langgraph
+plotly
+markdown_pdf 
