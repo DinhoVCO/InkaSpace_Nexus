@@ -38,8 +38,16 @@ def render_main_content(user_type):
         selected_sections = [s for s in sections if st.session_state[s]]
 
     with col3:
-        st.header("Report Generation")
+        # --- NUEVO: Selector de tipo de prompt ---
+        st.header("Agent Scientist Type")
+        prompt_type = st.radio(
+            "Choose AI prompt",
+            ("Simple", "Strict"),
+            index=0,
+            key="prompt_type_selector"
+        )
         
+        st.header("Report Generation")
         if st.button("🔬 Generate Research Summary"):
             if "messages_d1" in st.session_state and st.session_state.messages_d1:
                 with st.spinner("Analyzing conversation and generating AI report... This may take a moment."):
@@ -92,4 +100,4 @@ def render_main_content(user_type):
                 {"role": "assistant", "content": "Hello! How can I help you with scientific articles today?"}
             ]
         # Pasa las secciones seleccionadas a tu chatbot si es necesario
-        chatbot_interface(st.session_state.messages_d1, graph, selected_sections)
+        chatbot_interface(st.session_state.messages_d1, graph, selected_sections,prompt_type=st.session_state.prompt_type_selector)

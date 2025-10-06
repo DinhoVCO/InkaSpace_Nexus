@@ -52,7 +52,8 @@ store_results = QdrantVectorStore(
 # -----------------------------
 # Load prompts and LLM
 # -----------------------------
-prompt_mission_architects = hub.pull("pruebanasa/mission_architects")
+hub_simple = hub.pull("pruebanasa/architects_simple")
+hub_strict = hub.pull("pruebanasa/mission_architects")
 llm = init_chat_model("open-mixtral-8x7b", model_provider="mistralai")
 
 
@@ -65,6 +66,7 @@ class State(TypedDict):
     summary: List[str]
     answer: str
     selected_sections: List[str]
+    prompt_type: str
 
 
 # -----------------------------
@@ -155,9 +157,16 @@ def generate(state: State) -> State:
     """
     context = state.get("summary", "")
     chat_history = state["messages"][:-1]
+    if state["prompt_type"] == "Simple":
+        hub = hub_simple
+    else:
+        hub = hub_strict
+
+    print("*************usando**********")
+    print(state["prompt_type"])
 
     question = state["messages"][-1].content
-    messages = prompt_mission_architects.invoke({
+    messages = hub.invoke({
         "question": question,
         "context": context,
         "chat_history": chat_history

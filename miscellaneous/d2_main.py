@@ -19,8 +19,17 @@ pdf = MarkdownPdf(toc_level=2, optimize=True)
 
 def render_main_content(user_type):
     """Muestra el contenido de la página principal del dashboard."""
-    col2, col3 = st.columns([7, 2])
+    col1, col2, col3 = st.columns([1.5, 4, 1.5])
 
+    with col1:
+        # --- NUEVO: Selector de tipo de prompt ---
+        st.header("Agent Manager Type")
+        prompt_type = st.radio(
+            "Choose AI prompt",
+            ("Simple", "Strict"),
+            index=0,
+            key="prompt_type_selector"
+        )
 
     with col3:
         st.header("Report Generation")
@@ -77,4 +86,4 @@ def render_main_content(user_type):
                 {"role": "assistant", "content": "Hello! How can I help you with scientific articles today?"}
             ]
         # Pasa las secciones seleccionadas a tu chatbot si es necesario
-        chatbot_interface(st.session_state.messages_d2, graph)
+        chatbot_interface(st.session_state.messages_d2, graph, prompt_type=st.session_state.prompt_type_selector)

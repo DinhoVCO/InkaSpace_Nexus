@@ -9,7 +9,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 # --- Interfaz del Chatbot ---
-def chatbot_interface(session_messages, graph_to_call, selected_sections=None):
+def chatbot_interface(session_messages, graph_to_call, selected_sections=None, prompt_type = "Simple"):
     """Renderiza y gestiona el chatbot conectado a tu LangGraph conversacional."""
     # Muestra los mensajes previos del historial
     chat_container = st.container(height=450, border=True)
@@ -50,7 +50,8 @@ def chatbot_interface(session_messages, graph_to_call, selected_sections=None):
                         result = graph_to_call.invoke(
                             {
                                 "messages": formatted_messages, 
-                                "selected_sections": selected_sections or []
+                                "selected_sections": selected_sections or [],
+                                "prompt_type": prompt_type
                             },
                             {"callbacks": [st_callback]}
                         )
