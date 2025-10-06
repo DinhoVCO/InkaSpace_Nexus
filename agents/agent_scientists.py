@@ -58,7 +58,7 @@ class State(TypedDict):
     answer: str
     selected_sections: List[str]
 
-def retrieve(state: dict, k=5) -> dict:
+def retrieve(state: dict, k=2) -> dict:
     """
     Retrieves documents depending on user-selected sections.
     """
