@@ -61,7 +61,7 @@ class State(TypedDict):
 # -----------------------------
 # Document retrieval step
 # -----------------------------
-def retrieve_manager(state: dict, k=5) -> dict:
+def retrieve_manager(state: dict, k=3) -> dict:
     """
     Retrieves the top-k most relevant project documents (Manager profile)
     from Qdrant and builds a concise summary including project scope,

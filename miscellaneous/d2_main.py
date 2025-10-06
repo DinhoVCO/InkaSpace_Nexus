@@ -19,23 +19,8 @@ pdf = MarkdownPdf(toc_level=2, optimize=True)
 
 def render_main_content(user_type):
     """Muestra el contenido de la página principal del dashboard."""
-    col1, col2, col3 = st.columns([1.5, 4, 1.5])
+    col2, col3 = st.columns([7, 2])
 
-    with col1:
-        st.header("Filter By Section")
-        
-        sections = [
-            "Abstract", "Introduction", "Results and Discussion", 
-            "Conclusion", "Any Section"
-        ]
-
-        with st.expander("Filter by Section", expanded=True):
-            for section in sections:
-                st.session_state.setdefault(section, True) 
-                st.checkbox(section, key=section)
-
-        # Recolectar las secciones que están marcadas para el chatbot
-        selected_sections = [s for s in sections if st.session_state[s]]
 
     with col3:
         st.header("Report Generation")
@@ -92,4 +77,4 @@ def render_main_content(user_type):
                 {"role": "assistant", "content": "Hello! How can I help you with scientific articles today?"}
             ]
         # Pasa las secciones seleccionadas a tu chatbot si es necesario
-        chatbot_interface(st.session_state.messages_d2, graph, selected_sections)
+        chatbot_interface(st.session_state.messages_d2, graph)

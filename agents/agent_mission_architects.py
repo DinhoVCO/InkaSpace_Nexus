@@ -70,7 +70,7 @@ class State(TypedDict):
 # -----------------------------
 # Document retrieval step
 # -----------------------------
-def retrieve_architect(state: dict, k=5) -> dict:
+def retrieve_architect(state: dict, k=3) -> dict:
     """
     Retrieves top-k relevant scientific papers and projects related to
     space mission design, safety, and biological/engineering integration.
