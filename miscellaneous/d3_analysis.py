@@ -8,7 +8,7 @@ def render_analysis_page():
     st.logo("images/logo_nexus.png", size='large')
     st.set_page_config(page_title="Profile Architec", layout="wide")
     def load_json(path):
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
     def extract_field(d, key):

@@ -73,7 +73,7 @@ def retrieve_manager(state: dict, k=3) -> dict:
     retrieved_docs = store.similarity_search(query=question, k=k)
 
     if not retrieved_docs:
-        print("[retrieve_manager] No relevant projects found.")
+        #print("[retrieve_manager] No relevant projects found.")
         return {"context": [], "summary": "No relevant projects found."}
 
     summary_blocks = []
@@ -132,7 +132,7 @@ Impact and Earth Benefits:
         summary_blocks.append(info.strip())
 
     summary_text = "\n\n---\n\n".join(summary_blocks)
-    print(f"[retrieve_manager] Retrieved {len(retrieved_docs)} relevant projects.")
+    #print(f"[retrieve_manager] Retrieved {len(retrieved_docs)} relevant projects.")
     return {
         "context": retrieved_docs,
         "summary": summary_text
@@ -153,8 +153,8 @@ def generate(state: State) -> State:
     else:
         hub = hub_strict
 
-    print("*************usando**********")
-    print(state["prompt_type"])
+    #print("*************usando**********")
+    #print(state["prompt_type"])
 
     question = state["messages"][-1].content
     messages = hub.invoke({

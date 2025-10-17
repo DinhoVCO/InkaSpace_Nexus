@@ -7,11 +7,15 @@ import io
 from langchain_mistralai import ChatMistralAI
 from langchain_core.messages import HumanMessage
 from utils.prompts import REPORT_PROMPT_TEMPLATE_EN
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+LLM_MODEL = os.getenv("LLM_MODEL")
 llm = ChatMistralAI(
-    model="open-mixtral-8x7b",
+    model=LLM_MODEL,
     temperature=0,
-    max_retries=2,
+    max_retries=5,
 )
 
 pdf = MarkdownPdf(toc_level=2, optimize=True)

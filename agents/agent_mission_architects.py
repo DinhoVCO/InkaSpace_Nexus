@@ -79,7 +79,7 @@ def retrieve_architect(state: dict, k=3) -> dict:
     Combines both Qdrant collections: all scientific articles and project results.
     """
     question = state["messages"][-1].content
-    print(f"[retrieve_architect] Searching for '{question}' across collections...")
+    #print(f"[retrieve_architect] Searching for '{question}' across collections...")
 
     # --- 1. Retrieve from both collections ---
     docs_bio = store_all.similarity_search(query=question, k=k)
@@ -88,7 +88,7 @@ def retrieve_architect(state: dict, k=3) -> dict:
     retrieved_docs = docs_bio + docs_proj
 
     if not retrieved_docs:
-        print("[retrieve_architect] No relevant mission-related documents found.")
+        #print("[retrieve_architect] No relevant mission-related documents found.")
         return {"context": [], "summary": "No mission-related information found."}
 
     summary_blocks = []
@@ -140,7 +140,7 @@ Content:
 
     # --- Combine all summaries ---
     summary_text = "\n\n---\n\n".join(summary_blocks)
-    print(f"[retrieve_architect] Retrieved {len(retrieved_docs)} relevant documents.")
+    #print(f"[retrieve_architect] Retrieved {len(retrieved_docs)} relevant documents.")
     return {
         "context": retrieved_docs,
         "summary": summary_text
@@ -162,8 +162,8 @@ def generate(state: State) -> State:
     else:
         hub = hub_strict
 
-    print("*************usando**********")
-    print(state["prompt_type"])
+    #print("*************usando**********")
+    #print(state["prompt_type"])
 
     question = state["messages"][-1].content
     messages = hub.invoke({
@@ -172,7 +172,7 @@ def generate(state: State) -> State:
         "chat_history": chat_history
     })
 
-    print("[generate] Sending data to LLM (Mission Architect Agent)...")
+    #print("[generate] Sending data to LLM (Mission Architect Agent)...")
     response = llm.invoke(messages)
     answer = response.content.strip()
 

@@ -67,7 +67,7 @@ def get_similar_articles(task_query: str, k=10) -> list[str]:
     retrieved_docs = articles_store.similarity_search(task_query, k=5)
     results=[]
     for doc in retrieved_docs:
-        print(doc.metadata)
+        #print(doc.metadata)
         results.append(doc.metadata['pmcid'])
     return results
 

@@ -64,7 +64,7 @@ def retrieve(state: dict, k=3) -> dict:
     Retrieves documents depending on user-selected sections.
     """
     selected_sections = state.get("selected_sections", ["Any Section"])
-    print(f"[retrieve] Selected filters: {selected_sections}")
+    #print(f"[retrieve] Selected filters: {selected_sections}")
 
     # If "Any Section" is chosen, search in the general collection
     if "Any Section" in selected_sections:
@@ -78,7 +78,7 @@ def retrieve(state: dict, k=3) -> dict:
     question = state["messages"][-1].content
     retrieved_docs = []
     for collection in collections_to_search:
-        print(f"[retrieve] Searching in collection: {collection}")
+        #print(f"[retrieve] Searching in collection: {collection}")
 
         store = QdrantVectorStore(
             client=client,
@@ -91,7 +91,7 @@ def retrieve(state: dict, k=3) -> dict:
         retrieved_docs.extend(results)
 
     if not retrieved_docs:
-        print("[retrieve] No similar documents were found.")
+        #print("[retrieve] No similar documents were found.")
         return {"context": [], "summary": "No results found."}
 
     # Format results
@@ -112,7 +112,7 @@ Content:
         summary_list.append(info)
 
     summary_text = "\n".join(summary_list)
-    print(f"[retrieve] Retrieved {len(retrieved_docs)} documents in total.")
+    #print(f"[retrieve] Retrieved {len(retrieved_docs)} documents in total.")
     return {
         "context": retrieved_docs,
         "summary": summary_text
@@ -132,8 +132,8 @@ def generate(state: State) -> State:
     else:
         hub = hub_strict
 
-    print("*************usando**********")
-    print(state["prompt_type"])
+    #print("*************usando**********")
+    #print(state["prompt_type"])
 
     question = state["messages"][-1].content
     messages = hub.invoke({
